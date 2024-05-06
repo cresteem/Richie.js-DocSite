@@ -44,4 +44,4 @@ jobs:
 
           SOURCE: "opensource/"
           TARGET: ${{ secrets.REMOTE_TARGET }}
-          SCRIPT_BEFORE: ls
+          SCRIPT_BEFORE: ls && whoami
