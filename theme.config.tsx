@@ -48,6 +48,10 @@ const config: DocsThemeConfig = {
   themeSwitch: {
     component: <ThemeSwitch />,
   },
+
+  useNextSeoProps: () => {
+    return { titleTemplate: "%s" };
+  },
 };
 
 export default config;
