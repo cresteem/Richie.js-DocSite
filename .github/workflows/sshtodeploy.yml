@@ -18,7 +18,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     environment:
-      name: SSH CREDENTIALS
+      name: FTP
     steps:
       - name: "Checking Out"
         uses: actions/checkout@v4.1.4
@@ -36,13 +36,12 @@ jobs:
         run: yarn build
 
       - name: Deploy to Server
-        uses: easingthemes/ssh-deploy@v5.0.3
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
-          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
-          REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
-          REMOTE_USER: ${{ secrets.REMOTE_USER }}
-          REMOTE_PORT: ${{ secrets.REMOTE_PORT }}
-
-          SOURCE: "opensource/"
-          TARGET: ${{ secrets.REMOTE_TARGET }}
-          SCRIPT_BEFORE: ls && whoami
+          server: ${{ secrets.ftp_server }}
+          username: ${{ secrets.ftp_uname }}
+          password: ${{ secrets.ftp_pass }}
+          port: ${{ secrets.ftp_port }}
+          local-dir: ./opensource/
+          server-dir: ${{ secrets.ftp_dest }}
+          security: ${{ secrets.ftp_security }}
