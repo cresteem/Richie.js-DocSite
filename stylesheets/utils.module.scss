@@ -1,0 +1,30 @@
+.footerIcon {
+    float: right;
+    height: 25px;
+    width: auto;
+    margin-left: 10px;
+}
+
+.logoDiv {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    height: 5vw;
+    width: 10vw;
+    margin-top: 15px;
+}
+
+.heroText {
+    font-size: 20px !important;
+}
+
+.subText {
+    margin: 0;
+    padding: 0;
+    font-size: 12px;
+}
+
+.darkModeBtn {
+    display: flex;
+    column-gap: 10px;
+}
