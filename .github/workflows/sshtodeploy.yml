@@ -45,3 +45,4 @@ jobs:
           local-dir: ./opensource/
           server-dir: ${{ secrets.ftp_dest }}
           security: ${{ secrets.ftp_security }}
+          protocol: ftp
