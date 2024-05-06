@@ -26,7 +26,7 @@ jobs:
       - name: Setting Up Node.js
         uses: actions/setup-node@v4.0.2
         with:
-          node-version: "21.x"
+          node-version: "21"
           cache: "yarn"
 
       - name: Installing dependencies
