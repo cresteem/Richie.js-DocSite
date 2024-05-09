@@ -10,4 +10,6 @@ module.exports = {
     unoptimized: true,
   },
   basePath: "/opensource/richie-js",
+  output: "export",
+  distDir: "opensource/richie-js",
 };

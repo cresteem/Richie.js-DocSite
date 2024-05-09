@@ -2,13 +2,7 @@
 import { useConfig, useTheme } from "nextra-theme-docs";
 import { ReactElement, useState } from "react";
 
-import {
-  RiCreativeCommonsByLine,
-  RiCreativeCommonsLine,
-  RiCreativeCommonsSaLine,
-  RiMoonFill,
-  RiSunFill,
-} from "react-icons/ri";
+import { RiCopyleftFill, RiMoonFill, RiSunFill } from "react-icons/ri";
 
 import style from "../stylesheets/utils.module.scss";
 
@@ -81,15 +75,13 @@ export function LicenseFooter(): ReactElement {
       </a>{" "}
       is licensed under{" "}
       <a
-        href="https://creativecommons.org/licenses/by-sa/4.0/?ref=chooser-v1"
+        href="https://www.gnu.org/licenses/gpl-3.0-standalone.html"
         target="_blank"
         rel="license noopener noreferrer"
         style={{ display: "inline-block" }}
       >
-        Creative Commons Attribution-ShareAlike 4.0 International
-        <RiCreativeCommonsSaLine className={style.footerIcon} />
-        <RiCreativeCommonsByLine className={style.footerIcon} />
-        <RiCreativeCommonsLine className={style.footerIcon} />
+        GNU GENERAL PUBLIC LICENSE V3
+        <RiCopyleftFill className={style.footerIcon} />
       </a>
     </p>
   );

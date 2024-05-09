@@ -4,7 +4,7 @@
 	"description": "Richie JS API References",
 	"scripts": {
 		"dev": "next dev",
-		"build": "next build && next export -o opensource/richie-js",
+		"build": "next build",
 		"start": "next start"
 	},
 	"repository": {
