@@ -1,3 +1,3 @@
-## Richie JS
+RICHIE JS Docsite © 2024 by CRESTEEM is licensed under GNU GENERAL PUBLIC LICENSE V3
 
-[![Deploy Static Files to Server](https://github.com/cresteem/Richie-JS-DocSite/actions/workflows/sshtodeploy.yml/badge.svg)](https://github.com/cresteem/Richie-JS-DocSite/actions/workflows/sshtodeploy.yml)
+![GPL_v3](./gplv3.png)

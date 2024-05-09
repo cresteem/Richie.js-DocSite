@@ -16,7 +16,7 @@
 		"CRESTEEM <connect@cresteem.com>",
 		"DARSAN <darsan@cresteem.com>"
 	],
-	"license": "CC-BY-SA-4.0",
+	"license": "GPL-3.0-only",
 	"bugs": {
 		"url": "https://github.com/cresteem/Richie-JS-DocSite/issues"
 	},
