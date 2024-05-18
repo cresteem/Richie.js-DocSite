@@ -2,7 +2,7 @@
 import { useConfig, useTheme } from "nextra-theme-docs";
 import { ReactElement, useState } from "react";
 
-import { RiCopyleftFill, RiMoonFill, RiSunFill } from "react-icons/ri";
+import { RiOpenSourceFill, RiMoonFill, RiSunFill } from "react-icons/ri";
 
 import style from "../stylesheets/utils.module.scss";
 
@@ -80,8 +80,8 @@ export function LicenseFooter(): ReactElement {
         rel="license noopener noreferrer"
         style={{ display: "inline-block" }}
       >
-        GNU GENERAL PUBLIC LICENSE V3
-        <RiCopyleftFill className={style.footerIcon} />
+        APACHE LICENSE VERSION 2.0
+        <RiOpenSourceFill className={style.footerIcon} />
       </a>
     </p>
   );

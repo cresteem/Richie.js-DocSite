@@ -4,6 +4,11 @@ const withNextra = require("nextra")({
   staticImage: true,
 });
 
+console.log(
+  "\n###################################################\n",
+  "Localhost: http://localhost:3000/opensource/richie-js",
+  "\n####################################################\n"
+);
 module.exports = {
   ...withNextra(),
   images: {
