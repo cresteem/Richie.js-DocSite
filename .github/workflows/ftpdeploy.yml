@@ -10,10 +10,6 @@ on:
 permissions:
   contents: write
 
-concurrency:
-  group: "${{ github.workflow }} @ ${{ github.event.pull_request.head.label || github.head_ref || github.ref }}"
-  cancel-in-progress: false
-
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -36,13 +32,12 @@ jobs:
         run: yarn build
 
       - name: Deploy to Server
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        uses: joutvhu/ftp-transfer@v1
         with:
-          server: ${{ secrets.ftp_server }}
+          host: ${{ secrets.ftp_server }}
+          port: ${{ secrets.ftp_port }}
           username: ${{ secrets.ftp_uname }}
           password: ${{ secrets.ftp_pass }}
-          port: ${{ secrets.ftp_port }}
-          local-dir: ./opensource/
-          server-dir: ${{ secrets.ftp_dest }}
-          security: ${{ secrets.ftp_security }}
-          protocol: ftp
+          commands: |
+            pwd
+            ls

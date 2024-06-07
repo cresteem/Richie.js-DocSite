@@ -86,9 +86,9 @@ export function LicenseFooter(): ReactElement {
         </a>
       </p>
       <p style={{ position: "absolute", right: "2vw" }}>
-        📝Documentation made and 🛠️developed by{" "}
+        Documentation M&D by{" "}
         <b>
-          <a href="https://www.linkedin.com/in/iamspdarsan">Darsan 🧑🏻‍💻✅</a>
+          <a href="https://www.linkedin.com/in/iamspdarsan">DARSAN</a>
         </b>
       </p>
     </>
