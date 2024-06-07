@@ -1,18 +1,57 @@
 import { Callout, Tabs } from "nextra/components";
 
-# Breadcrumb (BreadcrumbList)
+# FAQ (FAQPage, Question, Answer)
 
-## What is breadcrumb?
-A breadcrumb trail shows a page's position within the site hierarchy, aiding users in navigation and site exploration. Starting from the last breadcrumb, users can move up one level at a time through the site hierarchy.
+## What is FAQ?
+An FAQ page includes a series of questions and answers related to a specific topic. When correctly formatted, these pages might qualify for a rich result in Search and an Action on Google Assistant, enhancing your site's visibility and helping it connect with the appropriate audience.
 
-Kindly Refer [Google Doc](https://developers.google.com/search/docs/appearance/structured-data/breadcrumb) to know more about breadcrumb rich result.
+Kindly Refer [Google Doc](https://developers.google.com/search/docs/appearance/structured-data/faqpage) to know more about FAQ rich result.
 
-## What are necessary data for breadcrumb rich result?
+## What are necessary data for FAQ rich result?
 
-  ```html copy filename="article.html"
-    <!-- article type - Article, NewsArticle, BlogPosting-->
-    <body data-articletype="NewsArticle">
-    ```
+### 1.FAQ Wrapper
+```html copy filename="faq.html" {1,11} /rjs-faq/
+<details class="rjs-faq">
+  
+  <summary class="question">
+    <!--removed for brevity -->
+  </summary>
+
+  <p class="answer">
+    <!--removed for brevity -->
+  </p>
+
+</details>
+```
+
+### 2.Question
+```html copy filename="faq.html" /question/ {3-6}  /rjs-faq/
+<details class="rjs-faq">
+
+  <summary class="question">
+    Can you provide a content management system (CMS) that allows me to
+    update the website easily?
+  </summary>
+
+  ........<!-- reduced for brevity -->
+
+</details>
+```
+
+### 3.Answer
+```html copy filename="faq.html" /answer/ {5-8}  /rjs-faq/
+<details class="rjs-faq">
+  
+  ......<!-- reduced for brevity -->
+
+  <p class="answer">
+    Certainly! We take pride in crafting custom <b>Content Management
+    Systems (CMS) tailored</b> exclusively to your requirements.
+  </p>
+
+</details>
+```
+
     
 ## Function and parameters
     
@@ -22,24 +61,79 @@ Kindly Refer [Google Doc](https://developers.google.com/search/docs/appearance/s
     We prefer CLI method for keeping it simpler (refer - [Working with API & CLI](/how-to-use)).</Callout>
 
     ```js copy filename="func_params.js" {5}
-    const richResultType = 'article';
-    const filePath = 'article.html';
-    const destination = 'dist/article.html'; /* optional */
+    const richResultType = 'faq';
+    const filePath = 'faq.html';
+    const destination = 'dist/faq.html'; /* optional */
     
     richie(richResultType, filePath, destination);
     ```
 
 ## Example of a Instance
 
-```html copy filename="article.html"
+```html copy filename="faq.html"
+<body>
+  <!-- FAQ-1 -->
+	<details class="rjs-faq">
+
+      <summary class="question">
+        Can you provide a content management system (CMS) that
+        allows me to update the website easily?
+      </summary>
+      
+      <p class="answer">
+        <b>Certainly! We take pride in crafting custom Content Management
+          Systems (CMS) tailored exclusively to your requirements.</b>
+          <!-- reduced for brevity -->
+      </p>
+
+	</details>
+
+  <!-- FAQ-2 -->
+	<details class="rjs-faq">
+    
+      <summary class="question">
+        Do you offer any additional services, such as digital marketing,
+        SEO, or social media management, to help promote the website?
+      </summary>
+      
+      <p class="answer">
+        <b>Absolutely! Beyond website development,</b> Cresteem offers
+        an array of comprehensive services. Our immersive... <!-- reduced for brevity --> 
+      </p>
+
+	</details>
+
+<!-- FAQ-N of count can be added-->
+</body>
 
 ```
 
 ## Output of a Instance
 
-```html filename="article.html" copy
+```js filename="faq.html" copy
 <script type="application/ld+json">
-
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Can you provide a content management system (CMS) that allows me to update the website easily?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Certainly! We take pride in crafting custom Content Management Systems (CMS) tailored exclusively to your requirements...." <!-- reduced for brevity -->
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you offer any additional services, such as digital marketing, SEO, or social media management, to help promote the website?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Absolutely! Beyond website development, Cresteem offers an array of comprehensive services. Our immersive digital marketing strategies are... <!-- reduced for brevity -->"
+      }
+    }
+  ]
+}
 </script>
 ```
 <br/>
