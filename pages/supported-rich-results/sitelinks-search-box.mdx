@@ -1,0 +1,47 @@
+import { Callout, Tabs } from "nextra/components";
+
+# Breadcrumb (BreadcrumbList)
+
+## What is breadcrumb?
+A breadcrumb trail shows a page's position within the site hierarchy, aiding users in navigation and site exploration. Starting from the last breadcrumb, users can move up one level at a time through the site hierarchy.
+
+Kindly Refer [Google Doc](https://developers.google.com/search/docs/appearance/structured-data/breadcrumb) to know more about breadcrumb rich result.
+
+## What are necessary data for breadcrumb rich result?
+
+  ```html copy filename="article.html"
+    <!-- article type - Article, NewsArticle, BlogPosting-->
+    <body data-articletype="NewsArticle">
+    ```
+    
+## Function and parameters
+    
+    <Callout type='default'>By default input file is overwriiten with result so `destination` is optional</Callout>
+
+    <Callout type='info'>This is only for API method.
+    We prefer CLI method for keeping it simpler (refer - [Working with API & CLI](/how-to-use)).</Callout>
+
+    ```js copy filename="func_params.js" {5}
+    const richResultType = 'article';
+    const filePath = 'article.html';
+    const destination = 'dist/article.html'; /* optional */
+    
+    richie(richResultType, filePath, destination);
+    ```
+
+## Example of a Instance
+
+```html copy filename="article.html"
+
+```
+
+## Output of a Instance
+
+```html filename="article.html" copy
+<script type="application/ld+json">
+
+</script>
+```
+<br/>
+<br/>
+**Let's see what's next!**

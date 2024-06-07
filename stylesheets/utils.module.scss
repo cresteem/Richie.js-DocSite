@@ -48,3 +48,25 @@
     height: 35px;
     margin-left: -10px;
 }
+
+.ol {
+    margin-left: 1.6vw;
+    padding-top: 1.7vw;
+}
+
+.ol>li {
+    list-style: upper-roman;
+    font-weight: 500;
+    line-height: 4.5ch;
+}
+
+.ol button {
+    margin-left: 1ch;
+    font-size: 1.4ch;
+    letter-spacing: 0.4ch;
+    color: rgb(255, 73, 73);
+}
+
+.ol button::before {
+    content: "@";
+}

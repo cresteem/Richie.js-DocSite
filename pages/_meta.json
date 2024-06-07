@@ -1,5 +1,37 @@
 {
+    "*": {
+        "theme": {
+            "breadcrumb": false
+        }
+    },
     "index": {
         "title": "Introduction"
+    },
+    "supported-rich-results": {
+        "title": "Supported Rich Results",
+        "theme": {
+            "breadcrumb": true
+        }
+    },
+    "getting-started": {
+        "title": "Getting Started"
+    },
+    "configurations": {
+        "title": "Configurations",
+        "theme": {
+            "breadcrumb": true
+        }
+    },
+    "intellisense": {
+        "title": "Intellisense Support"
+    },
+    "how-to-use": {
+        "title": "Working with API & CLI"
+    },
+    "contribute": {
+        "title": "Contribute"
+    },
+    "faq": {
+        "title": "FAQ"
     }
 }

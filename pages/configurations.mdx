@@ -1,0 +1,116 @@
+import { Tabs } from 'nextra/components'
+
+# Configurations
+Richie JS is pre-configured for user convenience, allowing developers to start using it immediately. For more granular control over input parsing and results, you can create an `rjs.config.json` file in your project's root directory.
+
+This configuration file allows you to specify class names to look up for information in HTML, Which Richie JS will use them to generate rich results for your web pages. Additionally, it lets you customize certain behaviors and preferences of Richie JS to better suit your project's needs. By [Intellisense Support](/intellisense) we can customize configuration simpler and faster without issues.
+
+## Configuration File Structure
+
+```json
+{
+  "domainAddress": "cresteem.com",
+  "timeFormat": "yyyy-MM-dd hh:mm a",
+  "siteSearchBoxFieldName": "searchTerm",
+  "reservedNames": {
+    "aggregateRating": { ... },
+    "reviews": { ... },
+    "common": { ... },
+    "article": { ... },
+    "movie": { ... },
+    "recipe": { ... },
+    "course": { ... },
+    "restaurant": { ... },
+    "events": { ... },
+    "faqPage": { ... },
+    "video": { ... },
+    "localBusiness": { ... },
+    "organisation": { ... },
+    "product": { ... },
+    "profilePage": { ... },
+    "softwareApp": { ... },
+    "businessEntity": { ... }
+  },
+  "preference": { ... }
+}
+```
+
+## Configurations Description
+
+Configurations can be divided into three parts:
+
+<Tabs items={['1.Reserved Names','2.Preferences','3.Other Configuration']}>
+   <Tabs.Tab>
+      **Type:** `object`<br/>
+      **Description:** Specifies where to look for information required to create rich result snippets.
+
+      Configurations available inside it are:
+      1. **common**
+      2. **aggregateRating**
+      3. **reviews**
+      4. **article**
+      5. **movie**
+      6. **recipe**
+      7. **course**
+      8. **restaurant**
+      9. **events**
+      10. **faqPage**
+      11. **video**
+      12. **localBusiness**
+      13. **organisation**
+      14. **product**
+      15. **profilePage**
+      16. **softwareApp**
+      17. **businessEntity**
+
+      We will see each of them in dedicated page for more details about it. You can start it from [Article](/configurations/article)
+   </Tabs.Tab>
+   
+   <Tabs.Tab>
+      **Type:** `object`<br/>
+      **Description:** Defines which type of rich results to generate, particularly for categories such as movies, recipes, courses, restaurants and product.
+
+      1. **isCarousals**
+
+            **Type:** `object`<br/>
+            **Description:** Control to generate carousels of below richies.<br/>
+            `true` for carousels and `false` for standard rich result.
+
+         - **movie:** `boolean` 
+         - **course:** `boolean`
+         - **restaurant:** `boolean` 
+         - **recipe:** `boolean` 
+      
+      <br/>
+      2. **isProductVar**
+         - **Type:** `boolean`
+         - **Description:** Specifies whether product has varients `true` or it is a single product `false`.
+
+   </Tabs.Tab>
+
+   <Tabs.Tab>
+      - **Description:** Sets basic information such as domainAddress, timeFormat, and siteSearchBoxFieldName for [Sitelink Search Box](https://developers.google.com/search/docs/appearance/structured-data/sitelinks-searchbox).
+
+      1. **domainAddress**
+      - **Type:** `string`
+      - **Description:** The domain address of your website.
+      - **Example:** `"cresteem.com"`
+      <br/>
+
+      2. **timeFormat**
+      - **Type:** `string`
+      - **Description:** The format used for mentioning time in web page. Follow [these tokens.](https://moment.github.io/luxon/#/parsing?id=table-of-tokens)
+      - **Example:** `"yyyy-MM-dd hh:mm a"`
+      <br/>
+
+      3. **siteSearchBoxFieldName**
+      - **Type:** `string`
+      - **Description:** The name attribute of the site search box field.
+      - **Example:** `"searchTerm"`
+   </Tabs.Tab>
+
+</Tabs>
+
+<br/>
+<br/>
+**Let's see how to configure for each rich result in detail.**

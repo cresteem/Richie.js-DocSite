@@ -53,43 +53,52 @@ export function ThemeSwitch(): ReactElement {
 
 export function LicenseFooter(): ReactElement {
   return (
-    <p>
-      <a
-        property="dct:title"
-        rel="cc:attributionURL"
-        href="https://github.com/cresteem/Richie-JS"
-        target="_blank"
-        style={{ fontWeight: "bold" }}
-      >
-        RICHIE JS
-      </a>{" "}
-      by{" "}
-      <a
-        style={{ fontWeight: "bold" }}
-        href="https://www.cresteem.com"
-        target="_blank"
-        rel="cc:attributionURL dct:creator"
-        property="cc:attributionName"
-      >
-        CRESTEEM
-      </a>{" "}
-      is licensed under{" "}
-      <a
-        href="https://www.gnu.org/licenses/gpl-3.0-standalone.html"
-        target="_blank"
-        rel="license noopener noreferrer"
-        style={{ display: "inline-block" }}
-      >
-        APACHE LICENSE VERSION 2.0
-        <RiOpenSourceFill className={style.footerIcon} />
-      </a>
-    </p>
+    <>
+      <p>
+        <a
+          property="dct:title"
+          rel="cc:attributionURL"
+          href="https://github.com/cresteem/Richie-JS"
+          target="_blank"
+          style={{ fontWeight: "bold" }}
+        >
+          RICHIE JS
+        </a>{" "}
+        powered by{" "}
+        <a
+          style={{ fontWeight: "bold" }}
+          href="https://www.cresteem.com"
+          target="_blank"
+          rel="cc:attributionURL dct:creator"
+          property="cc:attributionName"
+        >
+          CRESTEEM
+        </a>{" "}
+        is licensed under{" "}
+        <a
+          href="https://github.com/cresteem/Richie-JS/blob/main/LICENSE"
+          target="_blank"
+          rel="license noopener noreferrer"
+          style={{ display: "inline-block" }}
+        >
+          APACHE LICENSE VERSION 2.0
+          <RiOpenSourceFill className={style.footerIcon} />
+        </a>
+      </p>
+      <p style={{ position: "absolute", right: "2vw" }}>
+        📝Documentation made and 🛠️developed by{" "}
+        <b>
+          <a href="https://www.linkedin.com/in/iamspdarsan">Darsan 🧑🏻‍💻✅</a>
+        </b>
+      </p>
+    </>
   );
 }
 
 export function HeadElement({ currentUrl }: { currentUrl: string }) {
   const { frontMatter } = useConfig();
 
+  const title: string = `${frontMatter.title} | Richie JS API References | OpenSource at Cresteem`;
   return (
     <>
       {/* general page description */}
@@ -98,7 +107,7 @@ export function HeadElement({ currentUrl }: { currentUrl: string }) {
       {/* fb meta */}
       <meta property="og:type" content="website" />
       <meta property="og:url" content={currentUrl} />
-      <meta property="og:title" content={frontMatter.title} />
+      <meta property="og:title" content={title} />
       <meta property="og:description" content={frontMatter.description} />
       <meta property="og:site_name" content="CRESTEEM" />
       <meta property="og:locale" content="en_US" />
@@ -111,11 +120,11 @@ export function HeadElement({ currentUrl }: { currentUrl: string }) {
       <meta name="twitter:card" content={frontMatter.description} />
       <meta name="twitter:site" content="@cresteem" />
       <meta name="twitter:url" content={currentUrl} />
-      <meta name="twitter:title" content={frontMatter.title} />
+      <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={frontMatter.description} />
       <meta name="twitter:image" content={frontMatter.thumbnailUrl} />
 
-      <title>{frontMatter.title}</title>
+      <title>title</title>
 
       <link
         rel="icon"
