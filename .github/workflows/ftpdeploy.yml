@@ -31,8 +31,19 @@ jobs:
       - name: Generating Static Files
         run: yarn build
 
+      - name: Get yarn cache directory path
+        id: yarn-cache-dir-path
+        run: echo "dir=$(yarn config get cacheFolder)" >> $GITHUB_OUTPUT
+      - uses: actions/cache@v4.0.2
+        id: yarn-cache # use this to check for `cache-hit` (`steps.yarn-cache.outputs.cache-hit != 'true'`)
+        with:
+          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-
+
       - name: "Caching build"
-        uses: actions/cache@v4
+        uses: actions/cache@v4.0.2
         with:
           path: |
             ~/.npm
@@ -50,6 +61,8 @@ jobs:
           port: ${{ secrets.FTP_PORT }}
           username: ${{ secrets.FTP_UNAME }}
           password: ${{ secrets.FTP_PASS }}
-          protocol: ftp
+          protocol: ftps
           local-dir: ./opensource/
           server-dir: /opensource/
+          log-level: verbose
+          security: strict
