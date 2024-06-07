@@ -38,5 +38,6 @@ jobs:
           port: ${{ secrets.FTP_PORT }}
           username: ${{ secrets.FTP_UNAME }}
           password: ${{ secrets.FTP_PASS }}
+          protocol: ftp
           local-dir: ./opensource/
           server-dir: /opensource/
