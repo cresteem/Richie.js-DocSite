@@ -34,7 +34,7 @@ jobs:
       - name: Deploy to Server
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
-          server: ${{ secrets.FTP_SERVER }}
+          server: ftp://cresteem.com
           port: ${{ secrets.FTP_PORT }}
           username: ${{ secrets.FTP_UNAME }}
           password: ${{ secrets.FTP_PASS }}
