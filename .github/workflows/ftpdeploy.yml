@@ -66,6 +66,5 @@ jobs:
           password: ${{ secrets.FTP_PASS }}
           protocol: ftp
           local-dir: ./opensource/
-          server-dir: /opensource/
-          log-level: verbose
-          security: loose
+          server-dir: opensource/
+          security: strict
