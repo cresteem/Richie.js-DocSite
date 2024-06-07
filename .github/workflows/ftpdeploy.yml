@@ -32,12 +32,11 @@ jobs:
         run: yarn build
 
       - name: Deploy to Server
-        uses: joutvhu/ftp-transfer@v1
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
-          host: ${{ secrets.ftp_server }}
-          port: ${{ secrets.ftp_port }}
-          username: ${{ secrets.ftp_uname }}
-          password: ${{ secrets.ftp_pass }}
-          commands: |
-            pwd
-            ls
+          server: ${{ secrets.FTP_SERVER }}
+          port: ${{ secrets.FTP_PORT }}
+          username: ${{ secrets.FTP_UNAME }}
+          password: ${{ secrets.FTP_PASS }}
+          local-dir: ./opensource
+          server-dir: opensource
