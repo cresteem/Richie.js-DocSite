@@ -1,18 +1,83 @@
 import { Callout, Tabs } from "nextra/components";
 
-# Breadcrumb (BreadcrumbList)
+# Software app (SoftwareApplication)
 
-## What is breadcrumb?
-A breadcrumb trail shows a page's position within the site hierarchy, aiding users in navigation and site exploration. Starting from the last breadcrumb, users can move up one level at a time through the site hierarchy.
+## What is software app?
+Markup software application information on your web page to enhance the display of your app details in Google Search results.
 
-Kindly Refer [Google Doc](https://developers.google.com/search/docs/appearance/structured-data/breadcrumb) to know more about breadcrumb rich result.
+Kindly Refer [Google Doc](https://developers.google.com/search/docs/appearance/structured-data/software-app) to know more about software app rich result.
 
-## What are necessary data for breadcrumb rich result?
+## What are necessary data for software app rich result?
+### 1. Software / Game name
 
-  ```html copy filename="article.html"
-    <!-- article type - Article, NewsArticle, BlogPosting-->
-    <body data-articletype="NewsArticle">
-    ```
+```html copy filename="software-app.html" /1-name/ {3}
+<div>
+
+	<p class="rjs-sapp-1-name">God of War</p>
+
+<div>
+```
+
+### 2. Operating system
+<Callout>If you have list of OS, separator should be comma (,)</Callout>
+
+```html copy filename="software-app.html" /1-os/ {3-6}
+<div>
+  
+  <p>
+    Supported on:
+    <span class="rjs-sapp-1-os">Windows, PS4</span>
+  </p>
+
+<div>
+```
+
+### 3. Category
+
+```html copy filename="software-app.html" /1-cat/ {3-6}
+<div>
+  
+  <p>
+    Category:
+    <span class="rjs-sapp-1-cat">Game</span>
+  </p>
+
+<div>
+```
+
+### 4. Aggregated Rating
+
+```html showLineNumbers copy filename="software-app.html" /1-aggrate/ /div/ /"arv"/ /"mr"/ /"rc"/ {3-16}
+<div>
+  
+  <div class="rjs-sapp-1-aggrate">
+  
+    <!-- rating value -->
+    <p>
+      <span class="arv">99</span> / <span class="mr">100</span>
+    </p>
+    
+    <!-- rating counts -->
+    <p>
+      Number of rating:
+      <span class="rc">90864000</span>
+    </p>
+    
+  </div>
+
+<div>
+```
+
+### 5. Price & Currency
+<Callout>Currency should be `alpha-3` code.</Callout>
+
+```html copy filename="software-app.html" {3} /1-cost/ /data-currency="inr"/
+<div>
+  
+  <p class="rjs-sapp-1-cost" data-currency="inr">2000</p>
+
+<div>
+```
     
 ## Function and parameters
     
@@ -21,25 +86,74 @@ Kindly Refer [Google Doc](https://developers.google.com/search/docs/appearance/s
     <Callout type='info'>This is only for API method.
     We prefer CLI method for keeping it simpler (refer - [Working with API & CLI](/how-to-use)).</Callout>
 
-    ```js copy filename="func_params.js" {5}
-    const richResultType = 'article';
-    const filePath = 'article.html';
-    const destination = 'dist/article.html'; /* optional */
+    ```js copy filename="func_params.js" {5} /'software'/
+    const richResultType = 'software';
+    const filePath = 'software-app.html';
+    const destination = 'dist/software-app.html'; /* optional */
     
     richie(richResultType, filePath, destination);
     ```
 
 ## Example of a Instance
 
-```html copy filename="article.html"
+```html copy filename="software-app.html"
+<body>
+
+	<div>
+
+		<p class="rjs-sapp-1-name">God of War</p>
+
+		<p>
+			Category:
+			<span class="rjs-sapp-1-cat">Game</span>
+		</p>
+
+		<p>
+			Supported on:
+			<span class="rjs-sapp-1-os">Windows, PS4</span>
+		</p>
+
+		<!-- aggregate rating -->
+		<div class="rjs-sapp-1-aggrate">
+			<!-- rating value -->
+			<p>
+				<span class="arv">99</span> / <span class="mr">100</span>
+			</p>
+
+			<!-- rating counts -->
+			<p>Number of rating:
+				<span class="rc">90864000</span>
+			</p>
+		</div>
+
+		<p class="rjs-sapp-1-cost" data-currency="inr">2000</p>
+
+	</div>
+
+</body>
 
 ```
 
 ## Output of a Instance
 
-```html filename="article.html" copy
+```json filename="software-app.html" copy
 <script type="application/ld+json">
-
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "God of War",
+    "operatingSystem": ["WINDOWS", " PS4"],
+    "applicationCategory": "GameApplication",
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": 99,
+      "bestRating": 100,
+      "ratingCount": 90864000
+    },
+    "offers": { "price": 2000, "priceCurrency": "INR" }
+  }
+]
 </script>
 ```
 <br/>
