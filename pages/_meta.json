@@ -7,14 +7,14 @@
     "index": {
         "title": "Introduction"
     },
+    "getting-started": {
+        "title": "Getting Started"
+    },
     "supported-rich-results": {
         "title": "Supported Rich Results",
         "theme": {
             "breadcrumb": true
         }
-    },
-    "getting-started": {
-        "title": "Getting Started"
     },
     "configurations": {
         "title": "Configurations",
