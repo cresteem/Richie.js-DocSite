@@ -1,5 +1,5 @@
 "use client";
-import { useConfig, useTheme } from "nextra-theme-docs";
+import { useTheme } from "nextra-theme-docs";
 import { ReactElement, useState } from "react";
 
 import { RiOpenSourceFill, RiMoonFill, RiSunFill } from "react-icons/ri";
@@ -91,46 +91,6 @@ export function LicenseFooter(): ReactElement {
           <a href="https://www.linkedin.com/in/iamspdarsan">DARSAN</a>
         </b>
       </p>
-    </>
-  );
-}
-
-export function HeadElement({ currentUrl }: { currentUrl: string }) {
-  const { frontMatter } = useConfig();
-
-  const title: string = `${frontMatter.title} | Richie JS API References | OpenSource at Cresteem`;
-  return (
-    <>
-      {/* general page description */}
-      <meta name="description" content={frontMatter.description} />
-
-      {/* fb meta */}
-      <meta property="og:type" content="website" />
-      <meta property="og:url" content={currentUrl} />
-      <meta property="og:title" content={title} />
-      <meta property="og:description" content={frontMatter.description} />
-      <meta property="og:site_name" content="CRESTEEM" />
-      <meta property="og:locale" content="en_US" />
-
-      <meta property="og:image" content={frontMatter.thumbnailUrl} />
-      <meta property="og:image:width" content="1200" />
-      <meta property="og:image:height" content="630" />
-
-      {/* TWITTER META */}
-      <meta name="twitter:card" content={frontMatter.description} />
-      <meta name="twitter:site" content="@cresteem" />
-      <meta name="twitter:url" content={currentUrl} />
-      <meta name="twitter:title" content={title} />
-      <meta name="twitter:description" content={frontMatter.description} />
-      <meta name="twitter:image" content={frontMatter.thumbnailUrl} />
-
-      <title>title</title>
-
-      <link
-        rel="icon"
-        type="image/webp"
-        href="https://cresteem.com/favicon.webp"
-      ></link>
     </>
   );
 }

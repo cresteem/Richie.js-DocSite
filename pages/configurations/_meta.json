@@ -1,47 +1,47 @@
 {
     "article": {
-        "title": "Article"
+        "title": "Article - Configurations"
     },
     "breadcrumb": {
-        "title": "Breadcrumb"
+        "title": "Breadcrumb - Configurations"
     },
     "movie-carousel": {
-        "title": "Movie & Carousel"
+        "title": "Movie & Carousel - Configurations"
     },
     "recipe-carousel": {
-        "title": "Recipe & Carousel"
+        "title": "Recipe & Carousel - Configurations"
     },
     "course-carousel": {
-        "title": "Course & Carousel"
+        "title": "Course & Carousel - Configurations"
     },
     "restaurant-carousel": {
-        "title": "Restaurant & Carousel"
+        "title": "Restaurant & Carousel - Configurations"
     },
     "event": {
-        "title": "Event"
+        "title": "Event - Configurations"
     },
     "faq": {
-        "title": "FAQ"
+        "title": "FAQ - Configurations"
     },
     "learning-video": {
-        "title": "Learning Video"
+        "title": "Learning Video - Configurations"
     },
     "local-business": {
-        "title": "Local Business"
+        "title": "Local Business - Configurations"
     },
     "organization": {
-        "title": "Organization"
+        "title": "Organization - Configurations"
     },
     "product": {
-        "title": "Product & Varients"
+        "title": "Product & Varients - Configurations"
     },
     "profile-page": {
-        "title": "Profile Page"
+        "title": "Profile Page - Configurations"
     },
     "sitelinks-search-box": {
-        "title": "Sitelinks Search Box"
+        "title": "Sitelinks Search Box - Configurations"
     },
     "software-app": {
-        "title": "Software App"
+        "title": "Software App - Configurations"
     }
 }

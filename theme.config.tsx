@@ -1,23 +1,11 @@
-import { DocsThemeConfig } from "nextra-theme-docs";
+import { DocsThemeConfig, useConfig } from "nextra-theme-docs";
 
-import {
-  CresteemLogo,
-  HeadElement,
-  LicenseFooter,
-  ThemeSwitch,
-} from "./components/utils";
+import { CresteemLogo, LicenseFooter, ThemeSwitch } from "./components/utils";
 
 import { useRouter } from "next/router";
 import { RiTelegramFill } from "react-icons/ri";
 
 const config: DocsThemeConfig = {
-  head: () => {
-    const { pathname, basePath } = useRouter();
-    const url = `https://cresteem.com${basePath}${pathname}`;
-
-    return <HeadElement currentUrl={url} />;
-  },
-
   footer: {
     text: <LicenseFooter />,
   },
@@ -50,7 +38,48 @@ const config: DocsThemeConfig = {
   },
 
   useNextSeoProps: () => {
-    return { titleTemplate: "%s" };
+    const { frontMatter } = useConfig();
+    const { pathname, basePath } = useRouter();
+    const url = `https://cresteem.com${basePath}${pathname}`;
+    const title =
+      frontMatter.title +
+      " | Richie JS API References | OpenSource at Cresteem";
+    return {
+      title: title,
+      nofollow: false,
+      noindex: false,
+      themeColor: "system",
+      description: frontMatter.description,
+      openGraph: {
+        images: [
+          {
+            url: frontMatter.thumbnailUrl,
+            width: 1200,
+            height: 630,
+          },
+        ],
+        type: "website",
+        url: url,
+        siteName: "CRESTEEM",
+        description: frontMatter.description,
+        title: title,
+        locale: "en_US",
+      },
+      twitter: { handle: "@cresteem", site: url },
+      additionalLinkTags: [
+        {
+          rel: "icon",
+          type: "image/webp",
+          href: "https://cresteem.com/favicon.webp",
+        },
+      ],
+      additionalMetaTags: [
+        { name: "twitter:card", content: frontMatter.description },
+        { name: "twitter:title", content: title },
+        { name: "twitter:description", content: frontMatter.description },
+        { name: "twitter:image", content: frontMatter.thumbnailUrl },
+      ],
+    };
   },
 };
 
