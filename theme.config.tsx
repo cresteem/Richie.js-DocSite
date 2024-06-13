@@ -11,7 +11,7 @@ const config: DocsThemeConfig = {
   },
 
   banner: {
-    key: "111",
+    key: "114",
     text: "Richie JS version 1.1.4 🚀",
     dismissible: true,
   },
