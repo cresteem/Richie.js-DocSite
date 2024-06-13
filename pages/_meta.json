@@ -7,31 +7,37 @@
     "index": {
         "title": "Introduction"
     },
-    "getting-started": {
+    "getting-started-with-richie-js": {
         "title": "Getting Started"
     },
-    "supported-rich-results": {
+    "exploring-rich-results-with-richie-js": {
         "title": "Supported Rich Results",
         "theme": {
             "breadcrumb": true
         }
     },
-    "configurations": {
+    "configuring-richie-js-for-web-projects": {
         "title": "Configurations",
         "theme": {
             "breadcrumb": true
         }
     },
-    "intellisense": {
+    "unlocking-intellisense-for-richie-js": {
         "title": "Intellisense Support"
     },
-    "how-to-use": {
+    "working-with-richie-js-api-and-cli": {
         "title": "Working with API & CLI"
     },
-    "contribute": {
+    "exploring-richie-js-repository": {
+        "title": "Demonstrations"
+    },
+    "contributing-to-richie-js": {
         "title": "Contribute"
     },
-    "faq": {
+    "frequently-asked-questions-about-richie-js": {
         "title": "FAQ"
+    },
+    "richie-js-video-tutorial": {
+        "title": "Video"
     }
 }

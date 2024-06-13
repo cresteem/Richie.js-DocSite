@@ -26,7 +26,7 @@ export function Video(): ReactElement {
                 updateState(40);
               }}
             >
-              (1.40)
+              (2.20)
             </button>
           </li>
 
@@ -37,7 +37,7 @@ export function Video(): ReactElement {
                 updateState(50);
               }}
             >
-              (1.40)
+              (3.50)
             </button>
           </li>
 
@@ -48,7 +48,18 @@ export function Video(): ReactElement {
                 updateState(100);
               }}
             >
-              (1.40)
+              (7.10)
+            </button>
+          </li>
+
+          <li>
+            Richie JS in Action
+            <button
+              onClick={() => {
+                updateState(100);
+              }}
+            >
+              (9.20)
             </button>
           </li>
 
@@ -59,7 +70,7 @@ export function Video(): ReactElement {
                 updateState(110);
               }}
             >
-              (1.40)
+              (10.50)
             </button>
           </li>
         </ul>
@@ -69,7 +80,7 @@ export function Video(): ReactElement {
       <iframe
         width="560"
         height="315"
-        src={`https://www.youtube.com/embed/MYE6T_gd7H0?si=LPwgPRCeiYL8l284&start=${state}&autoplay=1`}
+        src={`https://www.youtube.com/embed/xyz?si=LPwgPRCeiYL8l284&start=${state}&autoplay=1`}
         title="YouTube video player"
         allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; web-share;"
         referrerPolicy="strict-origin-when-cross-origin"

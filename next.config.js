@@ -6,7 +6,7 @@ const withNextra = require("nextra")({
 
 console.log(
   "\n###################################################\n",
-  "Localhost: http://localhost:3000/opensource/richie-js",
+  "Localhost: http://localhost:3000/opensource/boost-seo-with-richie-js",
   "\n####################################################\n"
 );
 module.exports = {
@@ -14,7 +14,7 @@ module.exports = {
   images: {
     unoptimized: true,
   },
-  basePath: "/opensource/richie-js",
+  basePath: "/opensource/boost-seo-with-richie-js",
   output: "export",
-  distDir: "opensource/richie-js",
+  distDir: "opensource/boost-seo-with-richie-js",
 };
