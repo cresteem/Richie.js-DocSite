@@ -65,6 +65,6 @@ jobs:
           username: ${{ secrets.FTP_UNAME }}
           password: ${{ secrets.FTP_PASS }}
           protocol: ${{ secrets.FTP_PROTOCOL }}
-          local-dir: ./opensource/
-          server-dir: opensource/
+          local-dir: ./opensource/boost-seo-with-richie-js/
+          server-dir: opensource/boost-seo-with-richie-js/
           security: strict
