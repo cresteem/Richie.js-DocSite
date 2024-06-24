@@ -26,7 +26,7 @@ const config: DocsThemeConfig = {
 
   chat: {
     link: "https://t.me/cresteem/1",
-    icon: RiTelegramFill({ size: "2.2vw" }),
+    icon: RiTelegramFill({ size: "29" }),
   },
 
   docsRepositoryBase: "https://github.com/cresteem/Richie-JS-DocSite/tree/main",
@@ -35,6 +35,9 @@ const config: DocsThemeConfig = {
 
   themeSwitch: {
     component: <ThemeSwitch />,
+  },
+  sidebar: {
+    toggleButton: true,
   },
 
   useNextSeoProps: () => {
