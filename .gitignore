@@ -1,6 +1,6 @@
 .next
 node_modules
-opensource
 next-env.d.ts
 
-richie_op
+out
+reports

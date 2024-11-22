@@ -1,0 +1,107 @@
+---
+title: Sitelinks Search Box
+description: Discover how Richie JS, developed by Cresteem, can enhance your website's search functionality. This guide will show you how to implement structured data for sitelinks search boxes, making it easier for users to find what they're looking for on your site.
+thumbnailUrl: https://www.cresteem.com/opensource/boost-seo-with-richie-js/thumbnail.png
+---
+import { Callout, Tabs, FileTree } from "nextra/components";
+
+# Sitelinks search box (WebSite)
+
+## What is sitelinks search box?
+A sitelinks search box allows users to search your site or app directly from the search results page, offering real-time suggestions and other features.
+
+Google Search might automatically display a search box specific to your website when it appears as a search result, without any additional effort on your part. This search box is powered by Google Search. However, you can enhance its functionality by adding WebSite structured data, which helps Google better understand your site.
+
+If Google Search has already provided a sitelink search box for your site, you can manage certain aspects of it by adding WebSite structured data.
+
+Kindly Refer [Google Doc](https://developers.google.com/search/docs/appearance/structured-data/sitelinks-searchbox) to know more about sitelinks search box rich result.
+
+
+## What are necessary data for sitelinks search box rich result?
+### 1.siteSearchBoxFieldName
+This is configured inside `rjs.config.json` file.
+```json copy filename="rjs.config.json"
+{
+	"siteSearchBoxFieldName": "searchTerm"
+}
+```
+### 2. domainAddress
+This also configured inside `rjs.config.json` file.
+```json copy filename="rjs.config.json"
+{
+  "domainAddress": "cresteem.com",
+}
+```
+    
+## Function and parameters
+    
+    <Callout type='default'>By default input file is overwriiten with result so `destination` is optional</Callout>
+
+    <Callout type='info'>This is only for API method.
+    We prefer CLI method for keeping it simpler (refer - [Working with API & CLI](/working-with-richie-js-api-and-cli)).</Callout>
+
+    ```js copy filename="func_params.js" {1,2,5} /dist/
+    const richResultType = 'searchbox';
+    const filePath = 'pages/Sitesearch/searchpage.html';
+    const destination = 'dist/pages/Sitesearch/searchpage.html'; /* optional */
+    
+    richie(richResultType, filePath, destination);
+    ```
+
+## Example of a Instance & FS structure
+
+### File system structure
+<FileTree>
+  <FileTree.Folder name="pages" defaultOpen>
+    
+    <FileTree.Folder name="Sitesearch" defaultOpen>
+
+      <FileTree.File name="searchpage.html" />
+    
+    </FileTree.Folder>
+  
+  </FileTree.Folder>
+</FileTree>
+
+
+### Instance
+
+```html copy filename="search.html" /searchTerm/ {7}
+<body>  
+
+  <h1>Search Form</h1>
+	
+  <form onsubmit="return search()">
+    <label for="searchInput">Search:</label>
+    <input type="text" id="searchInput" name="searchTerm">
+    <button type="submit">Search</button>
+  </form>
+
+  <div id="result"></div>
+  
+</body>
+```
+
+
+## Output of a Instance
+
+```json filename="search.html" copy
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "url": "https://www.cresteem.com/",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": {
+      "@type": "EntryPoint",
+      "urlTemplate": "https://www.cresteem.com/pages/Sitesearch/searchpage?q={searchTerm}"
+    },
+    "query-input": "required name=searchTerm"
+  }
+}
+</script>
+```
+<br/>
+<br/>
+**Let's see what's next!**

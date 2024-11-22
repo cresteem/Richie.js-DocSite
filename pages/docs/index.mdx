@@ -1,0 +1,84 @@
+---
+title: "Enhance Your SEO Game: Meet Richie JS, a Rich Results Generator"
+description: Boost your website's visibility with Richie JS, a powerful SEO tool that generates rich results for enhanced search engine rankings and improved user experience. Learn how to simplify your SEO process and increase your online presence with our innovative solution.
+thumbnailUrl: https://www.cresteem.com/opensource/boost-seo-with-richie-js/thumbnail.png
+---
+
+import { Steps, Tabs } from "nextra/components";
+import style from "../../stylesheets/utils.module.scss";
+
+# Introduction
+
+## What is Richie JS?
+
+**Richie JS** is an _SEO tool_ that generates **rich results**, which are structured data snippets designed to enhance search engine visibility and improve user experience. Richie JS supports to generate various types of rich results recognized by [**Google**](https://developers.google.com/search/docs/appearance/structured-data/search-gallery). It leverages modern web technologies like Node.js and JavaScript, and is built on top of popular libraries such as Axios, Cheerio, Puppeteer, and Yargs ( _Thanks to those creators, maintainers and contributors of these packages_ ).
+
+Richie JS simplifies the process of generating rich results by automating most of the work. It fetches data from HTML sources, processes it to meet the requirements of google search engine, and generates structured JSON-LD output that can be easily consumed by search engines and other tools or platforms.
+
+## Why Richie JS?
+
+Using Richie JS **saves you plenty of time**, allowing you to achieve rich results **without extensive manual effort and copy-pasting.** Also it ensures that you include the necessary information on your webpage, elevate your website's level in **SEO** game and helping it reach the correct audience promptly. This **increased visibility** leads to more audience engagement and **greater success**.
+
+## Who can get benifit using Richie JS?
+
+**Using Richie JS**, SEO specialists to beginners and developers can quickly generate rich results for their websites or applications without needing to write complex code to generate rich results or understand the intricacies of search engine's requirements. This makes it an excellent choice for both **beginners and experienced developers** who want to improve their site's search engine performance and user engagement.
+
+## How To use Richie JS?
+
+To use Richie JS, you need to install `@cresteem/richie-js` in your node.js environment. Follow [Getting Started](getting-started-with-richie-js) for instructions. Once installed you can continue here.
+
+<Steps>
+### Use Reserved Class
+In HTML, use reserved class or partial reserved class name in element according to type of [rich result](exploring-rich-results-with-richie-js).
+Those are configured and available in `reservedNames` in `rjs.config.json`.
+ 
+### Command it
+Fire the terminal in project root directory and command it.
+
+<Tabs items={['yarn','npx']}>
+    <Tabs.Tab>
+        ```bash copy filename="YARN @ Bash ~ CMD"
+        yarn rjs make -p
+        # -p switch used to preserve files of dist directory (optional)
+        ```
+    </Tabs.Tab>
+
+    <Tabs.Tab>
+        ```bash copy filename="NPX @ Bash ~ CMD"
+        npx rjs make -p
+        # -p switch used to preserve files of dist directory (optional)
+        ```
+    </Tabs.Tab>
+
+</Tabs>
+
+### Output
+
+By default outputs are stored in `dist` folder in project root.<br/>
+Learn more about CLI in [Working with API & CLI](working-with-richie-js-api-and-cli)
+
+</Steps>
+
+## Author & License
+
+Richie JS is an open-source project developed and maintained by <a href="https://in.linkedin.com/in/iamspdarsan"><b>DARSAN</b></a> at [**CRESTEEM**](https://cresteem.com/), a leading web development company. It is licensed under the Apache 2.0 license, allowing you to use it freely for both personal and commercial projects. However, please ensure you provide proper attribution in accordance with the [license terms](https://github.com/cresteem/Richie-JS/blob/main/LICENSE) when using Richie JS in your project.
+
+To contribute to this project or report any issues, please visit the project's GitHub repository at
+https://github.com/cresteem/richie-js. The community is always welcoming new contributions and feedback.
+
+<br />
+<br />
+<br />
+<b>Let's get started!</b>
+
+<br />
+<br />
+<br />
+<strong>Keywords:</strong>
+<ul className={style.keywords}>
+  <li>SEO tool</li>
+  <li>rich results</li>
+  <li>structured data</li>
+  <li>search engine visibility</li>
+  <li>user experience</li>
+</ul>
