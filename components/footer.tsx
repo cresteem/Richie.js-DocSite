@@ -25,10 +25,10 @@ export default function Footer() {
 
   return (
     <footer
-      className="text-gray-500 px-4 py-5 w-full  mx-auto md:px-8 border-t"
+      className="text-gray-500 px-4 pb-5 pt-[3%] w-full md:px-8 border-t"
       style={{ margin: 0 }}
     >
-      <div className="max-w-screen-xl">
+      <div className="max-w-screen-xl mx-auto">
         <div className="max-w-lg sm:mx-auto sm:text-center">
           <Logo className="w-20 sm:mx-auto" />
           <p className="leading-relaxed mt-2 text-[15px]">

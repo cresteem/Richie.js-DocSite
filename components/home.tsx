@@ -7,17 +7,17 @@ export default function Home() {
       <div className="max-w-screen-xl mx-auto px-4 py-[6%] gap-12 text-gray-600 md:px-8">
         <div className="space-y-5 max-w-4xl mx-auto text-center">
           <h1 className="text-sm text-indigo-600 font-medium">
-            SEO Mastery for everyone
+            Richie JS: Simplify SEO, Maximize Impact
           </h1>
           <h2 className="text-4xl text-gray-800 font-extrabold mx-auto md:text-5xl">
-            There is no shortcut for SEO{" "}
+            There’s no shortcut to SEO,{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#4F46E5] to-[#E114E5]">
-              until Richie.js made.
+              until Richie.js came along.
             </span>
           </h2>
           <p className="max-w-2xl mx-auto">
-            Sed ut perspiciatis unde omnis iste natus voluptatem accusantium
-            doloremque laudantium, totam rem aperiam, eaque ipsa quae.
+            Automate schema creation to boost rankings, enhance visibility, and
+            drive effortless engagement. It's all start with this command.
           </p>
           <div className="items-center justify-center gap-x-3 space-y-3 sm:flex sm:space-y-0">
             <NPMInstall className="relative w-[25%] min-w-[250px]" />
