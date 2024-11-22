@@ -1,7 +1,17 @@
-export default function Logo({ className }: { className: string }) {
+export default function Logo({
+  className,
+  w,
+  h,
+}: {
+  className: string;
+  w?: number;
+  h?: number;
+}) {
   return (
     <svg
       className={className}
+      width={w}
+      height={h}
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 4000 4000"
     >

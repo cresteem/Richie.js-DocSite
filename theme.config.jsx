@@ -3,6 +3,7 @@ import { useConfig } from "nextra-theme-docs";
 import { useRouter } from "next/router";
 import { RiTelegramFill } from "react-icons/ri";
 import Footer from "./components/footer";
+import HeaderLogo from "./components/utils/header-logo";
 
 /** @type {import('nextra-theme-docs').DocsThemeConfig} */
 const config = {
@@ -16,7 +17,7 @@ const config = {
     dismissible: true,
   },
 
-  logo: <></>,
+  logo: <HeaderLogo />,
 
   logoLink: "/",
 
