@@ -1,21 +1,15 @@
 export default () => {
-  const posts: { title: string; desc: string; date: string; href: string }[] = [
+  /*  const posts: { title: string; desc: string; date: string; href: string }[] = [
     {
       title: "What Makes Richie.js Unique?",
       desc: "This section is a placeholder for detailed information about the unique features and benefits of Richie JS. Here, you could describe how Richie JS simplifies the process of generating structured data, enhances SEO performance, and integrates seamlessly with modern frameworks like Next.js, Vue.js, and React.js. Add compelling insights or stats to engage readers and highlight the tool's value.",
       date: "Thursday, November 9th 2024",
       href: "/",
     },
-    {
-      title: "How Richie.js Works",
-      desc: "This placeholder text is for an in-depth explanation of how Richie JS operates. You can describe the core functionality of the tool, detailing how it uses selectors to extract data from the webpage, aggregates that information, and generates structured JSON-LD for rich results. Consider adding step-by-step instructions, use cases, and any technical details that might help users understand how to implement Richie JS efficiently on their websites.",
-      date: "Thursday, November 9th 2024",
-      href: "/",
-    },
-  ];
+  ]; */
 
   return (
-    <section className="mt-12 mb-[9%] mx-auto px-4 max-w-screen-lg md:px-8">
+    <section className="mt-12 mb-[9%] mx-auto px-4 max-w-screen-lg md:px-8 leading-loose">
       <div className="max-w-lg">
         <h1 className="text-3xl text-gray-800 font-semibold">
           Unlock SEO Potential with Richie.js: Latest Blog Posts
@@ -29,7 +23,7 @@ export default () => {
         </p>
       </div>
       <div className="mt-12 grid gap-8 divide-y md:grid-cols-2 md:divide-y-0">
-        {posts.map((item, idx) => (
+        {/* {posts.map((item, idx) => (
           <article className="mt-5 pt-8 md:pt-0" key={idx}>
             <a href={item.href}>
               <span className="block text-gray-400 text-sm">{item.date}</span>
@@ -61,6 +55,10 @@ export default () => {
             </a>
           </article>
         ))}
+ */}{" "}
+        <article>
+          <p className="text-xl">No Blogs Added</p>
+        </article>
       </div>
     </section>
   );
