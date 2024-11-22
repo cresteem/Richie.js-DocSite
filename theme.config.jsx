@@ -48,6 +48,8 @@ const config = {
       <>
         <title>{title}</title>
         <meta name="description" content={desc} />
+
+        {/* favicons links  */}
         <link rel="icon" type="image/x-icon" href="/favicons/favicon.ico" />
         <link
           rel="icon"
@@ -135,7 +137,8 @@ const config = {
         <link
           rel="yandex-tableau-widget"
           href="/favicons/yandex-browser-manifest.json"
-        />
+        ></link>
+        {/*  */}
         <meta name="twitter:card" content={frontMatter.description} />
         <meta name="twitter:title" content={title} />
         <meta name="twitter:description" content={frontMatter.description} />

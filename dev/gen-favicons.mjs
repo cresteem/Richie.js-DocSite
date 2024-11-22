@@ -5,7 +5,7 @@ import { basename, join } from "path";
 export async function generateFavicons(
   metaDesc,
   version,
-  baseImage = "fav.png",
+  baseImage = "./dev/fav.webp",
   appName = basename(process.cwd()),
   basepath = join(process.cwd(), "public"),
   faviconsPath = "favicons",
@@ -75,5 +75,5 @@ export async function generateFavicons(
 
 generateFavicons(
   "Meet Richie JS, a Rich Results Generator, Boost your website's visibility with Richie JS, a powerful SEO tool that generates rich results for enhanced search engine rankings and improved user experience. Learn how to simplify your SEO process and increase your online presence with our innovative solution.",
-  "1.1.5"
+  "2.0.1"
 );
