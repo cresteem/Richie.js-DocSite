@@ -1,19 +1,23 @@
 ---
 title: Recipe & Carousel
 description: Explore the potential of recipe rich results with Cresteem's Richie JS. This guide will teach you how to showcase your recipes effectively, improving their visibility and making them stand out in search results.
-thumbnailUrl: https://www.cresteem.com/opensource/boost-seo-with-richie-js/thumbnail.png
+thumbnailUrl: https://www.cresteem.com/opensource/boost-seo-with-richie-js/thumbnail.webp
 ---
+
 import { Callout, Tabs } from "nextra/components";
 
 # Recipe & Carousel (Recipe, ItemList)
 
 ## What is recipe rich result?
+
 Enhance the visibility of your recipes on Google by using structured data. Providing details like ratings, cooking times, and nutrition information helps Google understand and showcase your recipes effectively in search results and images.
 
 Kindly Refer [Google Doc](https://developers.google.com/search/docs/appearance/structured-data/recipe) to know more about recipe rich result.
 
 ## What are necessary data for recipe rich result?
+
 ### 1. Name
+
 ```html copy filename="recipe.html" /1-name/ {3}
 <div id="rjs-recipe-1">
   <!-- name of recipe -->
@@ -21,28 +25,25 @@ Kindly Refer [Google Doc](https://developers.google.com/search/docs/appearance/s
 </div>
 ```
 
-
 ### 2. URL
+
 ```html copy filename="recipe.html" /id="rjs-recipe-1">/
-<div id="rjs-recipe-1">
-  ....
-</div>
+<div id="rjs-recipe-1">....</div>
 ```
 
-
 ### 3. Thumbnail
+
 ```html copy filename="recipe.html" /1-img/
 <!-- image thumbanails -->
 <img class="rjs-recipe-1-img" src="https://i.imsur.com/ULHbPTa.jpeg" />
 <img class="rjs-recipe-1-img" src="https://i.imsur.com/RstsU7N.jpeg" />
 ```
 
-
 ### 4. Author
+
 ```html copy filename="recipe.html" /1-aname/
 <p class="rjs-recipe-1-aname">Darsan</p>
 ```
-
 
 ### 5. Date published
 
@@ -50,48 +51,53 @@ Kindly Refer [Google Doc](https://developers.google.com/search/docs/appearance/s
 <p class="rjs-recipe-1-pdt">2023-01-12</p>
 ```
 
-
 ### 6. Description
+
 ```html copy filename="recipe.html" /1-desc/
 <p class="rjs-recipe-1-desc">
-Biryani is a flavorful and aromatic rice ..... <!-- shortened for brevity -->
+  Biryani is a flavorful and aromatic rice .....
+  <!-- shortened for brevity -->
 </p>
 ```
 
-
 ### 7. Recipe cuisine
+
 ```html copy filename="recipe.html" /1-csnt/
 <p class="rjs-recipe-1-csnt">Indian</p>
 ```
 
-
 ### 8. Preparation time
+
 ```html copy filename="recipe.html" /ptm/ /pth/ /pthm/
 <!-- ptm - means minutes-->
-<p class="rjs-recipe-1-ptm">25 minutes</p> <!-- OR -->
+<p class="rjs-recipe-1-ptm">25 minutes</p>
+<!-- OR -->
 
 <!-- pth - means hours-->
-<p class="rjs-recipe-1-pth">1 hours</p> <!-- OR -->
+<p class="rjs-recipe-1-pth">1 hours</p>
+<!-- OR -->
 
 <!-- pthm - hours and minutes -->
 <p class="rjs-recipe-1-pthm">2 hours 15 minutes</p>
 ```
 
-
 ### 9. Cooking time
+
 ```html copy filename="recipe.html" /cth/ /ctm/ /cthm/
 <!-- ctm - means minutes-->
-<p class="rjs-recipe-1-ctm">25 minutes</p> <!-- OR -->
+<p class="rjs-recipe-1-ctm">25 minutes</p>
+<!-- OR -->
 
 <!-- cth - means hours-->
-<p class="rjs-recipe-1-cth">1 hours</p> <!-- OR -->
+<p class="rjs-recipe-1-cth">1 hours</p>
+<!-- OR -->
 
 <!-- cthm - hours and minutes -->
 <p class="rjs-recipe-1-cthm">2 hours 15 minutes</p>
 ```
 
-
 ### 10. Keywords
+
 ```html copy filename="recipe.html" /1-kw/ {1,10}
 <ul class="rjs-recipe-1-kw">
   <li>Biryani recipe</li>
@@ -105,28 +111,28 @@ Biryani is a flavorful and aromatic rice ..... <!-- shortened for brevity -->
 </ul>
 ```
 
-
 ### 11. Number of Servings
+
 ```html copy filename="recipe.html" /serves/
 <p class="rjs-recipe-1-serves">2</p>
 ```
 
-
 ### 12. Recipe category
+
 ```html copy filename="recipe.html" /cat/
 <p class="rjs-recipe-1-cat">Breakfast</p>
 ```
 
-
 ### 13. Calories
+
 ```html copy filename="recipe.html" /nutrition/ /cal/ {2}
 <div class="rjs-recipe-1-nutrition">
-	<p class="cal">150</p>
+  <p class="cal">150</p>
 </div>
 ```
 
-
 ### 14. Aggregated rating
+
 ```html copy filename="recipe.html" /aggrate/ {1,8} /mr/ /arv/ /rc/
 <div class="rjs-recipe-1-aggrate">
   <!-- max rate -->
@@ -138,8 +144,8 @@ Biryani is a flavorful and aromatic rice ..... <!-- shortened for brevity -->
 </div>
 ```
 
+### 15 Ingredients
 
-### 15  Ingredients
 ```html copy filename="recipe.html" /ingredient/ /ul/ /li/
 <ul class="rjs-recipe-1-ingredient">
   <li>Basmati Rice - 2 cups</li>
@@ -151,62 +157,61 @@ Biryani is a flavorful and aromatic rice ..... <!-- shortened for brevity -->
 </ul>
 ```
 
-
 ### 16. Instructions
 
 <Callout type='warning'>Each step instance `<div>` mush have `id` for making deeplink / internal link. like line 4 and 18 in below.</Callout>
 
 ```html showLineNumbers copy filename="recipe.html" /instructions/ {1,34,3} /id="step1"/ /id="step2"/ /div/ /class="short"/ /class="simg"/ /class="long"/ /class="step"/
 <div class="rjs-recipe-1-instructions">
+  <!-- steps instance 1-->
+  <div class="step" id="step1">
+    <p class="short">Prepare the Rice:</p>
 
-	<!-- steps instance 1-->
-	<div class="step" id="step1">
+    <img class="simg" src="https://i.imgur.com/9XdcrCN.jpeg" />
 
-		<p class="short">Prepare the Rice:</p>
+    <p class="long">
+      Rinse 2 cups of basmati rice under cold water until..
+      <!-- shortened for brevity -->
+    </p>
+  </div>
 
-		<img class="simg" src="https://i.imgur.com/9XdcrCN.jpeg" />
+  <!-- steps instance 2-->
+  <div class="step" id="step2">
+    <p class="short">Prepare the Meat or Vegetables:</p>
 
-		<p class="long">
-		Rinse 2 cups of basmati rice under cold water until.. <!-- shortened for brevity -->
-		</p>
+    <img class="simg" src="https://i.imgur.com/yisIi6d.jpeg" />
 
-	</div>
-
-
-	<!-- steps instance 2-->
-	<div class="step" id="step2">
-
-		<p class="short">Prepare the Meat or Vegetables:</p>
-
-		<img class="simg" src="https://i.imgur.com/yisIi6d.jpeg" />
-
-		<p class="long">
-		Marinate 500 grams of meat... <!-- shortened for brevity -->
-		</p>
-
-	</div>
+    <p class="long">
+      Marinate 500 grams of meat...
+      <!-- shortened for brevity -->
+    </p>
+  </div>
 
   <!-- add number of step instance as you need -->
-
-</div><!-- INSTRUCTIONS OVER -->
+</div>
+<!-- INSTRUCTIONS OVER -->
 ```
-
 
 ### 17. Video
 
 <Callout type="info">Use Youtube Embed Video</Callout>
 
 ```html copy filename="recipe.html" /vframe/
-<iframe class="rjs-recipe-1-vframe" width="560" height="315"
-src="https://www.youtube-nocookie.com/embed/E8GtcPT25Hs?si=lgkECFFRd86ypZoE"
-title="YouTube video player" frameborder="0"
-allow="accelerometer; autoplay;"
-referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe
+  class="rjs-recipe-1-vframe"
+  width="560"
+  height="315"
+  src="https://www.youtube-nocookie.com/embed/E8GtcPT25Hs?si=lgkECFFRd86ypZoE"
+  title="YouTube video player"
+  frameborder="0"
+  allow="accelerometer; autoplay;"
+  referrerpolicy="strict-origin-when-cross-origin"
+  allowfullscreen
+></iframe>
 ```
 
-    
 ## Function and parameters
-    
+
     <Callout type='default'>By default input file is overwriiten with result so `destination` is optional</Callout>
 
     <Callout type='info'>This is only for API method.
@@ -228,134 +233,136 @@ referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         const richResultType = 'crecipe';
         const filePath = 'recipe.html';
         const destination = 'dist/recipe.html'; /* optional */
-        
+
         richie(richResultType, filePath, destination);
         ```
       </Tabs.Tab>
     </Tabs>
 
 ## Example of a Instance
+
 <Tabs items={['Standard','Carousel']}>
 	<Tabs.Tab>
   ```html copy filename="recipe.html" showLineNumbers
 <body>
 
-	<div id="rjs-recipe-1">
+    <div id="rjs-recipe-1">
 
-		<!-- name of recipe -->
-		<p class="rjs-recipe-1-name">Biryani</p>
+    	<!-- name of recipe -->
+    	<p class="rjs-recipe-1-name">Biryani</p>
 
-		<!-- image thumbanails -->
-		<img class="rjs-recipe-1-img" src="https://i.imgur.com/ULHbPTa.jpeg" />
-		<img class="rjs-recipe-1-img" src="https://i.imgur.com/RstsU7N.jpeg" />
+    	<!-- image thumbanails -->
+    	<img class="rjs-recipe-1-img" src="https://i.imgur.com/ULHbPTa.jpeg" />
+    	<img class="rjs-recipe-1-img" src="https://i.imgur.com/RstsU7N.jpeg" />
 
-		<!--author name -->
-		<p class="rjs-recipe-1-aname">Darsan</p>
+    	<!--author name -->
+    	<p class="rjs-recipe-1-aname">Darsan</p>
 
-		<!-- published date -->
-		<p class="rjs-recipe-1-pdt">2023-01-12</p>
+    	<!-- published date -->
+    	<p class="rjs-recipe-1-pdt">2023-01-12</p>
 
-		<!-- description -->
-		<p class="rjs-recipe-1-desc">
-		Biryani is a flavorful and aromatic.. <!-- shortened for brevity -->
-		</p>
+    	<!-- description -->
+    	<p class="rjs-recipe-1-desc">
+    	Biryani is a flavorful and aromatic.. <!-- shortened for brevity -->
+    	</p>
 
-		<!-- ptm - means minutes-->
-		<!-- pth - means hours-->
-		<!-- pthm - hours and minutes (hours should be first ex: 2 Hours and 10 minutes)-->
-		<p class="rjs-recipe-1-ptm">25 minutes</p>
-		<!-- <p class="rjs-recipe-1-pth">1 Hours</p> -->
-		<!-- <p class="rjs-recipe-1-pthm">1 Hours and 25 minutes</p> -->
+    	<!-- ptm - means minutes-->
+    	<!-- pth - means hours-->
+    	<!-- pthm - hours and minutes (hours should be first ex: 2 Hours and 10 minutes)-->
+    	<p class="rjs-recipe-1-ptm">25 minutes</p>
+    	<!-- <p class="rjs-recipe-1-pth">1 Hours</p> -->
+    	<!-- <p class="rjs-recipe-1-pthm">1 Hours and 25 minutes</p> -->
 
-		<!-- ctm - means minutes-->
-		<!-- cth - means hours-->
-		<!-- cthm - hours and minutes (hours should be first ex: 2 Hours and 10 minutes)-->
-		<p class="rjs-recipe-1-ctm">20 minutes</p>
-		<!-- <p class="rjs-recipe-1-cth">2 Hours</p>
-		<p class="rjs-recipe-1-cthm">1 Hours and 10 minutes</p> -->
-
-
-		<!-- serving counts (yield)-->
-		<p class="rjs-recipe-1-serves">4</p>
-
-		<!-- category -->
-		<p class="rjs-recipe-1-cat">Rich Dishes</p>
-
-		<!-- cuisine -->
-		<p class="rjs-recipe-1-csnt">Indian</p>
-
-		<!-- nutrition informations -->
-		<div class="rjs-recipe-1-nutrition">
-			<!-- calories -->
-			<p class="cal">300</p>
-		</div>
-
-		<!--  ingredients -->
-		<ul class="rjs-recipe-1-ingredient">
-			<li>Basmati Rice - 2 cups</li>
-			<li>Meat (chicken, lamb, or beef) or Vegetables - 500 grams</li>
-			<li> Aromatic Spices </li>
-			<li>Yogurt - 1/2 cup</li>
-			<li>Saffron - A pinch (soaked in 2 tablespoons of warm milk)</li>
-			<li>Rose Water - 1 tablespoon</li>
-		</ul>
-
-		<!-- instructions -->
-		<div class="rjs-recipe-1-instructions">
-			<!-- steps instance 1-->
-			<div class="step" id="step1">
-
-				<p class="short">Prepare the Rice:</p>
-
-				<img class="simg" src="https://i.imgur.com/9XdcrCN.jpeg" />
-
-				<p class="long">
-				Rinse 2 cups of basmati rice under cold water until.. <!-- shortened for brevity -->
-				</p>
-
-			</div>
+    	<!-- ctm - means minutes-->
+    	<!-- cth - means hours-->
+    	<!-- cthm - hours and minutes (hours should be first ex: 2 Hours and 10 minutes)-->
+    	<p class="rjs-recipe-1-ctm">20 minutes</p>
+    	<!-- <p class="rjs-recipe-1-cth">2 Hours</p>
+    	<p class="rjs-recipe-1-cthm">1 Hours and 10 minutes</p> -->
 
 
-			<!-- steps instance 2-->
-			<div class="step" id="step2">
+    	<!-- serving counts (yield)-->
+    	<p class="rjs-recipe-1-serves">4</p>
 
-				<p class="short">Prepare the Meat or Vegetables:</p>
+    	<!-- category -->
+    	<p class="rjs-recipe-1-cat">Rich Dishes</p>
 
-				<img class="simg" src="https://i.imgur.com/yisIi6d.jpeg" />
+    	<!-- cuisine -->
+    	<p class="rjs-recipe-1-csnt">Indian</p>
 
-				<p class="long">
-				Marinate 500 grams of meat... <!-- shortened for brevity -->
-				</p>
+    	<!-- nutrition informations -->
+    	<div class="rjs-recipe-1-nutrition">
+    		<!-- calories -->
+    		<p class="cal">300</p>
+    	</div>
 
-			</div>
+    	<!--  ingredients -->
+    	<ul class="rjs-recipe-1-ingredient">
+    		<li>Basmati Rice - 2 cups</li>
+    		<li>Meat (chicken, lamb, or beef) or Vegetables - 500 grams</li>
+    		<li> Aromatic Spices </li>
+    		<li>Yogurt - 1/2 cup</li>
+    		<li>Saffron - A pinch (soaked in 2 tablespoons of warm milk)</li>
+    		<li>Rose Water - 1 tablespoon</li>
+    	</ul>
 
-		</div><!-- INSTRUCTIONS OVER -->
+    	<!-- instructions -->
+    	<div class="rjs-recipe-1-instructions">
+    		<!-- steps instance 1-->
+    		<div class="step" id="step1">
 
-		<!-- aggregate rating -->
-		<div class="rjs-recipe-1-aggrate">
-			<!-- max rate -->
-			<p class="mr">100</p>
-			<!-- rated value-->
-			<p class="arv">99</p>
-			<!-- number of ratings -->
-			<p class="rc">1200</p>
-		</div>
+    			<p class="short">Prepare the Rice:</p>
 
-		<!--embedded youtube video -->
-		<iframe class="rjs-recipe-1-vframe" width="560" height="315"
-		src="https://www.youtube-nocookie.com/embed/95BCU1n268w?si=I6Tdi-DXX3bVVuP3"
-		title="YouTube video player" frameborder="0"
-		allow="accelerometer; autoplay;"
-		allowfullscreen></iframe>
+    			<img class="simg" src="https://i.imgur.com/9XdcrCN.jpeg" />
 
-		<!-- keywords -->
-		<ul class="rjs-recipe-1-kw">
-			<li>Biryani recipe</li>
-			<li>Authentic biryani</li>
-			<li>Homemade biryani</li>
-		</ul>
+    			<p class="long">
+    			Rinse 2 cups of basmati rice under cold water until.. <!-- shortened for brevity -->
+    			</p>
 
-	</div>
+    		</div>
+
+
+    		<!-- steps instance 2-->
+    		<div class="step" id="step2">
+
+    			<p class="short">Prepare the Meat or Vegetables:</p>
+
+    			<img class="simg" src="https://i.imgur.com/yisIi6d.jpeg" />
+
+    			<p class="long">
+    			Marinate 500 grams of meat... <!-- shortened for brevity -->
+    			</p>
+
+    		</div>
+
+    	</div><!-- INSTRUCTIONS OVER -->
+
+    	<!-- aggregate rating -->
+    	<div class="rjs-recipe-1-aggrate">
+    		<!-- max rate -->
+    		<p class="mr">100</p>
+    		<!-- rated value-->
+    		<p class="arv">99</p>
+    		<!-- number of ratings -->
+    		<p class="rc">1200</p>
+    	</div>
+
+    	<!--embedded youtube video -->
+    	<iframe class="rjs-recipe-1-vframe" width="560" height="315"
+    	src="https://www.youtube-nocookie.com/embed/95BCU1n268w?si=I6Tdi-DXX3bVVuP3"
+    	title="YouTube video player" frameborder="0"
+    	allow="accelerometer; autoplay;"
+    	allowfullscreen></iframe>
+
+    	<!-- keywords -->
+    	<ul class="rjs-recipe-1-kw">
+    		<li>Biryani recipe</li>
+    		<li>Authentic biryani</li>
+    		<li>Homemade biryani</li>
+    	</ul>
+
+    </div>
+
 </body>
   ```
   </Tabs.Tab>
@@ -364,230 +371,229 @@ referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
   ```html copy filename="recipe.html" showLineNumbers
   <body>
 
-	<div id="rjs-recipe-1">
+    <div id="rjs-recipe-1">
 
-		<!-- name of recipe -->
-		<p class="rjs-recipe-1-name">Biryani</p>
+    	<!-- name of recipe -->
+    	<p class="rjs-recipe-1-name">Biryani</p>
 
-		<!-- image thumbanails -->
-		<img class="rjs-recipe-1-img" src="https://i.imgur.com/ULHbPTa.jpeg" />
-		<img class="rjs-recipe-1-img" src="https://i.imgur.com/RstsU7N.jpeg" />
+    	<!-- image thumbanails -->
+    	<img class="rjs-recipe-1-img" src="https://i.imgur.com/ULHbPTa.jpeg" />
+    	<img class="rjs-recipe-1-img" src="https://i.imgur.com/RstsU7N.jpeg" />
 
-		<!--author name -->
-		<p class="rjs-recipe-1-aname">Darsan</p>
+    	<!--author name -->
+    	<p class="rjs-recipe-1-aname">Darsan</p>
 
-		<!-- published date -->
-		<p class="rjs-recipe-1-pdt">2023-01-12</p>
+    	<!-- published date -->
+    	<p class="rjs-recipe-1-pdt">2023-01-12</p>
 
-		<!-- description -->
-		<p class="rjs-recipe-1-desc">
-		Biryani is a flavorful and aromatic.. <!-- shortened for brevity -->
-		</p>
+    	<!-- description -->
+    	<p class="rjs-recipe-1-desc">
+    	Biryani is a flavorful and aromatic.. <!-- shortened for brevity -->
+    	</p>
 
-		<!-- ptm - means minutes-->
-		<!-- pth - means hours-->
-		<!-- pthm - hours and minutes (hours should be first ex: 2 Hours and 10 minutes)-->
-		<p class="rjs-recipe-1-ptm">25 minutes</p>
-		<!-- <p class="rjs-recipe-1-pth">1 Hours</p> -->
-		<!-- <p class="rjs-recipe-1-pthm">1 Hours and 25 minutes</p> -->
+    	<!-- ptm - means minutes-->
+    	<!-- pth - means hours-->
+    	<!-- pthm - hours and minutes (hours should be first ex: 2 Hours and 10 minutes)-->
+    	<p class="rjs-recipe-1-ptm">25 minutes</p>
+    	<!-- <p class="rjs-recipe-1-pth">1 Hours</p> -->
+    	<!-- <p class="rjs-recipe-1-pthm">1 Hours and 25 minutes</p> -->
 
-		<!-- ctm - means minutes-->
-		<!-- cth - means hours-->
-		<!-- cthm - hours and minutes (hours should be first ex: 2 Hours and 10 minutes)-->
-		<p class="rjs-recipe-1-ctm">20 minutes</p>
-		<!-- <p class="rjs-recipe-1-cth">2 Hours</p>
-		<p class="rjs-recipe-1-cthm">1 Hours and 10 minutes</p> -->
-
-
-		<!-- serving counts (yield)-->
-		<p class="rjs-recipe-1-serves">4</p>
-
-		<!-- category -->
-		<p class="rjs-recipe-1-cat">Rich Dishes</p>
-
-		<!-- cuisine -->
-		<p class="rjs-recipe-1-csnt">Indian</p>
-
-		<!-- nutrition informations -->
-		<div class="rjs-recipe-1-nutrition">
-			<!-- calories -->
-			<p class="cal">300</p>
-		</div>
-
-		<!--  ingredients -->
-		<ul class="rjs-recipe-1-ingredient">
-			<li>Basmati Rice - 2 cups</li>
-			<li>Meat (chicken, lamb, or beef) or Vegetables - 500 grams</li>
-			<li> Aromatic Spices </li>
-			<li>Yogurt - 1/2 cup</li>
-			<li>Saffron - A pinch (soaked in 2 tablespoons of warm milk)</li>
-			<li>Rose Water - 1 tablespoon</li>
-		</ul>
-
-		<!-- instructions -->
-		<div class="rjs-recipe-1-instructions">
-			<!-- steps instance 1-->
-			<div class="step" id="step1">
-
-				<p class="short">Prepare the Rice:</p>
-
-				<img class="simg" src="https://i.imgur.com/9XdcrCN.jpeg" />
-
-				<p class="long">
-				Rinse 2 cups of basmati rice under cold water until.. <!-- shortened for brevity -->
-				</p>
-
-			</div>
+    	<!-- ctm - means minutes-->
+    	<!-- cth - means hours-->
+    	<!-- cthm - hours and minutes (hours should be first ex: 2 Hours and 10 minutes)-->
+    	<p class="rjs-recipe-1-ctm">20 minutes</p>
+    	<!-- <p class="rjs-recipe-1-cth">2 Hours</p>
+    	<p class="rjs-recipe-1-cthm">1 Hours and 10 minutes</p> -->
 
 
-			<!-- steps instance 2-->
-			<div class="step" id="step2">
+    	<!-- serving counts (yield)-->
+    	<p class="rjs-recipe-1-serves">4</p>
 
-				<p class="short">Prepare the Meat or Vegetables:</p>
+    	<!-- category -->
+    	<p class="rjs-recipe-1-cat">Rich Dishes</p>
 
-				<img class="simg" src="https://i.imgur.com/yisIi6d.jpeg" />
+    	<!-- cuisine -->
+    	<p class="rjs-recipe-1-csnt">Indian</p>
 
-				<p class="long">
-				Marinate 500 grams of meat... <!-- shortened for brevity -->
-				</p>
+    	<!-- nutrition informations -->
+    	<div class="rjs-recipe-1-nutrition">
+    		<!-- calories -->
+    		<p class="cal">300</p>
+    	</div>
 
-			</div>
+    	<!--  ingredients -->
+    	<ul class="rjs-recipe-1-ingredient">
+    		<li>Basmati Rice - 2 cups</li>
+    		<li>Meat (chicken, lamb, or beef) or Vegetables - 500 grams</li>
+    		<li> Aromatic Spices </li>
+    		<li>Yogurt - 1/2 cup</li>
+    		<li>Saffron - A pinch (soaked in 2 tablespoons of warm milk)</li>
+    		<li>Rose Water - 1 tablespoon</li>
+    	</ul>
 
-		</div><!-- INSTRUCTIONS OVER -->
+    	<!-- instructions -->
+    	<div class="rjs-recipe-1-instructions">
+    		<!-- steps instance 1-->
+    		<div class="step" id="step1">
 
-		<!-- aggregate rating -->
-		<div class="rjs-recipe-1-aggrate">
-			<!-- max rate -->
-			<p class="mr">100</p>
-			<!-- rated value-->
-			<p class="arv">99</p>
-			<!-- number of ratings -->
-			<p class="rc">1200</p>
-		</div>
+    			<p class="short">Prepare the Rice:</p>
 
-		<!--embedded youtube video -->
-		<iframe class="rjs-recipe-1-vframe" width="560" height="315"
-		src="https://www.youtube-nocookie.com/embed/95BCU1n268w?si=I6Tdi-DXX3bVVuP3"
-		title="YouTube video player" frameborder="0"
-		allow="accelerometer; autoplay;"
-		allowfullscreen></iframe>
+    			<img class="simg" src="https://i.imgur.com/9XdcrCN.jpeg" />
 
-		<!-- keywords -->
-		<ul class="rjs-recipe-1-kw">
-			<li>Biryani recipe</li>
-			<li>Authentic biryani</li>
-			<li>Homemade biryani</li>
-		</ul>
+    			<p class="long">
+    			Rinse 2 cups of basmati rice under cold water until.. <!-- shortened for brevity -->
+    			</p>
 
-	</div>
+    		</div>
 
-	<!-- oatmeal -->
-	<div id="rjs-recipe-2">
 
-		<!-- name of recipe -->
-		<p class="rjs-recipe-2-name">Classic Oatmeal</p>
+    		<!-- steps instance 2-->
+    		<div class="step" id="step2">
 
-		<!-- image thumbnail -->
-		<img class="rjs-recipe-2-img" src="https://i.imgur.com/xyz123.jpg" />
+    			<p class="short">Prepare the Meat or Vegetables:</p>
 
-		<!-- author name -->
-		<p class="rjs-recipe-2-aname">Your Name</p>
+    			<img class="simg" src="https://i.imgur.com/yisIi6d.jpeg" />
 
-		<!-- published date -->
-		<p class="rjs-recipe-2-pdt">2024-04-26</p>
+    			<p class="long">
+    			Marinate 500 grams of meat... <!-- shortened for brevity -->
+    			</p>
 
-		<!-- description -->
-		<p class="rjs-recipe-2-desc">
-		Classic oatmeal is a nutritious and comforting.. <!-- shortened for brevity --> 
-		</p>
+    		</div>
 
-		<!-- preparation time -->
-		<p class="rjs-recipe-2-ptm">10 minutes</p>
+    	</div><!-- INSTRUCTIONS OVER -->
 
-		<!-- cooking time -->
-		<p class="rjs-recipe-2-ctm">5 minutes</p>
+    	<!-- aggregate rating -->
+    	<div class="rjs-recipe-1-aggrate">
+    		<!-- max rate -->
+    		<p class="mr">100</p>
+    		<!-- rated value-->
+    		<p class="arv">99</p>
+    		<!-- number of ratings -->
+    		<p class="rc">1200</p>
+    	</div>
 
-		<!-- serving counts -->
-		<p class="rjs-recipe-2-serves">2</p>
+    	<!--embedded youtube video -->
+    	<iframe class="rjs-recipe-1-vframe" width="560" height="315"
+    	src="https://www.youtube-nocookie.com/embed/95BCU1n268w?si=I6Tdi-DXX3bVVuP3"
+    	title="YouTube video player" frameborder="0"
+    	allow="accelerometer; autoplay;"
+    	allowfullscreen></iframe>
 
-		<!-- category -->
-		<p class="rjs-recipe-2-cat">Breakfast</p>
+    	<!-- keywords -->
+    	<ul class="rjs-recipe-1-kw">
+    		<li>Biryani recipe</li>
+    		<li>Authentic biryani</li>
+    		<li>Homemade biryani</li>
+    	</ul>
 
-		<!-- cuisine -->
-		<p class="rjs-recipe-2-csnt">American</p>
+    </div>
 
-		<!-- nutrition information -->
-		<div class="rjs-recipe-2-nutrition">
-			<!-- calories -->
-			<p class="cal">150</p>
-		</div>
+    <!-- oatmeal -->
+    <div id="rjs-recipe-2">
 
-		<!-- ingredients -->
-		<ul class="rjs-recipe-2-ingredient">
-			<li>Rolled oats - 1 cup</li>
-			<li>Milk or water - 2 cups</li>
-			<li>Optional toppings: fruits, nuts, honey, cinnamon, etc.</li>
-		</ul>
+    	<!-- name of recipe -->
+    	<p class="rjs-recipe-2-name">Classic Oatmeal</p>
 
-		<!-- instructions -->
-		<div class="rjs-recipe-2-instructions">
+    	<!-- image thumbnail -->
+    	<img class="rjs-recipe-2-img" src="https://i.imgur.com/xyz123.jpg" />
 
-			<!-- steps -->
-			<div class="step" id="step1">
+    	<!-- author name -->
+    	<p class="rjs-recipe-2-aname">Your Name</p>
 
-				<p class="short">Cook the Oats:</p>
+    	<!-- published date -->
+    	<p class="rjs-recipe-2-pdt">2024-04-26</p>
 
-				<img class="simg" src="https://i.imgur.com/abc123.jpg" />
+    	<!-- description -->
+    	<p class="rjs-recipe-2-desc">
+    	Classic oatmeal is a nutritious and comforting.. <!-- shortened for brevity -->
+    	</p>
 
-				<p class="long">
-				In a saucepan, bring the milk .. <!-- shortened for brevity -->
-				</p>
-			</div>
+    	<!-- preparation time -->
+    	<p class="rjs-recipe-2-ptm">10 minutes</p>
 
-			<!-- steps -->
-			<div class="step" id="step2">
+    	<!-- cooking time -->
+    	<p class="rjs-recipe-2-ctm">5 minutes</p>
 
-				<p class="short">Serve:</p>
+    	<!-- serving counts -->
+    	<p class="rjs-recipe-2-serves">2</p>
 
-				<img class="simg" src="https://i.imgur.com/abc123.jpg" />
+    	<!-- category -->
+    	<p class="rjs-recipe-2-cat">Breakfast</p>
 
-				<p class="long">
-				Once cooked, remove the oatmeal.. <!-- shortened for brevity -->
-				</p>
-			</div>
+    	<!-- cuisine -->
+    	<p class="rjs-recipe-2-csnt">American</p>
 
-		</div><!-- INSTRUCTIONS OVER -->
+    	<!-- nutrition information -->
+    	<div class="rjs-recipe-2-nutrition">
+    		<!-- calories -->
+    		<p class="cal">150</p>
+    	</div>
 
-		<!-- aggregate rating -->
-		<div class="rjs-recipe-2-aggrate">
-			<!-- max rate -->
-			<p class="mr">5</p>
-			<!-- rated value-->
-			<p class="arv">4.5</p>
-			<!-- number of ratings -->
-			<p class="rc">500</p>
-		</div>
+    	<!-- ingredients -->
+    	<ul class="rjs-recipe-2-ingredient">
+    		<li>Rolled oats - 1 cup</li>
+    		<li>Milk or water - 2 cups</li>
+    		<li>Optional toppings: fruits, nuts, honey, cinnamon, etc.</li>
+    	</ul>
 
-		<!-- keywords -->
-		<ul class="rjs-recipe-2-kw">
-			<li>Oatmeal recipe</li>
-			<li>Classic oatmeal</li>
-			<li>Breakfast dish</li>
-		</ul>
+    	<!-- instructions -->
+    	<div class="rjs-recipe-2-instructions">
 
-		<iframe class="rjs-recipe-2-vframe" width="560" height="315"
-		src="https://www.youtube-nocookie.com/embed/E8GtcPT25Hs?si=lgkECFFRd86ypZoE"
-		title="YouTube video player" frameborder="0"
-		allow="accelerometer; autoplay;"
-		referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    		<!-- steps -->
+    		<div class="step" id="step1">
 
-	</div>
+    			<p class="short">Cook the Oats:</p>
+
+    			<img class="simg" src="https://i.imgur.com/abc123.jpg" />
+
+    			<p class="long">
+    			In a saucepan, bring the milk .. <!-- shortened for brevity -->
+    			</p>
+    		</div>
+
+    		<!-- steps -->
+    		<div class="step" id="step2">
+
+    			<p class="short">Serve:</p>
+
+    			<img class="simg" src="https://i.imgur.com/abc123.jpg" />
+
+    			<p class="long">
+    			Once cooked, remove the oatmeal.. <!-- shortened for brevity -->
+    			</p>
+    		</div>
+
+    	</div><!-- INSTRUCTIONS OVER -->
+
+    	<!-- aggregate rating -->
+    	<div class="rjs-recipe-2-aggrate">
+    		<!-- max rate -->
+    		<p class="mr">5</p>
+    		<!-- rated value-->
+    		<p class="arv">4.5</p>
+    		<!-- number of ratings -->
+    		<p class="rc">500</p>
+    	</div>
+
+    	<!-- keywords -->
+    	<ul class="rjs-recipe-2-kw">
+    		<li>Oatmeal recipe</li>
+    		<li>Classic oatmeal</li>
+    		<li>Breakfast dish</li>
+    	</ul>
+
+    	<iframe class="rjs-recipe-2-vframe" width="560" height="315"
+    	src="https://www.youtube-nocookie.com/embed/E8GtcPT25Hs?si=lgkECFFRd86ypZoE"
+    	title="YouTube video player" frameborder="0"
+    	allow="accelerometer; autoplay;"
+    	referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+    </div>
 
 </body>
   ```
   </Tabs.Tab>
 </Tabs>
-
 
 ## Output of a Instance
 
@@ -828,6 +834,6 @@ referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
   </Tabs.Tab>
 </Tabs>
 
-<br/>
-<br/>
+<br />
+<br />
 **Let's see what's next!**

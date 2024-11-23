@@ -30,7 +30,13 @@ export default function Footer() {
     >
       <div className="max-w-screen-xl mx-auto">
         <div className="max-w-lg sm:mx-auto sm:text-center">
-          <Logo className="w-20 sm:mx-auto" />
+          <div>
+            <Logo className="w-20 sm:mx-auto" />
+            <p className="font-bold ml-2 text-xl text-primary tracking-widest">
+              RICHIE.js
+            </p>
+          </div>
+
           <p className="leading-relaxed mt-2 text-[15px]">
             Richie JS is an advanced SEO toolkit that simplifies the creation of
             structured data for rich results, enhancing your website's

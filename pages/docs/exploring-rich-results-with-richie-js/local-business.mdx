@@ -1,19 +1,23 @@
 ---
 title: Local Business
 description: Learn the power of structured data and Richie JS for achieving Local Business rich results. Improve your visibility on Google Search and Maps with this step-by-step tutorial.
-thumbnailUrl: https://www.cresteem.com/opensource/boost-seo-with-richie-js/thumbnail.png
+thumbnailUrl: https://www.cresteem.com/opensource/boost-seo-with-richie-js/thumbnail.webp
 ---
+
 import { Callout, Tabs } from "nextra/components";
 
 # Local business (LocalBusiness)
 
 ## What is local business rich result?
+
 When users search for businesses on Google Search or Maps, they may see a Google knowledge panel with detailed business information or a carousel of related businesses for broader queries like "best NYC restaurants." To enhance visibility and user experience, businesses can use Local Business structured data to provide information such as business hours, departments, and reviews. Additionally, the Maps Booking API allows businesses to enable reservations, payments, and other actions directly from search results, making it easier for users to engage with the business.
 
 Kindly Refer [Google Doc](https://developers.google.com/search/docs/appearance/structured-data/local-business) to know more about local business rich result.
 
 ## What are necessary data for local business rich result?
+
 ### 1. Business name
+
 ```html copy filename="local-business.html" /1-name/ /div/ {2}
 <div id="rjs-lb-1">
   <p class="rjs-lb-1-name">Hookie Dookie</p>
@@ -26,21 +30,26 @@ Kindly Refer [Google Doc](https://developers.google.com/search/docs/appearance/s
 
 ```html copy filename="local-business.html" {3,5} /1-img/
 <div id="rjs-lb-1">
-  
-  <img class="rjs-lb-1-img" src="https://i.imgur.com/3aIBedv.jpeg" alt="picture of reception">
-  
-  <img class="rjs-lb-1-img" src="https://i.imgur.com/RbIZogg.jpeg" alt="another 1">
+  <img
+    class="rjs-lb-1-img"
+    src="https://i.imgur.com/3aIBedv.jpeg"
+    alt="picture of reception"
+  />
 
+  <img
+    class="rjs-lb-1-img"
+    src="https://i.imgur.com/RbIZogg.jpeg"
+    alt="another 1"
+  />
 </div>
 ```
 
 ### 3. Location
+
 ```html showLineNumbers copy filename="local-business.html" {4,23} /1-loc/ /div/ /"stl"/ /"ct"/ /"st"/ /"pc"/ /"ctry"/
 <div id="rjs-lb-1">
-  
   <!-- geo will be generated from address -->
   <div class="rjs-lb-1-loc">
-
     <!-- loc-st for street -->
     <!-- any number of loc-st can be created but 2 is good -->
     <p class="stl">008, Papanna street</p>
@@ -57,50 +66,45 @@ Kindly Refer [Google Doc](https://developers.google.com/search/docs/appearance/s
 
     <!-- country -->
     <p class="ctry">India</p>
-
   </div>
-
 </div>
 ```
 
 ### 4. Reviews
+
 Author type classes,
+
 - `authorP` - Person type author
 - `authorO` - Organisation type author
 
 ```html showLineNumbers copy filename="local-business.html" /1-reviews/ /"urate"/ /"rv"/ /"mr"/ /"raterP"/ /"raterO"/ /"rpOn"/ /div/ /section/ {5-15,17-25}
 <div id="rjs-lb-1">
-
   <section class="rjs-lb-1-reviews">
+    <!-- userrating instance 1 -->
+    <div class="urate">
+      <!-- rating value -->
+      <p class="rv">4.5</p>
+      <!-- max rate -->
+      <p class="mr">5</p>
+      <!-- author -->
+      <p class="raterP">Dean</p>
+      <!-- published on -->
+      <p class="rpOn">Amazon</p>
+    </div>
 
-	<!-- userrating instance 1 -->
-	<div class="urate">
-		<!-- rating value -->
-		<p class="rv">4.5</p>
-		<!-- max rate -->
-		<p class="mr">5</p>
-		<!-- author -->
-		<p class="raterP">Dean</p>
-		<!-- published on -->
-		<p class="rpOn">Amazon</p>
-	</div>
-
-	<!-- userrating instance 2 -->
-	<div class="urate">
-		
-		<p class="rv">4.5</p>
-		<p class="mr">5</p>
-		<p class="raterP">Someone</p>
-		<p class="rpOn">Noogle</p>
-
-	</div>
-
+    <!-- userrating instance 2 -->
+    <div class="urate">
+      <p class="rv">4.5</p>
+      <p class="mr">5</p>
+      <p class="raterP">Someone</p>
+      <p class="rpOn">Noogle</p>
+    </div>
   </section>
-
 </div>
 ```
 
 ### 5. Telephone & Reservation
+
 ```html copy filename="local-business.html" {2} /1-tel/ /data-reserve="true"/
 <div id="rjs-lb-1">
   <p class="rjs-lb-1-tel" data-reserve="true">+91-84259372x3</p>
@@ -118,56 +122,60 @@ Author type classes,
 ```
 
 ### 7. Work hours
+
 Format Specification classes are,
+
 #### Day(s) Wrapper
+
 - `wdr` - Range of Working days.
 - `wd` - Single Working day
 
 #### Hour Specification classes
+
 - `HR` - 24 Hours format
 - `hr` - 12 Hour format
 
-<Callout> Range seperator should be Hyphen(-) in between days and times</Callout>
+<Callout>
+  {" "}
+  Range seperator should be Hyphen(-) in between days and times
+</Callout>
 
 ```html copy filename="local-business.html" /div/ /section/ /1-workhours/ /"wdr"/ /"wd"/ /"HR"/ /"hr"/ /-/
 <div id="rjs-lb-1">
-  
   <section class="rjs-lb-1-workhours">
-    
-    <p class="wdr">Sunday - Thursday
+    <p class="wdr">
+      Sunday - Thursday
       <span class="HR">(10:00 - 21:00)</span>
     </p>
-    
-    <p class="wd">Saturday
+
+    <p class="wd">
+      Saturday
       <span class="HR">(13:00 - 18:00)</span>
     </p>
-    
-    <p class="wd">Friday
+
+    <p class="wd">
+      Friday
       <span class="hr">(10:00AM - 06:00PM)</span>
     </p>
-
   </section>
-
 </div>
 ```
 
 ### 8. Menu link
+
 ```html copy filename="local-business.html" /1-menu/ {3-5}
 <div id="rjs-lb-1">
-  
   <a class="rjs-lb-1-menu" href="https://www.restaurant.com/menu">
     <p>Menu</p>
   </a>
-
 </div>
 ```
 
 ### 9. Aggregated rating
+
 ```html showLineNumbers copy filename="local-business.html" /1-aggrate/ /"arv"/ /"mr"/ /"rc"/ /div/ {5-12}
 <div id="rjs-lb-1">
-  
   <div class="rjs-lb-1-aggrate">
-  
     <!-- aggregate rate -->
     <p class="arv">100</p>
 
@@ -176,72 +184,66 @@ Format Specification classes are,
 
     <!-- total user rate count -->
     <p class="rc">1000</p>
-  
   </div>
-
 </div>
 ```
 
 ### 10. Keywords
+
 ```html showLineNumbers copy filename="local-business.html" /1-kw/ /div/ {5-8}
 <div id="rjs-lb-1">
-  
   <p class="rjs-lb-1-kw">
-  
     <span>#Tag1</span>
     <span>#Tag2</span>
     <span>#Tag3</span>
     <span>#Tag4</span>
-  
   </p>
-
 </div>
 ```
 
 ### 11. Area served
+
 ```html showLineNumbers copy filename="local-business.html" /1-areaserves/ /div/ {3-9,13}
 <div id="rjs-lb-1">
-
   <p class="rjs-lb-1-areaserves">
-  
     <span>Chennai</span>
     <span>Osur</span>
     <span>Hyderabad</span>
-  
   </p>
 
-<!-- OR -->
+  <!-- OR -->
 
   <p class="rjs-lb-1-areaserves">Bangalore</p>
-
 </div>
 ```
 
 ### 12. URL (Website)
-<Callout>URL would be deeplink of entity so ID is mandatory in parent wrapper.</Callout>
+
+<Callout>
+  URL would be deeplink of entity so ID is mandatory in parent wrapper.
+</Callout>
 
 ```html copy filename="local-business.html" /id="rjs-lb-1"/ /div/
-<div id="rjs-lb-1">
-  ....
-</div>
+<div id="rjs-lb-1">....</div>
 ```
 
 ### 13. Map iframe
+
 <Callout>Use Google Map embed</Callout>
 
 ```html copy filename="local-business.html" /div/ /1-map/ {3-5}
 <div id="rjs-lb-1">
-
-  <iframe class="rjs-lb-1-map"
-  src="https://www.google.com/maps/embed?pb (reduced for brevity)"
-  width="400" height="300" ></iframe>
-
+  <iframe
+    class="rjs-lb-1-map"
+    src="https://www.google.com/maps/embed?pb (reduced for brevity)"
+    width="400"
+    height="300"
+  ></iframe>
 </div>
 ```
 
-
 ## Function and parameters
-    
+
     <Callout type='default'>By default input file is overwriiten with result so `destination` is optional</Callout>
 
     <Callout type='info'>This is only for API method.
@@ -251,7 +253,7 @@ Format Specification classes are,
     const richResultType = 'localbusiness';
     const filePath = 'local-business.html';
     const destination = 'dist/local-business.html'; /* optional */
-    
+
     richie(richResultType, filePath, destination);
     ```
 
@@ -259,116 +261,116 @@ Format Specification classes are,
 
 ```html copy filename="local-business.html"
 <body>
+  <div id="rjs-lb-1">
+    <!-- name -->
+    <p class="rjs-lb-1-name">Hookie Dookie</p>
 
-	<div id="rjs-lb-1">
-		
-		<!-- name -->
-		<p class="rjs-lb-1-name">Hookie Dookie</p>
+    <!-- image=[] -->
+    <img
+      class="rjs-lb-1-img"
+      src="https://i.imgur.com/3aIBedv.jpeg"
+      alt="picture of reception"
+    />
 
-		<!-- image=[] -->
-		<img class="rjs-lb-1-img" src="https://i.imgur.com/3aIBedv.jpeg" alt="picture of reception">
-		
-		<!-- address -->
-		<!-- geo will be generated from address -->
-		<div class="rjs-lb-1-loc">
+    <!-- address -->
+    <!-- geo will be generated from address -->
+    <div class="rjs-lb-1-loc">
+      <p class="stl">008, Papanna street</p>
+      <p class="stl">St Mark's Rd</p>
 
-			<p class="stl">008, Papanna street</p>
-			<p class="stl">St Mark's Rd</p>
+      <!-- city -->
+      <p class="ct">Bengaluru</p>
 
-			<!-- city -->
-			<p class="ct">Bengaluru</p>
+      <!-- state -->
+      <p class="st">Karnataka</p>
 
-			<!-- state -->
-			<p class="st">Karnataka</p>
+      <!-- pincode -->
+      <p class="pc">560001</p>
 
-			<!-- pincode -->
-			<p class="pc">560001</p>
+      <!-- country -->
+      <p class="ctry">India</p>
+    </div>
 
-			<!-- country -->
-			<p class="ctry">India</p>
-		</div>
+    <!-- review -->
+    <section class="rjs-lb-1-reviews">
+      <div class="urate">
+        <!-- rating value -->
+        <p class="rv">4.5</p>
 
-		<!-- review -->
-		<section class="rjs-lb-1-reviews">
+        <!-- max rate -->
+        <p class="mr">5</p>
 
-			<div class="urate">
-				<!-- rating value -->
-				<p class="rv">4.5</p>
+        <p class="raterP">Dean</p>
 
-				<!-- max rate -->
-				<p class="mr">5</p>
+        <p class="rpOn">Amazon</p>
+      </div>
 
-				<p class="raterP">Dean</p>
+      <div class="urate">
+        <!-- rating value -->
+        <p class="rv">4.5</p>
 
-				<p class="rpOn">Amazon</p>
-			</div>
+        <!-- max rate -->
+        <p class="mr">5</p>
 
-			<div class="urate">
-				<!-- rating value -->
-				<p class="rv">4.5</p>
+        <p class="raterP">Someone</p>
 
-				<!-- max rate -->
-				<p class="mr">5</p>
+        <p class="rpOn">Noogle</p>
+      </div>
+    </section>
 
-				<p class="raterP">Someone</p>
+    <!-- telephone -->
+    <!-- data-reservation="true" for reservation accepted (Boolean)-->
+    <p class="rjs-lb-1-tel" data-reserve="true">+91-84259372x3</p>
 
-				<p class="rpOn">Noogle</p>
-			</div>
+    <!-- cost range -->
+    <p class="rjs-lb-1-cost">INR 200 - INR 500</p>
 
-		</section>
+    <!-- opening hour specification -->
+    <section class="rjs-lb-1-workhours">
+      <p class="wdr">
+        Sunday - Thursday <span class="HR">(10:00 - 21:00)</span>
+      </p>
 
-		<!-- telephone -->
-		<!-- data-reservation="true" for reservation accepted (Boolean)-->
-		<p class="rjs-lb-1-tel" data-reserve="true">+91-84259372x3</p>
+      <p class="wd">Saturday <span class="HR">(13:00 - 18:00)</span></p>
 
-		<!-- cost range -->
-		<p class="rjs-lb-1-cost">INR 200 - INR 500</p>
+      <p class="wd">Friday <span class="hr">(10:00AM - 06:00PM)</span></p>
+    </section>
 
-		<!-- opening hour specification -->
-		<section class="rjs-lb-1-workhours">
+    <!-- menu optional menu url-->
+    <a class="rjs-lb-1-menu" href="https://www.restaurant.com/menu">
+      <p>Menu</p>
+    </a>
 
-			<p class="wdr">Sunday - Thursday <span class="HR">(10:00 - 21:00)</span></p>
-			
-			<p class="wd">Saturday <span class="HR">(13:00 - 18:00)</span></p>
-			
-			<p class="wd">Friday <span class="hr">(10:00AM - 06:00PM)</span></p>
+    <!-- aggregate review -->
+    <div class="rjs-lb-1-aggrate">
+      <!-- aggregate rate that got -->
+      <p class="arv">100</p>
+      <!-- max possibly rate -->
+      <p class="mr">100</p>
+      <!-- total user rate count -->
+      <p class="rc">1000</p>
+    </div>
 
-		</section>
+    <iframe
+      class="rjs-lb-1-map"
+      src="https://www.google.com/maps/embed?pb (reduced for brevity)"
+      width="400"
+      height="300"
+    ></iframe>
 
-		<!-- menu optional menu url-->
-		<a class="rjs-lb-1-menu" href="https://www.restaurant.com/menu">
-			<p>Menu</p>
-		</a>
+    <p class="rjs-lb-1-kw">
+      <span>#Tag1</span>
+      <span>#Tag2</span>
+      <span>#Tag3</span>
+      <span>#Tag4</span>
+    </p>
 
-		<!-- aggregate review -->
-		<div class="rjs-lb-1-aggrate">
-			<!-- aggregate rate that got -->
-			<p class="arv">100</p>
-			<!-- max possibly rate -->
-			<p class="mr">100</p>
-			<!-- total user rate count -->
-			<p class="rc">1000</p>
-		</div>
-
-		<iframe class="rjs-lb-1-map"
-			src="https://www.google.com/maps/embed?pb (reduced for brevity)"
-			width="400" height="300" ></iframe>
-
-		<p class="rjs-lb-1-kw">
-			<span>#Tag1</span>
-			<span>#Tag2</span>
-			<span>#Tag3</span>
-			<span>#Tag4</span>
-		</p>
-
-		<p class="rjs-lb-1-areaserves">
-			<span>Chennai</span>
-			<span>Osur</span>
-			<span>Hyderabad</span>
-		</p>
-
-	</div>
-
+    <p class="rjs-lb-1-areaserves">
+      <span>Chennai</span>
+      <span>Osur</span>
+      <span>Hyderabad</span>
+    </p>
+  </div>
 </body>
 ```
 
@@ -463,6 +465,7 @@ Format Specification classes are,
 ]
 </script>
 ```
-<br/>
-<br/>
+
+<br />
+<br />
 **Let's see what's next!**

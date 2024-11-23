@@ -30,10 +30,15 @@ export default function Home() {
           </div>
         </div>
         <div className="mt-14">
-          <img
-            src="https://raw.githubusercontent.com/sidiDev/remote-assets/main/Safari%20(Big%20Sur)%20-%20Light.png"
+          <video
+            playsInline
+            disablePictureInPicture
+            src="/hero.mp4"
+            poster="/thumbnail.webp"
+            muted
+            autoPlay
+            loop
             className="w-full shadow-lg rounded-lg border"
-            alt=""
           />
         </div>
       </div>

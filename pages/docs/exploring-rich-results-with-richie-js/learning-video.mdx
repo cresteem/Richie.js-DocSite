@@ -1,13 +1,15 @@
 ---
 title: Learning Video
 description: Learn how to optimize your learning video content for Google search results, including the necessary data for learning video rich results, and improve your video's visibility and engagement.
-thumbnailUrl: https://www.cresteem.com/opensource/boost-seo-with-richie-js/thumbnail.png
+thumbnailUrl: https://www.cresteem.com/opensource/boost-seo-with-richie-js/thumbnail.webp
 ---
+
 import { Callout, Tabs } from "nextra/components";
 
 # Learning video (LearningResource, VideoObject, Clip)
 
 ## What is learning video rich result?
+
 Google Search serves as a gateway for users to find and watch videos. Although Google attempts to automatically interpret your video's details, you can proactively provide information like the description, thumbnail URL, upload date, and duration by using `VideoObject` markup. This enables your videos to appear in Google Search results, video search results, Google Images, and Google Discover.
 
 Kindly Refer [Google Doc](https://developers.google.com/search/docs/appearance/structured-data/video) to know more about learning video rich result.
@@ -18,34 +20,40 @@ Kindly Refer [Google Doc](https://developers.google.com/search/docs/appearance/s
 
 ```html copy filename="learning-video.html" /class="rjs-video-1-vframe"/ /div/ /iframe/
 <div id="video-1">
-
-    <iframe class="rjs-video-1-vframe"      
-        src="https://www.youtube.com/embed/zxyz"
-        width="560" height="315" title="YouTube video player" frameborder="0" 
-        allow="accelerometer; autoplay;clipboard-write; encrypted-media; gyroscope; 
-        picture-in-picture; web-share" allowfullscreen>
-     </iframe>
-    
+  <iframe
+    class="rjs-video-1-vframe"
+    src="https://www.youtube.com/embed/zxyz"
+    width="560"
+    height="315"
+    title="YouTube video player"
+    frameborder="0"
+    allow="accelerometer; autoplay;clipboard-write; encrypted-media; gyroscope; 
+        picture-in-picture; web-share"
+    allowfullscreen
+  >
+  </iframe>
 </div>
 ```
 
 ### 2. Segment index
-<Callout>Time stamp of beginning of each segment should be set using `data-offset` attribute. Where value is number of seconds.</Callout>
+
+<Callout>
+  Time stamp of beginning of each segment should be set using `data-offset`
+  attribute. Where value is number of seconds.
+</Callout>
 
 ```html copy filename="learning-video.html" /class="rjs-video-1-index"/ /ul/ /div/ /data-offset=/ {4-6}
 <div id="video-1">
-
-    <ul class="rjs-video-1-index">
-        <li data-offset="30">Photo Testing</li>
-        <li data-offset="200">Video Testing</li>
-        <li data-offset="800">Cinematic Testing</li>
-    </ul>
-    
+  <ul class="rjs-video-1-index">
+    <li data-offset="30">Photo Testing</li>
+    <li data-offset="200">Video Testing</li>
+    <li data-offset="800">Cinematic Testing</li>
+  </ul>
 </div>
 ```
-    
+
 ## Function and parameters
-    
+
     <Callout type='default'>By default input file is overwriiten with result so `destination` is optional</Callout>
 
     <Callout type='info'>This is only for API method.
@@ -55,34 +63,39 @@ Kindly Refer [Google Doc](https://developers.google.com/search/docs/appearance/s
     const richResultType = "video";
     const filePath = 'learning-video.html';
     const destination = 'dist/learning-video.html'; /* optional */
-    
+
     richie(richResultType, filePath, destination);
     ```
 
 ## Example of a Instance
-<Callout type="info">Any number of video instance can be added in single page</Callout>
+
+<Callout type="info">
+  Any number of video instance can be added in single page
+</Callout>
 
 ```html copy filename="learning-video.html"
 <body>
+  <!-- video instance 1 -->
+  <div id="video-1">
+    <ul class="rjs-video-1-index">
+      <li data-offset="30">Photo Testing</li>
+      <li data-offset="200">Video Testing</li>
+      <li data-offset="800">Cinematic Testing</li>
+    </ul>
 
-	<!-- video instance 1 -->
-	<div id="video-1">
-	
-		<ul class="rjs-video-1-index">
-			<li data-offset="30">Photo Testing</li>
-			<li data-offset="200">Video Testing</li>
-			<li data-offset="800">Cinematic Testing</li>
-		</ul>
-
-	    <iframe class="rjs-video-1-vframe"      
-            src="https://www.youtube.com/embed/zxyz"
-            width="560" height="315" title="YouTube video player" frameborder="0" 
-            allow="accelerometer; autoplay;clipboard-write; encrypted-media; gyroscope; 
-            picture-in-picture; web-share" allowfullscreen>
-        </iframe>
-
-	</div>
-
+    <iframe
+      class="rjs-video-1-vframe"
+      src="https://www.youtube.com/embed/zxyz"
+      width="560"
+      height="315"
+      title="YouTube video player"
+      frameborder="0"
+      allow="accelerometer; autoplay;clipboard-write; encrypted-media; gyroscope; 
+            picture-in-picture; web-share"
+      allowfullscreen
+    >
+    </iframe>
+  </div>
 </body>
 ```
 
@@ -134,6 +147,7 @@ Kindly Refer [Google Doc](https://developers.google.com/search/docs/appearance/s
 ]
 </script>
 ```
-<br/>
-<br/>
+
+<br />
+<br />
 **Let's see what's next!**

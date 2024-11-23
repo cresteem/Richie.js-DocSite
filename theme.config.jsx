@@ -3,6 +3,7 @@ import { useConfig } from "nextra-theme-docs";
 import { useRouter } from "next/router";
 import { RiTelegramFill } from "react-icons/ri";
 import Footer from "./components/footer";
+import Banner from "./components/utils/banner";
 import HeaderLogo from "./components/utils/header-logo";
 
 /** @type {import('nextra-theme-docs').DocsThemeConfig} */
@@ -10,11 +11,12 @@ const config = {
   footer: {
     component: <Footer />,
   },
-
+  backgroundColor: { dark: "#000", light: "#fff" },
+  color: { hue: 162, saturation: 60, lightness: 50 },
   banner: {
     key: "201",
-    content: "Richie.js 2.0.1 released 🚀",
-    dismissible: true,
+    content: <Banner />,
+    dismissible: false,
   },
 
   logo: <HeaderLogo />,

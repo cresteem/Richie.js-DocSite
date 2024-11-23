@@ -45,7 +45,7 @@ export default () => {
               <h4 className="text-gray-700 font-semibold sm:text-lg">
                 {team[0].name}
               </h4>
-              <p className="text-indigo-600">{team[0].title}</p>
+              <p className="text-deep">{team[0].title}</p>
               <div className="mt-3 flex gap-4 text-white">
                 <a href={team[0].github} target="_blank">
                   <RiGithubFill className="w-7 h-7 rounded-full bg-black p-1" />

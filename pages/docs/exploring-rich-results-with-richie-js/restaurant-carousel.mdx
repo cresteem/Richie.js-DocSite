@@ -1,13 +1,15 @@
 ---
 title: Restaurant & Carousel
 description: Explore the potential of restaurant rich results with Cresteem's Richie JS. This guide will teach you how to showcase your restaurant's information effectively, improving its visibility and making it easier for diners to find you.
-thumbnailUrl: https://www.cresteem.com/opensource/boost-seo-with-richie-js/thumbnail.png
+thumbnailUrl: https://www.cresteem.com/opensource/boost-seo-with-richie-js/thumbnail.webp
 ---
+
 import { Callout, Tabs } from "nextra/components";
 
 # Restaurant & Carousel (Restaurant, ItemList)
 
 ## What is restaurant rich result?
+
 When users search for restaurants on Google Search or Maps, results may feature a prominent knowledge panel with details about the restaurant. For queries like 'best NYC restaurants,' a carousel of related businesses may appear. Using Local Business structured data, you can inform Google about your restaurant's hours, departments, and reviews. To enable reservations or orders directly from Search results, use the Maps Booking API for bookings, payments, and other actions.
 
 Kindly Refer [Google Doc](https://developers.google.com/search/docs/appearance/structured-data/local-business) to know more about restaurant rich result.
@@ -15,84 +17,97 @@ Kindly Refer [Google Doc](https://developers.google.com/search/docs/appearance/s
 ## What are necessary data for restaurant rich result?
 
 ### 1. Name
+
 ```html copy filename="restaurant.html" {2} /name/
 <div id="rjs-restaurant-1">
-    <p class="rjs-restaurant-1-name">Hookie Dookie</p>
+  <p class="rjs-restaurant-1-name">Hookie Dookie</p>
 </div>
 ```
 
 ### 2. Thumbnail images
-```html copy filename="restaurant.html" /1-img/
-<img class="rjs-restaurant-1-img" src="https://i.imgur.com/3aIBedv.jpeg" alt="picture of reception">
 
-<img class="rjs-restaurant-1-img" src="https://i.imgur.com/RbIZogg.jpeg" alt="another 1">
+```html copy filename="restaurant.html" /1-img/
+<img
+  class="rjs-restaurant-1-img"
+  src="https://i.imgur.com/3aIBedv.jpeg"
+  alt="picture of reception"
+/>
+
+<img
+  class="rjs-restaurant-1-img"
+  src="https://i.imgur.com/RbIZogg.jpeg"
+  alt="another 1"
+/>
 ```
 
 ### 3. Location
+
 ```html copy filename="restaurant.html" /-loc/ /class="stl"/ /class="ct"/ /class="st"/ /class="pc"/ /class="ctry"/ /div/
 <div class="rjs-restaurant-1-loc">
-    <!-- loc-st for street -->
-    <!-- any number of stl(street line) can be created but 2 is good -->
-    <p class="stl">008, Papanna street</p>
-    <p class="stl">St Mark's Rd</p>
+  <!-- loc-st for street -->
+  <!-- any number of stl(street line) can be created but 2 is good -->
+  <p class="stl">008, Papanna street</p>
+  <p class="stl">St Mark's Rd</p>
 
-    <!-- city -->
-    <p class="ct">Bengaluru</p>
+  <!-- city -->
+  <p class="ct">Bengaluru</p>
 
-    <!-- state -->
-    <p class="st">Karnataka</p>
+  <!-- state -->
+  <p class="st">Karnataka</p>
 
-    <!-- pincode -->
-    <p class="pc">560001</p>
+  <!-- pincode -->
+  <p class="pc">560001</p>
 
-    <!-- country -->
-    <p class="ctry">India</p>
+  <!-- country -->
+  <p class="ctry">India</p>
 </div>
 ```
 
 ### 4. Reviews
+
 ```html copy filename="restaurant.html" /-reviews/ /class="urate"/ /class="rv"/ /class="mr"/ /class="raterP"/ /class="raterO"/  /class="rpOn"/ /div/
 <section class="rjs-restaurant-1-reviews">
+  <div class="urate">
+    <!-- rating value -->
+    <p class="rv">4.5</p>
 
-    <div class="urate">
-        <!-- rating value -->
-        <p class="rv">4.5</p>
+    <!-- max rate -->
+    <p class="mr">5</p>
 
-        <!-- max rate -->
-        <p class="mr">5</p>
+    <!-- authorO is Organisation class - pub class prop not req-->
+    <!-- authorP is Person class - pub class prop req-->
+    <!-- <p class="review-authorO">Foogle</p> -->
+    <p class="raterP">Dean</p>
 
-        <!-- authorO is Organisation class - pub class prop not req-->
-        <!-- authorP is Person class - pub class prop req-->
-        <!-- <p class="review-authorO">Foogle</p> -->
-        <p class="raterP">Dean</p>
+    <p class="rpOn">Amazon</p>
+  </div>
 
-        <p class="rpOn">Amazon</p>
-    </div>
+  <div class="urate">
+    <!-- rating value -->
+    <p class="rv">4.5</p>
 
-    <div class="urate"> 
-        <!-- rating value -->
-        <p class="rv">4.5</p>
+    <!-- max rate -->
+    <p class="mr">5</p>
 
-        <!-- max rate -->
-        <p class="mr">5</p>
+    <!-- authorO is Organisation class - pub class prop not req-->
+    <!-- authorP is Person class - pub class prop req-->
+    <!-- <p class="review-authorO">Foogle</p> -->
+    <p class="raterP">Someone</p>
 
-        <!-- authorO is Organisation class - pub class prop not req-->
-        <!-- authorP is Person class - pub class prop req-->
-        <!-- <p class="review-authorO">Foogle</p> -->
-        <p class="raterP">Someone</p>
-
-        <p class="rpOn">Noogle</p>
-    </div>
-
+    <p class="rpOn">Noogle</p>
+  </div>
 </section>
 ```
+
 ### 5. Telephone & Reservation availability
+
 ```html copy filename="restaurant.html" /data-reserve/ /-tel/
 <!-- data-reserve="true" for reservation accepted -->
 <p class="rjs-restaurant-1-tel" data-reserve="true">+91-84259372x3</p>
 ```
 
 ### 6. Cuisine
+
 ```html copy filename="restaurant.html" /-csnt/
 <!-- It can be more than 1-->
 <p class="rjs-restaurant-1-csnt">Asian</p>
@@ -100,67 +115,72 @@ Kindly Refer [Google Doc](https://developers.google.com/search/docs/appearance/s
 ```
 
 ### 7. Price range
+
 ```html copy filename="restaurant.html" /-cost/
 <p class="rjs-restaurant-1-cost">INR 200 - INR 500</p>
 ```
 
 ### 8. Work Hours
-```html copy showLineNumbers filename="restaurant.html" /-workhours/ /class="wdr"/ /class="wd"/ /class="wdr"/ /class="HR"/ /class="hr"/ {3,13,15,16,5,6} 
+
+```html copy showLineNumbers filename="restaurant.html" /-workhours/ /class="wdr"/ /class="wd"/ /class="wdr"/ /class="HR"/ /class="hr"/ {3,13,15,16,5,6}
 <!-- opening hour specification -->
 <section class="rjs-restaurant-1-workhours">
-    <!-- wdr for working day range -->
+  <!-- wdr for working day range -->
 
-    <!-- wdr-HR HR means 24 hour format spec -->
-    <!-- wdr-hr hr means 12 hour format spec -->
-    
-    <!-- sepeartor should be (-) hyphen in range -->
-    <p class="wdr">Sunday - Thursday <span class="HR">(10:00 - 21:00)</span></p>
-    <!-- OR -->
-    <p class="wdr">Sunday - Thursday <span class="hr">(10:00AM - 09:00PM)</span></p>
+  <!-- wdr-HR HR means 24 hour format spec -->
+  <!-- wdr-hr hr means 12 hour format spec -->
 
-    <!-- wd for single working day-->
-    
-    <!-- wd-HR HR means 24 hour format spec-->
-    <!-- wd-hr hr means 12 hour format spec -->
-    
-    <p class="wd">Saturday <span class="HR">(13:00 - 18:00)</span></p>
-    
-    <p class="wd">Friday <span class="hr">(10:00AM - 06:00PM)</span></p>
+  <!-- sepeartor should be (-) hyphen in range -->
+  <p class="wdr">Sunday - Thursday <span class="HR">(10:00 - 21:00)</span></p>
+  <!-- OR -->
+  <p class="wdr">
+    Sunday - Thursday <span class="hr">(10:00AM - 09:00PM)</span>
+  </p>
 
+  <!-- wd for single working day-->
+
+  <!-- wd-HR HR means 24 hour format spec-->
+  <!-- wd-hr hr means 12 hour format spec -->
+
+  <p class="wd">Saturday <span class="HR">(13:00 - 18:00)</span></p>
+
+  <p class="wd">Friday <span class="hr">(10:00AM - 06:00PM)</span></p>
 </section>
 ```
 
 ### 9. Menu Link
+
 ```html copy filename="restaurant.html" /-menu/ /href="/
 <a class="rjs-restaurant-1-menu" href="https://www.restaurant.com/menu">Menu</a>
 ```
 
 ### 10. Aggregated rating
+
 ```html copy filename="restaurant.html" /1-aggrate/ /class="arv"/ /class="mr"/ /class="rc"/
 <div class="rjs-restaurant-1-aggrate">
-    <!-- aggregate rate that got -->
-    <p class="arv">100</p>
+  <!-- aggregate rate that got -->
+  <p class="arv">100</p>
 
-    <!-- max possibly rate -->
-    <p class="mr">100</p>
+  <!-- max possibly rate -->
+  <p class="mr">100</p>
 
-    <!-- total user rate count -->
-    <p class="rc">1000</p>
+  <!-- total user rate count -->
+  <p class="rc">1000</p>
 </div>
 ```
 
-### 11. URL 
+### 11. URL
 
-<Callout type="warning">`id` is mandatory to make deeplink. Even though it is meant for Carousel.</Callout>
+<Callout type="warning">
+  `id` is mandatory to make deeplink. Even though it is meant for Carousel.
+</Callout>
 
 ```html copy filename="restaurant.html" /id="rjs-restaurant-1"/
-<div id="rjs-restaurant-1">
-    ...
-</div>
+<div id="rjs-restaurant-1">...</div>
 ```
-    
+
 ## Function and parameters
-    
+
     <Callout type='default'>By default input file is overwriiten with result so `destination` is optional</Callout>
 
     <Callout type='info'>This is only for API method.
@@ -172,7 +192,7 @@ Kindly Refer [Google Doc](https://developers.google.com/search/docs/appearance/s
         const richResultType = 'restaurant';
         const filePath = 'restaurant.html';
         const destination = 'dist/restaurant.html'; /* optional */
-        
+
         richie(richResultType, filePath, destination);
         ```
       </Tabs.Tab>
@@ -182,14 +202,14 @@ Kindly Refer [Google Doc](https://developers.google.com/search/docs/appearance/s
         const richResultType = 'crestaurant';
         const filePath = 'restaurant.html';
         const destination = 'dist/restaurant.html'; /* optional */
-        
+
         richie(richResultType, filePath, destination);
         ```
       </Tabs.Tab>
     </Tabs>
 
-
 ## Example of a Instance
+
 <Tabs items={['Standard','Carousel']}>
 	<Tabs.Tab>
     ```html filename="restaurant.html" copy
@@ -582,9 +602,11 @@ Kindly Refer [Google Doc](https://developers.google.com/search/docs/appearance/s
     </body>
     ```
     </Tabs.Tab>
+
 </Tabs>
 
 ## Output of a Instance
+
 <Tabs items={['Standard','Carousel']}>
 	<Tabs.Tab>
     ```html filename="restaurant.html" copy
@@ -866,8 +888,9 @@ Kindly Refer [Google Doc](https://developers.google.com/search/docs/appearance/s
     </script>
     ```
     </Tabs.Tab>
+
 </Tabs>
 
-<br/>
-<br/>
+<br />
+<br />
 **Let's see what's next!**

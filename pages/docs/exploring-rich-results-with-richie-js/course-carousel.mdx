@@ -1,86 +1,94 @@
 ---
 title: Course & Carousel
 description: Learn how to create course and carousel rich results with Richie JS. Discover the necessary data and examples to get started with course and carousel rich results and improve your website's visibility in search engines.
-thumbnailUrl: https://www.cresteem.com/opensource/boost-seo-with-richie-js/thumbnail.png
+thumbnailUrl: https://www.cresteem.com/opensource/boost-seo-with-richie-js/thumbnail.webp
 ---
+
 import { Callout, Tabs } from "nextra/components";
 
 # Course & Carousel (Course, ItemList)
 
 ## What is coursen rich result?
+
 Utilizing course structured data allows you to enhance the information available about your courses, making them more discoverable to potential students through Google Search. This includes specifying the course title, provider, and a brief description.
 
 Kindly Refer [Google Doc](https://developers.google.com/search/docs/appearance/structured-data/course) to know more about course rich result.
 
 ## What are necessary data for course rich result?
+
 ### 1. Course name
-  ```html copy filename="course.html" {3} /name/
-  <div id="rjs-course-1">
-      <!-- name of course-->
-      <p class="rjs-course-1-name">Python Crash Course</p>
-  </div>
-  ```
-  
+
+```html copy filename="course.html" {3} /name/
+<div id="rjs-course-1">
+  <!-- name of course-->
+  <p class="rjs-course-1-name">Python Crash Course</p>
+</div>
+```
+
 ### 2. Language
-  ```html copy filename="course.html" /data-lang="Tamil"/ /lang/ {4}
-  <!-- name of course with language as data attribute-->
-  <p class="rjs-course-1-name" data-lang="Tamil">Java Intermediate to Advanced</p>
-  <!-- OR -->
-  <p class="rjs-course-1-lang">English</p>
-  ```
+
+```html copy filename="course.html" /data-lang="Tamil"/ /lang/ {4}
+<!-- name of course with language as data attribute-->
+<p class="rjs-course-1-name" data-lang="Tamil">Java Intermediate to Advanced</p>
+<!-- OR -->
+<p class="rjs-course-1-lang">English</p>
+```
 
 ### 3. Mode of Course
-  ```html copy filename="course.html" /mode/ {2}
-  <p class="rjs-course-1-name">Java Intermediate to Advanced</p>
-  <p class="rjs-course-1-mode">Blended</p>
-  ```
+
+```html copy filename="course.html" /mode/ {2}
+<p class="rjs-course-1-name">Java Intermediate to Advanced</p>
+<p class="rjs-course-1-mode">Blended</p>
+```
 
 ### 4. Instructor
-  ```html copy filename="course.html" /ins/ {2}
-  <p class="rjs-course-1-name">Java Intermediate to Advanced</p>
-  <p class="rjs-course-1-ins">Peter</p>
-  ```
+
+```html copy filename="course.html" /ins/ {2}
+<p class="rjs-course-1-name">Java Intermediate to Advanced</p>
+<p class="rjs-course-1-ins">Peter</p>
+```
 
 ### 5. Description
-  ```html copy filename="course.html" /desc/ {1}
-  <p class="rjs-course-3-desc">This is scratch Course of java</p>
-  ```
+
+```html copy filename="course.html" /desc/ {1}
+<p class="rjs-course-3-desc">This is scratch Course of java</p>
+```
+
 ### 6. Duration with repeatFrequency and repeatCount
-  ```html copy filename="course.html" /data-freq="daily"/ /data-rep="7"/ /"rjs-course-1-period"/ /1 Months/
-  <p class="rjs-course-1-period" data-freq="daily" data-rep="7">1 Months</p>
-  ```
+
+```html copy filename="course.html" /data-freq="daily"/ /data-rep="7"/ /"rjs-course-1-period"/ /1 Months/
+<p class="rjs-course-1-period" data-freq="daily" data-rep="7">1 Months</p>
+```
 
 ### 7. Fees with Currency
-  ```html copy filename="course.html" /data-currency="inr"/ /cost/ /data-currency="inr"/
-  <p class="rjs-course-1-cost" data-currency="inr">2000 RS</p>
-  ```
+
+```html copy filename="course.html" /data-currency="inr"/ /cost/ /data-currency="inr"/
+<p class="rjs-course-1-cost" data-currency="inr">2000 RS</p>
+```
 
 ### 8. Publisher name and URL
-  ```html copy filename="course.html" /purl/ /pname/
-  <a class="rjs-course-1-purl" href="https://notoracle.com/">
-    <p class="pname">Notoracle</p>
-  </a>
-  ```
+
+```html copy filename="course.html" /purl/ /pname/
+<a class="rjs-course-1-purl" href="https://notoracle.com/">
+  <p class="pname">Notoracle</p>
+</a>
+```
 
 ### 9. Course URL
-  
-  Richie JS's reserved value on `id` attribute is mandatory for deeplink or course URL
-  
-  <Callout type='info'>ID value template is rjs-course-[number]</Callout>
 
-  ```html copy filename="course.html" /id="rjs-course-/
-    <div id="rjs-course-1">
-      ......
-    </div>
+Richie JS's reserved value on `id` attribute is mandatory for deeplink or course URL
 
-    <div id="rjs-course-2">
-      ......
-    </div>
-  ```
+{" "}
+<Callout type="info">ID value template is rjs-course-[number]</Callout>
 
-    
+```html copy filename="course.html" /id="rjs-course-/
+<div id="rjs-course-1">......</div>
+
+<div id="rjs-course-2">......</div>
+```
+
 ## Function and parameters
-    
+
     <Callout type='default'>By default input file is overwriiten with result so `destination` is optional</Callout>
 
     <Callout type='info'>This is only for API method.
@@ -92,7 +100,7 @@ Kindly Refer [Google Doc](https://developers.google.com/search/docs/appearance/s
         const richResultType = 'course';
         const filePath = 'course.html';
         const destination = 'dist/course.html'; /* optional */
-        
+
         richie(richResultType, filePath, destination);
         ```
       </Tabs.Tab>
@@ -102,13 +110,14 @@ Kindly Refer [Google Doc](https://developers.google.com/search/docs/appearance/s
         const richResultType = 'ccourse';
         const filePath = 'course.html';
         const destination = 'dist/course.html'; /* optional */
-        
+
         richie(richResultType, filePath, destination);
         ```
       </Tabs.Tab>
     </Tabs>
 
 ## Example of a Instance
+
 <Tabs items={['Standard','Carousel']}>
   
   <Tabs.Tab>  
@@ -141,14 +150,15 @@ Kindly Refer [Google Doc](https://developers.google.com/search/docs/appearance/s
         <a class="rjs-course-1-purl" href="https://lms.com/">
           <p>LMS</p>
         </a>
-        <!-- OR 
-          publisher url with publisher name as element with id able class name 
+        <!-- OR
+          publisher url with publisher name as element with id able class name
         <a class="rjs-course-1-purl" href="https://cresteem.com/">
           <p class="pname">cresteem</p>
         </a> -->
       </div>
     </body>
     ```
+
   </Tabs.Tab>
   
   <Tabs.Tab>  
@@ -182,8 +192,8 @@ Kindly Refer [Google Doc](https://developers.google.com/search/docs/appearance/s
           <a class="rjs-course-1-purl" href="https://lms.com/">
             <p>LMS</p>
           </a>
-          <!-- OR 
-            publisher url with publisher name as element with id able class name 
+          <!-- OR
+            publisher url with publisher name as element with id able class name
           <a class="rjs-course-1-purl" href="https://cresteem.com/">
             <p class="pname">cresteem</p>
           </a> -->
@@ -236,12 +246,13 @@ Kindly Refer [Google Doc](https://developers.google.com/search/docs/appearance/s
 
       </body>
     ```
+
   </Tabs.Tab>
   
 </Tabs>
 
-
 ## Output of a Instance
+
 <Tabs items={['Standard','Carousel']}>
   <Tabs.Tab>
    ```html filename="course.html" copy /Intentionally removed for simplicity/
@@ -395,6 +406,6 @@ Kindly Refer [Google Doc](https://developers.google.com/search/docs/appearance/s
   </Tabs.Tab>
 </Tabs>
 
-<br/>
-<br/>
+<br />
+<br />
 **Let's see what's next!**

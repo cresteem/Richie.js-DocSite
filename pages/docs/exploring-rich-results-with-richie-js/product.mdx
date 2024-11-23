@@ -1,16 +1,19 @@
 ---
 title: Product & Variants
 description: Discover how Richie JS, developed by Cresteem, can transform your product listings. This ultimate guide will show you how to implement structured data effectively, improving your search engine visibility and boosting sales.
-thumbnailUrl: https://www.cresteem.com/opensource/boost-seo-with-richie-js/thumbnail.png
+thumbnailUrl: https://www.cresteem.com/opensource/boost-seo-with-richie-js/thumbnail.webp
 ---
+
 import { Callout, Tabs } from "nextra/components";
 
 # Product & Variants (Product, ProductGroup, Review, Offer)
 
 ## What is product rich result?
+
 Adding `Product` markup to your webpage makes it eligible for a product snippet display. `Product` snippets are enhanced text results that showcase additional product details like **ratings, reviews, price, and availability.**
 
 ### ProductGroup
+
 Products like apparel, shoes, furniture, electronics, and luggage often come in various sizes, colors, materials, or patterns. To help Google recognize these variants as part of the same parent product, use the `ProductGroup` class with properties like **variesBy, hasVariant, and productGroupID** alongside Product structured data.
 
 ProductGroup also allows you to specify common properties for all variants, such as brand and reviews, reducing duplicated information.
@@ -23,40 +26,47 @@ Kindly Refer [Google Doc](https://developers.google.com/search/docs/appearance/s
 
 ```html copy filename="product.html" {3} /class="rjs-prod-1-name"/
 <div class="product">
+  <h1 class="rjs-prod-1-name">Denim Jacket</h1>
 
-  <h1 class="rjs-prod-1-name"> Denim Jacket </h1>
-
-<div>
+  <div></div>
+</div>
 ```
 
 ### 2. Images
 
 ```html copy filename="product.html" /class="rjs-prod-1-img"/ /<img/ {3-4}
 <div class="product">
+  <img
+    class="rjs-prod-1-img"
+    src="https://example.com/image1.jpg"
+    alt="Product Image 1"
+  />
+  <img
+    class="rjs-prod-1-img"
+    src="https://example.com/image2.jpg"
+    alt="Product Image 2"
+  />
 
-  <img class="rjs-prod-1-img" src="https://example.com/image1.jpg" alt="Product Image 1">
-  <img class="rjs-prod-1-img" src="https://example.com/image2.jpg" alt="Product Image 2">
-
-<div>
+  <div></div>
+</div>
 ```
 
 ### 3. Description
 
 ```html copy filename="product.html" /class="rjs-prod-1-desc"/ {3-5}
 <div class="product">
-
   <p class="rjs-prod-1-desc">
     Product Description Lorem ipsum dolor sit amet, consectetur adipiscing elit.
   </p>
 
-<div>
+  <div></div>
+</div>
 ```
 
 ### 4. SKU ID / MPN Code
 
 ```html showLineNumbers copy filename="product.html" /class="rjs-prod-1-sku"/ /class="rjs-prod-1-mpn"/ {3-6,8-11}
 <div class="product">
-
   <p>
     SKU ID:
     <span class="rjs-prod-1-sku">123456789</span>
@@ -67,29 +77,28 @@ Kindly Refer [Google Doc](https://developers.google.com/search/docs/appearance/s
     <span class="rjs-prod-1-mpn">ABC123</span>
   </p>
 
-<div>
+  <div></div>
+</div>
 ```
 
 ### 5. Brand name
 
 ```html showLineNumbers copy filename="product.html" /class="rjs-prod-1-brand"/ {3-6}
 <div class="product">
-  
   <p>
     Brand:
     <span class="rjs-prod-1-brand">XYZ Brand</span>
   </p>
 
-<div>
+  <div></div>
+</div>
 ```
 
 ### 6. Reviews
 
 ```html showLineNumbers copy filename="product.html" /class="rjs-prod-1-reviews"/ /"urate"/ /"rv"/ /"mr/ /"raterP"/ /"raterO"/ /section/ /div/ {5-11,13-19}
 <div class="product">
-
   <section class="rjs-prod-1-reviews">
-    
     <div class="urate">
       <!-- rating value -->
       <p class="rv">4.5</p>
@@ -105,17 +114,16 @@ Kindly Refer [Google Doc](https://developers.google.com/search/docs/appearance/s
       <p class="mr">5</p>
       <p class="raterO">Foogle</p>
     </div>
-
   </section>
 
-<div>
+  <div></div>
+</div>
 ```
 
 ### 7. Aggregated rating
 
 ```html showLineNumbers copy filename="product.html" /class="rjs-prod-1-aggrate"/ /"arv"/ /"mr"/ /"rc"/ {3-10}
 <div class="product">
-  
   <div class="rjs-prod-1-aggrate">
     <!-- aggregated rate-->
     <p class="arv">100</p>
@@ -125,14 +133,17 @@ Kindly Refer [Google Doc](https://developers.google.com/search/docs/appearance/s
     <p class="rc">1000</p>
   </div>
 
-<div>
+  <div></div>
+</div>
 ```
 
 ### 8. Offer
-Offer is a object that consists of shipping  details, return policy, price, purchase link, availability and condition.
+
+Offer is a object that consists of shipping details, return policy, price, purchase link, availability and condition.
 
 #### Shipping details
-- Shipping cost - `rjs-prod-*(uid)-delcost` 
+
+- Shipping cost - `rjs-prod-*(uid)-delcost`
 - Shipping destination - `data-delover` (data attribute)
 - Processing time - `rjs-prod-*(uid)-ptime`
 - Delivery time - `rjs-prod-*(uid)-ttime`
@@ -141,29 +152,34 @@ Offer is a object that consists of shipping  details, return policy, price, purc
 ```html showLineNumbers copy filename="product.html" /class="rjs-prod-1-delcost"/ /data-delover/ /"rjs-prod-1-ptime"/ /"rjs-prod-1-ttime"/ /data-range/ {5,8,12}
 <div class="product">
 
-  <p>
-    Shipping Cost:
-    <span class="rjs-prod-1-delcost" data-delover="india">80</span>
-  </p>
+{" "}
+<p>
+  Shipping Cost:
+  <span class="rjs-prod-1-delcost" data-delover="india">
+    80
+  </span>
+</p>
 
-  <p class="rjs-prod-1-ptime" data-range="1-3">
-    Processing Time: 1-3 business days
-  </p>
+{" "}
+<p class="rjs-prod-1-ptime" data-range="1-3">
+  Processing Time: 1-3 business days
+</p>
 
-  <p class="rjs-prod-1-ttime" data-range="3-5">
-    Estimated Delivery Time: 3-5 business days
-  </p>
+{" "}
+<p class="rjs-prod-1-ttime" data-range="3-5">
+  Estimated Delivery Time: 3-5 business days
+</p>
 
 <div>
 ```
 
 #### Merchant return details
+
 - Return within
 - Return fee
 
 ```html showLineNumbers copy filename="product.html" /"rjs-prod-1-returnin"/ /"rjs-prod-1-returnfee"/ {5,10}
 <div class="product">
-
   <p>
     Return Policy:
     <span class="rjs-prod-1-returnin">30 days</span>
@@ -174,38 +190,42 @@ Offer is a object that consists of shipping  details, return policy, price, purc
     <span class="rjs-prod-1-returnfee">Free</span>
   </p>
 
-<div>
+  <div></div>
+</div>
 ```
 
 #### Validity
+
 This is defined as `reservedNames.product.productPriceValidUntilNext` in `rjs.config.json`
 
 ```json copy filename="rjs.config.json" {4}
-  {
-    "reservedNames": {
-      "product": {
+{
+  "reservedNames": {
+    "product": {
       "productPriceValidUntilNext": 30 //30days from generation date.
-      }
     }
   }
+}
 ```
 
 #### Purchase link
+
 The purchase link is automatically generated based on the hierarchical structure of the input file. For files containing multiple variants on a single page, the link includes specific variant parameters in the URL, such as `https://www.ashop.com/productPage?var=black_20_male.`
 
 Parameter name is defined as `reservedNames.product.varientParameterName` in `rjs.config.json`. Configure this according to your web server's logic of parameters handling.
 
 ```json copy filename="rjs.config.json" {4} /"var"/
-  {
-    "reservedNames": {
-      "product": {
+{
+  "reservedNames": {
+    "product": {
       "varientParameterName": "var"
-      }
     }
   }
+}
 ```
 
 #### Price & Currency
+
 <Callout>Alpha-3 code is for currency</Callout>
 ```html copy filename="product.html" /"rjs-prod-1-cost"/ /data-currency/ {5}
 <div class="product">
@@ -219,37 +239,42 @@ Parameter name is defined as `reservedNames.product.varientParameterName` in `rj
 ```
 
 #### Availability
+
 Availability is boolean (true or false)
 
 ```html copy filename="product.html" /rjs-prod-1-avail/ /data-avail/ {5}
 <div class="product">
-  
   <p>
     Availability:
     <span class="rjs-prod-1-avail" data-avail="true">In Stock</span>
   </p>
 
-<div>
+  <div></div>
+</div>
 ```
 
 #### Condition
+
 Two possible values are,
+
 - `new`
 - `used`
 
 ```html copy filename="product.html" /"rjs-prod-1-cond"/ /data-cond/ {5}
 <div class="product">
-  
   <p>
     Item Condition:
     <span class="rjs-prod-1-cond" data-cond="new">New</span>
   </p>
 
-<div>
+  <div></div>
+</div>
 ```
 
 ### 9. Varies By classes
+
 There are six type of variant class,
+
 - `Color` - color
 - `Gender` - audage
 - `Age` - audage
@@ -257,8 +282,12 @@ There are six type of variant class,
 - `Pattern` - pattern
 - `Size` - size
 
-<Callout type='info'>Two or more classes can be added by using separator between them.
-<br/>Example: `color-audage-gender`- Element's innerText value order should match them and follow after name of the product. (**see line number 4**)</Callout>
+<Callout type="info">
+  Two or more classes can be added by using separator between them.
+  <br />
+  Example: `color-audage-gender`- Element's innerText value order should match
+  them and follow after name of the product. (**see line number 4**)
+</Callout>
 
 <Callout>`data-var` should be added in **[product name](#1-product-name) element** (`rjs-prod-*-name`) element.</Callout>
 ```html showLineNumbers copy filename="product.html" /data-var="color-audage-gender"/ /class="rjs-prod-1-name"/ {3-5}
@@ -275,8 +304,10 @@ There are six type of variant class,
     
 <Callout type='default'>By default input file is overwriiten with result so `destination` is optional</Callout>
 
-<Callout type='info'>This is only for API method.
-We prefer CLI method for keeping it simpler (refer - [Working with API & CLI](/working-with-richie-js-api-and-cli)).</Callout>
+<Callout type="info">
+  This is only for API method. We prefer CLI method for keeping it simpler
+  (refer - [Working with API & CLI](/working-with-richie-js-api-and-cli)).
+</Callout>
 
 <Tabs items={['Single Varient',"Multi Varient"]}>
 
@@ -286,134 +317,142 @@ We prefer CLI method for keeping it simpler (refer - [Working with API & CLI](/w
   const filePath = 'product.html';
   const destination = 'dist/product.html'; /* optional */
 
-  richie(richResultType, filePath, destination);
-  ```
-  </Tabs.Tab>
+richie(richResultType, filePath, destination);
 
-  <Tabs.Tab>
-  ```js copy filename="func_params.js" {5} /'productwv'/
-  const richResultType = 'productwv';
-  const filePath = 'product.html';
-  const destination = 'dist/product.html'; /* optional */
+````
+</Tabs.Tab>
 
-  richie(richResultType, filePath, destination);
-  ```
+<Tabs.Tab>
+```js copy filename="func_params.js" {5} /'productwv'/
+const richResultType = 'productwv';
+const filePath = 'product.html';
+const destination = 'dist/product.html'; /* optional */
+
+richie(richResultType, filePath, destination);
+````
+
   </Tabs.Tab>
 
 </Tabs>
-
-   
 
 ## Example of a Instance
 
 ```html copy filename="article.html"
 <body>
+  <div class="product">
+    <!-- name -->
+    <h1 class="rjs-prod-1-name" data-var="color-audage-gender">
+      Denim Jacket | Black | Age 20 | Male
+    </h1>
 
-	<div class="product">
+    <!-- images -->
+    <img
+      class="rjs-prod-1-img"
+      src="https://example.com/image1.jpg"
+      alt="Product Image 1"
+    />
+    <img
+      class="rjs-prod-1-img"
+      src="https://example.com/image2.jpg"
+      alt="Product Image 2"
+    />
 
-		<!-- name -->
-		<h1 class="rjs-prod-1-name" data-var="color-audage-gender">Denim Jacket | Black | Age 20 | Male</h1>
+    <!-- description -->
+    <p class="rjs-prod-1-desc">
+      Product Description Lorem ipsum dolor sit amet, consectetur adipiscing
+      elit.
+    </p>
 
-		<!-- images -->
-		<img class="rjs-prod-1-img" src="https://example.com/image1.jpg" alt="Product Image 1">
-		<img class="rjs-prod-1-img" src="https://example.com/image2.jpg" alt="Product Image 2">
+    <!-- skuid -->
+    <p>
+      SKU ID:
+      <span class="rjs-prod-1-sku">123456789</span>
+    </p>
 
-		<!-- description -->
-		<p class="rjs-prod-1-desc">Product Description Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    <!--mpn code  -->
+    <p>
+      MPN Code:
+      <span class="rjs-prod-1-mpn">ABC123</span>
+    </p>
 
-		<!-- skuid -->
-		<p>
-			SKU ID:
-			<span class="rjs-prod-1-sku">123456789</span>
-		</p>
+    <!-- brand name -->
+    <p>
+      Brand:
+      <span class="rjs-prod-1-brand">XYZ Brand</span>
+    </p>
 
-		<!--mpn code  -->
-		<p>
-			MPN Code:
-			<span class="rjs-prod-1-mpn">ABC123</span>
-		</p>
+    <p>
+      Price:
+      <span class="rjs-prod-1-cost" data-currency="inr">990</span>
+    </p>
 
-		<!-- brand name -->
-		<p>
-			Brand:
-			<span class="rjs-prod-1-brand">XYZ Brand</span>
-		</p>
+    <p>
+      Availability:
+      <span class="rjs-prod-1-avail" data-avail="true">In Stock</span>
+    </p>
 
+    <p>
+      Item Condition:
+      <span class="rjs-prod-1-cond" data-cond="new">New</span>
+    </p>
 
-		<p>
-			Price:
-			<span class="rjs-prod-1-cost" data-currency="inr">990</span>
-		</p>
+    <p>
+      Return Policy:
+      <span class="rjs-prod-1-returnin">30 days</span>
+    </p>
 
-		<p>
-			Availability:
-			<span class="rjs-prod-1-avail" data-avail="true">In Stock</span>
-		</p>
+    <p>
+      Return Fees:
+      <span class="rjs-prod-1-returnfee">Free</span>
+    </p>
 
+    <!-- delivery across and return policy applicable country -->
+    <p>
+      Shipping Cost:
+      <span class="rjs-prod-1-delcost" data-delover="india">80</span>
+    </p>
 
-		<p>
-			Item Condition:
-			<span class="rjs-prod-1-cond" data-cond="new">New</span>
-		</p>
+    <p class="rjs-prod-1-ptime" data-range=" 1-3">
+      Processing Time: 1-3 business days
+    </p>
 
+    <p class="rjs-prod-1-ttime" data-range="3-5">
+      Estimated Delivery Time: 3-5 business days
+    </p>
 
-		<p>
-			Return Policy:
-			<span class="rjs-prod-1-returnin">30 days</span>
-		</p>
+    <!-- review -->
+    <section class="rjs-prod-1-reviews">
+      <div class="urate">
+        <!-- rating value -->
+        <p class="rv">4.5</p>
+        <!-- max rate -->
+        <p class="mr">5</p>
+        <p class="raterP">John</p>
+      </div>
 
-		<p>
-			Return Fees:
-			<span class="rjs-prod-1-returnfee">Free</span>
-		</p>
+      <div class="urate">
+        <!-- rating value -->
+        <p class="rv">4.5</p>
 
-		<!-- delivery across and return policy applicable country -->
-		<p>
-			Shipping Cost:
-			<span class="rjs-prod-1-delcost" data-delover="india">80</span>
-		</p>
+        <!-- max rate -->
+        <p class="mr">5</p>
 
-		<p class="rjs-prod-1-ptime" data-range=" 1-3">Processing Time: 1-3 business days</p>
+        <p class="raterO">Foogle</p>
+      </div>
+    </section>
 
-		<p class="rjs-prod-1-ttime" data-range="3-5">Estimated Delivery Time: 3-5 business days</p>
+    <!-- aggregate review -->
+    <div class="rjs-prod-1-aggrate">
+      <!-- aggregate rate that got -->
+      <p class="arv">100</p>
 
-		<!-- review -->
-		<section class="rjs-prod-1-reviews">
-			
-			<div class="urate">
-				<!-- rating value -->
-				<p class="rv">4.5</p>
-				<!-- max rate -->
-				<p class="mr">5</p>
-				<p class="raterP">John</p>
-			</div>
+      <!-- max possibly rate -->
+      <p class="mr">100</p>
 
-			<div class="urate">
-				<!-- rating value -->
-				<p class="rv">4.5</p>
-
-				<!-- max rate -->
-				<p class="mr">5</p>
-
-				<p class="raterO">Foogle</p>
-			</div>
-
-		</section>
-
-		<!-- aggregate review -->
-		<div class="rjs-prod-1-aggrate">
-			<!-- aggregate rate that got -->
-			<p class="arv">100</p>
-
-			<!-- max possibly rate -->
-			<p class="mr">100</p>
-
-			<!-- total user rate count -->
-			<p class="rc">1000</p>
-		</div>
-
-	</div>
-
+      <!-- total user rate count -->
+      <p class="rc">1000</p>
+    </div>
+  </div>
 </body>
 ```
 
@@ -580,6 +619,7 @@ We prefer CLI method for keeping it simpler (refer - [Working with API & CLI](/w
   ]
 </script>
 ```
-<br/>
-<br/>
+
+<br />
+<br />
 **Let's see what's next!**
