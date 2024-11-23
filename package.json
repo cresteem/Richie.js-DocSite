@@ -23,6 +23,8 @@
   },
   "homepage": "https://richiejs.cresteem.com/",
   "devDependencies": {
+    "@mantine/core": "^7.14.1",
+    "@mantine/hooks": "^7.14.1",
     "@types/dompurify": "^3.2.0",
     "@types/node": "22.9.1",
     "@types/react": "^18.3.12",

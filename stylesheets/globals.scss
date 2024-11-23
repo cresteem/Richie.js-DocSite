@@ -5,3 +5,30 @@
 .nextra-banner-container {
     @apply bg-primary;
 }
+th {
+    @apply text-lg;
+}
+td {
+    @apply border border-gray-300 px-4 py-2;
+}
+
+td:nth-child(3) > span {
+    @apply font-semibold text-primary;
+}
+
+td:nth-child(2) > span {
+    @apply font-normal text-red-500;
+}
+
+td:nth-child(1) {
+    @apply font-bold text-primary;
+}
+
+td:nth-child(3):before {
+    content: "✅";
+    @apply pr-2;
+}
+td:nth-child(2):before {
+    content: "❌";
+    @apply pr-2;
+}

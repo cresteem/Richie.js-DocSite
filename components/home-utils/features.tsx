@@ -50,7 +50,9 @@ export default function Features() {
         <div className="relative max-w-2xl mx-auto sm:text-center">
           <div className="relative z-10">
             <h3 className="text-gray-800 text-3xl font-semibold sm:text-4xl">
-              Features That Save Time, Enhance SEO, and Deliver Results
+              Features That <span className="text-primary">Save Time</span>,
+              Enhance <span className="text-primary">SEO</span>, and Deliver
+              Results
             </h3>
             <p className="mt-3">
               Explore the tools and capabilities designed to streamline your

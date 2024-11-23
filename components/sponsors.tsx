@@ -1,3 +1,5 @@
+import SponsorButton from "./utils/sponsor-button";
+
 export default function Sponsors() {
   return (
     <section className="flex flex-col justify-center items-center leading-loose pb-[8%]">
@@ -68,13 +70,7 @@ export default function Sponsors() {
               </li>
             </ul>
 
-            <a
-              href="https://github.com/sponsors/darsan-in"
-              target="_blank"
-              className="bg-primary px-6 py-2 rounded-full text-white mx-auto mt-3 block w-[200px] text-center hover:bg-primary/[70%]"
-            >
-              Become a sponsor
-            </a>
+            <SponsorButton className="mt-3" />
           </div>
         </div>
       </div>
