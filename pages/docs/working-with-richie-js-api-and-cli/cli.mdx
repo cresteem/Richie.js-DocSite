@@ -1,0 +1,103 @@
+---
+title: Richie.js CLI - Command Line Interface
+description: Learn how to use the Richie.js CLI to generate rich result snippets and initialize configuration for your projects.
+thumbnailUrl: https://www.cresteem.com/opensource/boost-seo-with-richie-js/thumbnail.webp
+---
+
+# Richie.js CLI
+
+Richie.js offers a Command Line Interface (CLI) for easy integration and management of rich result generation and configuration. This CLI allows you to generate SEO-rich snippets for your HTML files and initialize the tool's configuration automatically.
+
+## Available Commands
+
+The Richie.js CLI provides two core commands: **`make`** and **`init`**.
+
+### `make` Command
+
+The `make` command generates rich result snippets for all HTML files and injects them automatically. This command also allows you to control the output directory and exclude specific patterns.
+
+#### Usage
+
+```bash
+richie make [options]
+```
+
+#### Options
+
+- **`-d, --destDir <string>`**
+  Specifies the destination directory for the generated rich snippets (default: `dist`).
+- **`-o, --omitPatterns <patterns...>`**
+  Exclude specific directories or glob patterns from the rich result generation.
+
+- **`-p, --norm`**
+  Preserve the current state of the destination directory.
+
+#### Example
+
+```bash
+richie make --destDir public --omitPatterns "test/*" --norm
+```
+
+This command will generate rich result snippets for all HTML files, save them in the `public` directory, omit files matching the `test/*` pattern, and preserve the existing files in the destination directory.
+
+#### Output
+
+Once the command completes, you'll see a success message:
+
+```bash
+✅ Rich result snippets are generated for all HTML & saved.
+```
+
+If there is an error during the generation, it will display:
+
+```bash
+⚠️ Error generating rich result snippets: <error details>
+```
+
+### `init` Command
+
+The `init` command initializes the Richie.js configuration required for rich result generation.
+
+#### Usage
+
+```bash
+richie init
+```
+
+This will automatically create and set up the `richiejs.config.js` file in your project directory.
+
+#### Example
+
+```bash
+richie init
+```
+
+After running this command, you will see the following message:
+
+```bash
+🚀 Richie.js configuration initialised.
+```
+
+If there is an error initializing the configuration, it will display:
+
+```bash
+⚠️ Error initializing icon associations: <error details>
+```
+
+## Conclusion
+
+Richie.js CLI simplifies the process of generating rich SEO snippets and initializing configurations in your project. By using the `make` and `init` commands, you can easily enhance your site's SEO performance and ensure all configurations are properly set up.
+
+## Keywords
+
+import style from "../../../stylesheets/utils.module.scss";
+
+<ul className={style.keywords}>
+  <li>Richie JS</li>
+  <li>API</li>
+  <li>CLI (Command Line Interface)</li>
+  <li>Application Programming Interface</li>
+  <li>SEO Tool</li>
+  <li>Search Engine Visibility</li>
+  <li>User Experience</li>
+</ul>

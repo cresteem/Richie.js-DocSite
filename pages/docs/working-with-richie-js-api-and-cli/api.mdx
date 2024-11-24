@@ -1,0 +1,196 @@
+---
+title: Richie.js API Reference
+description: Explore the API methods for Richie.js, including browser-side and Node.js implementations for rich result generation.
+thumbnailUrl: https://www.cresteem.com/opensource/boost-seo-with-richie-js/thumbnail.webp
+---
+
+# Richie.js API Reference
+
+Richie.js provides flexible APIs for integrating structured data into your project. This reference covers the API for **browser-side** and **Node.js** setups, including detailed descriptions of available rich result types.
+
+---
+
+## Browser-Side API
+
+The Richie.js browser-side API allows you to dynamically generate rich results within the browser environment.
+
+### `RichieJS.default` Function
+
+#### Syntax
+
+```javascript
+RichieJS.default({
+  richieNames: [], // Array of rich result types
+});
+```
+
+#### Parameters
+
+- **`richieNames`** _(Array)_:  
+  Specify the rich result types to generate. Each value represents a type of structured data.  
+  **Allowed Values**:
+
+import { Table, Td, Th, Tr } from "nextra/components";
+
+<Table id="env">
+  <thead>
+    <Tr>
+      <Th>Rich Result Type</Th>
+      <Th>Description</Th>
+    </Tr>
+  </thead>
+  <tbody>
+    <Tr>
+      <Td>`"article"`</Td>
+      <Td>Structured data for blog posts or articles.</Td>
+    </Tr>
+    <Tr>
+      <Td>`"breadcrumb"`</Td>
+      <Td>Breadcrumb navigation for improving site hierarchy visibility.</Td>
+    </Tr>
+    <Tr>
+      <Td>`"crecipe"`</Td>
+      <Td>Carousel of multiple recipes.</Td>
+    </Tr>
+    <Tr>
+      <Td>`"cmovie"`</Td>
+      <Td>Carousel of movies or video listings.</Td>
+    </Tr>
+    <Tr>
+      <Td>`"crestaurant"`</Td>
+      <Td>Carousel of restaurants or dining options.</Td>
+    </Tr>
+    <Tr>
+      <Td>`"ccourse"`</Td>
+      <Td>Carousel of courses or educational content.</Td>
+    </Tr>
+    <Tr>
+      <Td>`"recipe"`</Td>
+      <Td>A single recipe rich result.</Td>
+    </Tr>
+    <Tr>
+      <Td>`"movie"`</Td>
+      <Td>A single movie rich result.</Td>
+    </Tr>
+    <Tr>
+      <Td>`"restaurant"`</Td>
+      <Td>A single restaurant or dining place rich result.</Td>
+    </Tr>
+    <Tr>
+      <Td>`"course"`</Td>
+      <Td>A single course or educational content rich result.</Td>
+    </Tr>
+    <Tr>
+      <Td>`"event"`</Td>
+      <Td>Details about an event (date, location, etc.).</Td>
+    </Tr>
+    <Tr>
+      <Td>`"faq"`</Td>
+      <Td>Frequently Asked Questions with answers.</Td>
+    </Tr>
+    <Tr>
+      <Td>`"video"`</Td>
+      <Td>Video object with details like duration and upload date.</Td>
+    </Tr>
+    <Tr>
+      <Td>`"localbusiness"`</Td>
+      <Td>
+        Rich result for a business with physical presence (address, hours,
+        etc.).
+      </Td>
+    </Tr>
+    <Tr>
+      <Td>`"organization"`</Td>
+      <Td>Details about an organization (logo, name, and contact details).</Td>
+    </Tr>
+    <Tr>
+      <Td>`"product"`</Td>
+      <Td>Information about a specific product.</Td>
+    </Tr>
+    <Tr>
+      <Td>`"productwv"`</Td>
+      <Td>A product group or collection of related products.</Td>
+    </Tr>
+    <Tr>
+      <Td>`"profile"`</Td>
+      <Td>Rich result for a personal or organizational profile.</Td>
+    </Tr>
+    <Tr>
+      <Td>`"searchbox"`</Td>
+      <Td>Structured data for a site-wide search box.</Td>
+    </Tr>
+    <Tr>
+      <Td>`"software"`</Td>
+      <Td>Information about software applications or tools.</Td>
+    </Tr>
+  </tbody>
+</Table>
+
+#### Example Usage
+
+```javascript
+RichieJS.default({
+  richieNames: ["crecipe", "faq"],
+});
+```
+
+This will dynamically generate the JSON-LD snippets for a recipe carousel and a FAQ section.
+
+---
+
+## Node.js API
+
+The Node.js API is designed to generate JSON-LD structured data from pre-rendered HTML files.
+
+### `richie` Function
+
+#### Syntax
+
+```javascript
+richie(
+  richieNames: richies[], // Array of rich result types
+  filepath: string,       // Path to the input HTML file
+  destinationPath: string = "" // Optional output directory
+): Promise<void>;
+```
+
+#### Parameters
+
+- **`richieNames`** _(Array)_:  
+  Specify the rich result types to generate. Each value represents a type of structured data (refer to the browser-side API table for details).
+
+- **`filepath`** _(String)_:  
+  Path to the input HTML file where the structured data will be added.
+
+- **`destinationPath`** _(String)_ _(Optional)_:  
+  Output path to save the modified HTML file. Defaults to overwriting the original file.
+
+#### Example Usage
+
+```javascript
+import { richie } from "@cresteem/richie-js";
+
+await richie(
+  ["productwv", "breadcrumb"],
+  "./input/index.html",
+  "./output.html"
+);
+```
+
+This will process the specified HTML file and inject the JSON-LD snippets for a product group and breadcrumb navigation.
+
+---
+
+## Keywords
+
+import style from "../../../stylesheets/utils.module.scss";
+
+<ul className={style.keywords}>
+  <li>Richie JS</li>
+  <li>Browser-Side API</li>
+  <li>Node.js API</li>
+  <li>SEO Optimization</li>
+  <li>Rich Results</li>
+  <li>Carousel Structured Data</li>
+  <li>Product Group Data</li>
+</ul>
