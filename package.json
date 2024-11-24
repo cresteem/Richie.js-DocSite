@@ -1,7 +1,7 @@
 {
   "name": "richie-js-docsite",
   "version": "0.2b",
-  "description": "Richie JS API References",
+  "description": "Richie.js API References",
   "type": "module",
   "scripts": {
     "dev": "next dev",

@@ -1,104 +1,166 @@
 ---
-title: "All Your Richie JS Questions Answered: A Comprehensive FAQ"
-description: Learn about Richie JS, an open-source SEO tool that generates rich results for enhanced search engine visibility and user experience. Discover its features, configurations, and usage guides to improve your website's search engine performance.
+title: "All Your Richie.js Questions Answered: A Comprehensive FAQ"
+description: "Learn about Richie.js, an open-source SEO tool that generates rich results for enhanced search engine visibility and user experience. Discover its features, configurations, and usage guides to improve your website's search engine performance."
 thumbnailUrl: https://www.cresteem.com/opensource/boost-seo-with-richie-js/thumbnail.webp
 ---
 
 import { Callout } from "nextra/components";
+import style from "../../stylesheets/utils.module.scss";
 
 # FAQ
 
 <Callout type="error" emoji="🚨">
-  Help us to add more FAQ by asking your questions on [telegram
-  channel](https://t.me/cresteem/1)
+  Help us add more FAQs by asking your questions on our [Telegram
+  channel](https://t.me/cresteem/1).
 </Callout>
 
 <details>
-  <summary>What types of rich results does Richie JS support?</summary>
-  Richie JS can generate wide range of rich results recognized by Google, including
-  article, breadcrumb, movie & carousel, recipe & carousel, course & carousel, restaurant
-  & carousel, event, faq, learning video, local business, organization, product &
-  variants, profile page, sitelinks search box, and software app.
-</details>
-
-<details>
-  <summary>How can I contribute to Richie JS or report issues?</summary>
-  You can report your issue on our Github repo of [Richie JS](https://github.com/cresteem/Richie-JS)
-  and we encourage opensource contributor to follow our [contributor guidelines](/contributing-to-richie-js).
-</details>
-
-<details>
-  <summary>What output format does Richie JS generate?</summary>
-  Richie JS generates JSON-linked data and automatically injects them into HTML input
-  sources, eliminating the need for manual intervention. Once you've commanded Richie
-  JS, the output files are ready for deployment.
+  <summary>
+    <strong>What types of rich results does Richie.js support?</strong>
+  </summary>
+  Richie.js supports a wide range of rich results recognized by Google, including:
+  Article, Breadcrumb, Movie & Carousel, Recipe & Carousel, Course & Carousel, Restaurant
+  & Carousel, Event, FAQ, Learning Video, Local Business, Organization, Product &
+  Variants, Profile Page, Sitelinks Search Box, and Software App.
 </details>
 
 <details>
   <summary>
-    How does Richie JS simplify the process of generating rich results?
+    <strong>How can I contribute to Richie.js or report issues?</strong>
   </summary>
-  To create rich results, traditionally you'd need to manually copy and paste your
-  page content, even though it's already on your webpage. But fear not! That's where
-  Richie JS steps in. It automates this process for you. All you need to do is use
-  a reserved class name. You're free to choose your own or simply use one of our
-  predefined ones. Richie JS then looks up by queries it using CSS selectors. From
-  there, it automatically generates rich results without any interruptions, effectively
-  cutting out the manual work for you.
-</details>
-
-<details>
-  <summary>What steps are involved in using Richie JS?</summary>
-  Simply follow our documentation to use the reserved class name corresponding to
-  your desired rich result type. Then, command Richie JS, and voila, you've got it!
-</details>
-
-<details>
-  <summary>Where are the outputs stored by default?</summary>
-  By default outputs are stored inside `dist` You can change output directory by
-  passing it to the command line when exucuting Richie JS (Kindly refer [working
-  with API & CLI](/working-with-richie-js-api-and-cli)).
-</details>
-
-<details>
-  <summary>How do I use reserved classes in HTML with Richie JS?</summary>
-  To use reserved classes in HTML for Richie JS, simply refer to the documentation
-  corresponding to your desired rich result type. Each rich result type has its own
-  set of reserved names, so it's important to follow the guidelines provided for
-  that specific type. By doing so, you'll be able to use the reserved class names
-  accordingly and generate the desired rich results seamlessly.
-</details>
-
-<details>
-  <summary>Is Richie JS open-source? What license does it use?</summary>
-  Yes it is open source. and licenced under Apache 2.0, By means we give complete
-  freedom to users and developers to use commercially or non commercially without
-  any limitation.
+  You can report issues on our [GitHub repo for Richie.js](https://github.com/cresteem/Richie.js)
+  and follow our [contributor guidelines](/docs/contributing-to-richie-js) to get
+  involved.
 </details>
 
 <details>
   <summary>
-    Can I use Richie JS for both personal and commercial projects?
+    <strong>What output format does Richie.js generate?</strong>
   </summary>
-  Yes, absolutely since it is licence under Apache 2.0.
+  Richie.js generates JSON-LD structured data and injects it into HTML sources automatically,
+  saving you from manual coding. Once the command is executed, your files are ready
+  for deployment.
 </details>
 
 <details>
   <summary>
-    Does Richie JS provide any support or assistance for troubleshooting?
+    <strong>
+      How does Richie.js simplify the process of generating rich results?
+    </strong>
   </summary>
-  You can reach us through our telegram channel or via email (connect@cresteem.com).
-  We're here to assist you every step of the way.
+  Richie.js automates the generation of rich results by using reserved class names
+  and CSS selectors to extract the relevant content from your pages. It eliminates
+  the need for manual copying and pasting, making it easier for you to enhance your
+  site's SEO.
 </details>
 
-import style from "../../stylesheets/utils.module.scss";
+<details>
+  <summary>
+    <strong>What steps are involved in using Richie.js?</strong>
+  </summary>
+  Simply follow our documentation to use the appropriate reserved class name for
+  your desired rich result type. Then, run Richie.js and watch the magic happen!
+</details>
 
-<br />
-<br />
-<br />
-<strong>Keywords:</strong>
+<details>
+  <summary>
+    <strong>Where are the outputs stored by default?</strong>
+  </summary>
+  By default, Richie.js stores outputs in the `dist` folder. You can change the output
+  directory by specifying a path when running the CLI. For more details, refer to
+  our [Working with API & CLI](/working-with-richie-js-api-and-cli) guide.
+</details>
+
+<details>
+  <summary>
+    <strong>How do I use reserved classes in HTML with Richie.js?</strong>
+  </summary>
+  To use reserved classes in HTML, refer to the documentation for your specific rich
+  result type. Each type comes with a set of predefined reserved class names, ensuring
+  easy integration for automatic rich results generation.
+</details>
+
+<details>
+  <summary>
+    <strong>Is Richie.js open-source? What license does it use?</strong>
+  </summary>
+  Yes, Richie.js is open-source and licensed under the Apache 2.0 license. This allows
+  developers and users to use it for both commercial and non-commercial projects
+  without restrictions.
+</details>
+
+<details>
+  <summary>
+    <strong>
+      Can I use Richie.js for both personal and commercial projects?
+    </strong>
+  </summary>
+  Absolutely! Richie.js is licensed under Apache 2.0, which grants you full freedom
+  to use it in personal, commercial, or enterprise-level projects.
+</details>
+
+<details>
+  <summary>
+    <strong>
+      Does Richie.js provide any support or assistance for troubleshooting?
+    </strong>
+  </summary>
+  Yes, if you encounter any issues, you can reach us through our [Telegram channel](https://t.me/cresteem/1)
+  or by emailing us at connect@cresteem.com. We're always here to help you!
+</details>
+
+<details>
+  <summary>
+    <strong>Can I use Richie.js with any website or platform?</strong>
+  </summary>
+  Yes, Richie.js can be used with any website that supports HTML and JavaScript.
+  It works well with content management systems (CMS) like WordPress, as well as
+  custom-built websites. Since Richie.js integrates by adding specific class names
+  and generates structured data automatically, it can be used on most platforms without
+  complex configurations.
+</details>
+
+<details>
+  <summary>
+    <strong>
+      What if I don't have a technical background? Can I still use Richie.js?
+    </strong>
+  </summary>
+  Absolutely! Richie.js is designed to be user-friendly. While some familiarity with
+  HTML and JavaScript is beneficial, the tool simplifies the process by automating
+  the generation of rich results. You only need to apply reserved class names, and
+  Richie.js will handle the rest. Our documentation provides clear instructions for
+  users of all skill levels.
+</details>
+
+<details>
+  <summary>
+    <strong>How often does Richie.js need to be updated?</strong>
+  </summary>
+  Richie.js is continuously maintained to stay up-to-date with the latest SEO standards
+  and Google’s rich result guidelines. We recommend checking for updates periodically
+  or following the project’s repository on GitHub to keep your version of Richie
+  JS current.
+</details>
+
+<details>
+  <summary>
+    <strong>
+      Does Richie.js support dynamic content (e.g., content that loads after the
+      page has loaded)?
+    </strong>
+  </summary>
+  Richie.js works with static HTML content that is loaded when the page is rendered.
+  For dynamically loaded content (e.g., JavaScript frameworks like React or Vue.js),
+  you'll need to ensure that the content is available in the DOM at the time Richie
+  JS is executed. You may need to trigger Richie.js after dynamic content is loaded
+  or use server-side rendering (SSR) to ensure proper integration.
+</details>
+
+## Keywords
+
 <ul className={style.keywords}>
-  <li>Richie JS</li>
+  <li>Richie.js</li>
   <li>FAQ</li>
   <li>SEO Tool</li>
   <li>Open-source</li>
