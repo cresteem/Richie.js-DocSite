@@ -1,0 +1,145 @@
+---
+title: "Getting Started with Richie JS: Node.js Setup"
+description: "Learn how to set up Richie JS in a Node.js environment to generate rich results from pre-rendered HTML files using the API or CLI. Boost your SEO with automated structured data generation."
+thumbnailUrl: "https://www.cresteem.com/opensource/boost-seo-with-richie-js/thumbnail.webp"
+---
+
+import style from "../../../stylesheets/utils.module.scss";
+
+# Node.js Setup
+
+## How Richie.js Works in Node.js?
+
+Richie.js allows you to generate **JSON-LD structured data** from **pre-rendered HTML files**. This is useful for SEO purposes, helping search engines better understand your content. Richie.js works seamlessly in **Node.js** using either the **API** or **CLI** method.
+
+### Step 1: Install Richie.js Package
+
+To get started, install Richie.js in your **Node.js** project using **npm** or **yarn**.
+
+Run the following command in your project’s root directory:
+
+```bash
+npm install @cresteem/richie-js
+```
+
+or
+
+```bash
+yarn add @cresteem/richie-js
+```
+
+This installs the Richie.js package and its dependencies so that you can begin using it for generating structured data.
+
+### Step 2: Use Reserved Class Names in HTML Elements
+
+Richie.js works by identifying specific **reserved class names** within your HTML elements. These class names help Richie.js scrape the necessary data to generate JSON-LD output for various rich result types. In this example, we’ll use the **FAQ** rich result type.
+
+Here's an example of how your HTML should look when using Richie.js for **FAQ** structured data:
+
+```html
+<body>
+  <!-- rjs reserved name - faq reserved name - id(unique number) - reserved wrapper name -->
+  <details class="rjs-faq">
+    <summary class="question">
+      Can you provide a content management system (CMS) that allows me to update
+      the website easily?
+    </summary>
+
+    <p class="answer">
+      <b
+        >Certainly! We take pride in crafting custom Content Management Systems
+        (CMS) tailored exclusively to your requirements.</b
+      >
+      Unlike common pre-made template CMS, our solutions are designed with your
+      unique needs in mind. With Cresteem, managing your website's content is
+      not only simple but also seamlessly integrated for a truly
+      <b>personalized experience.</b>
+    </p>
+  </details>
+</body>
+```
+
+In this example:
+
+- The class `rjs-faq` is used to identify the FAQ element.
+- The class `question` is used for the FAQ question.
+- The class `answer` is used for the FAQ answer.
+
+Richie.js will scan these reserved class names in the HTML, extract the necessary content, and generate the corresponding **JSON-LD** data for the **FAQ** rich result type.
+
+Each **rich result type** (e.g., `Article`, `Product`, `FAQ`) has its own set of reserved class names that are required for Richie.js to generate the correct structured data, refer [Supported Rich Results](/docs/exploring-rich-results-with-richie-js).
+
+### Step 3: Call Richie.js API or CLI Method
+
+Once you’ve installed Richie.js and set up your HTML with the required class names, you can use either the **API** or the **CLI** method to generate the structured data.
+
+#### Method 1: Using Richie.js API
+
+You can learn more about using the **Richie.js API** on the [API Setup Page](/docs/working-with-richie-js-api-and-cli/api).
+
+Here’s an example of how to use Richie.js with the API to generate structured data:
+
+```javascript
+const { richie } = require("@cresteem/richie-js");
+
+const type = "faq"; // Set your desired rich result type
+const inputFile = "pages/faq-page.html"; // Your pre-rendered HTML file
+const outputFile = "./output.html";
+
+// Generate structured data (JSON-LD)
+richie([type], inputFile, outputFile);
+```
+
+This will process the HTML file specified in `inputFile`, scrape the relevant information based on the class names, and generate the corresponding JSON-LD output in the `outputFile` location.
+
+#### Method 2: Using Richie.js CLI
+
+You can learn more about using the **Richie.js CLI** on the [CLI Setup Page](/docs/working-with-richie-js-api-and-cli/cli).
+
+If you prefer using the **CLI**, Richie.js offers a simple command for batch processing:
+
+use the following command to generate structured data for your pre-rendered HTML files:
+
+```bash
+rjs make
+```
+
+or
+
+```bash
+npx rjs make
+```
+
+This command will look for the HTML files in your project and automatically generate the appropriate JSON-LD data based on the defined class names for each file.
+
+---
+
+### Summary
+
+In just three easy steps, you can use Richie.js to generate SEO-friendly structured data for your static HTML pages:
+
+1. **Install the Richie.js package** in your Node.js project.
+2. **Apply the required reserved class names** to your HTML elements.
+3. **Call Richie.js via API or CLI** to generate the corresponding JSON-LD structured data.
+
+For more detailed instructions on using the **API** or **CLI**, please refer to their respective pages in the documentation:
+
+- [Richie.js API Setup](/docs/working-with-richie-js-api-and-cli/api)
+- [Richie.js CLI Setup](/docs/working-with-richie-js-api-and-cli/cli)
+
+---
+
+### Keywords
+
+<ul className={style.keywords}>
+  <li>Node.js</li>
+  <li>Richie JS</li>
+  <li>API</li>
+  <li>CLI</li>
+  <li>SEO Tool</li>
+  <li>JSON-LD</li>
+  <li>Structured Data</li>
+  <li>Search Engine Optimization</li>
+  <li>Installation</li>
+  <li>Rich Results</li>
+</ul>

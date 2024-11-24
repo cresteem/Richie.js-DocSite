@@ -1,53 +1,96 @@
 ---
-title: "Getting Started with Richie JS: Enhance Your SEO Journey"
-description: Discover Richie JS, a powerful SEO tool that generates rich results for enhanced search engine visibility and improved user experience. Learn how to simplify your SEO process and increase your online presence with our innovative solution.
+title: "Getting Started with Richie.js: Elevate Your SEO Game"
+description: Begin your journey with Richie.js, the powerful SEO tool that simplifies creating rich results. Learn step-by-step how to set up Richie.js to enhance your search engine visibility and user experience.
 thumbnailUrl: https://www.cresteem.com/opensource/boost-seo-with-richie-js/thumbnail.webp
 ---
 
+import { Steps, Table, Td, Th, Tr } from "nextra/components";
+import style from "../../stylesheets/utils.module.scss";
+import { Cards } from "nextra/components";
+import { BsBrowserChrome } from "react-icons/bs";
+import { FaNodeJs } from "react-icons/fa6";
+
 # Getting Started
 
-## Prerequisite
+## How Richie.js Works
 
-To use **Richie JS**, you will need the following prerequisites:
+Richie.js simplifies the process of generating structured data for rich results, improving your website's search engine visibility and user engagement. Here's how it works:
 
-- **Node.js (v18.0 or later)** installed on your system. You can download it from
-  [https://nodejs.org/en/download](https://nodejs.org/en/download).
-- **NPM** (Node Package Manager) or **YARN** should be installed along with Node.js.
-- **Internet** to install Richie JS from npm registry.
-- **Basic knowledge** of CSS selectors and HTML attributes.
+<Steps>
+### Step 1: Choose Your Environment
+Richie.js can be used in two main ways:
+- **Browser-Side (Dynamic)**: Dynamically generates structured data directly in the browser at runtime.
+- **Node.js (Pre-Generated)**: Generates structured data ahead of time, which can be embedded into static webpages.
 
-Once you have these prerequisites in place, you can follow the installation steps in the project's documentation
-to set up and run the project on your local machine.
+### Step 2: Integrate Richie.js
 
-## Installation
+- For **browser-side use**, include the Richie.js script and call its API to dynamically generate structured data.
+- For **Node.js**, install Richie.js and use its CLI or API to pre-generate JSON-LD for your static or pre-rendered pages.
 
-```sh npm2yarn
-npm install -D @cresteem/richie-js
-```
+### Step 3: Automate Rich Results
 
-<br />
-<br />
-<br />
-You are almost ready to use Richie JS. Now we will explore how to configure Richie
-JS for your own projects and how to enhance custom configuration experience by intellisense.
-<br />
-<b>Let's setup Richie JS!</b>
+Once integrated, Richie.js automatically identifies the desired elements on your webpage and generates structured data for the specified rich result types. This ensures your website is SEO-ready without manual coding efforts.
 
-import style from "../../stylesheets/utils.module.scss";
+</Steps>
 
-<br />
-<br />
-<br />
-<strong>Keywords:</strong>
+---
+
+## Which Environment Should You Choose?
+
+Select an environment based on your project requirements:
+
+<Table id="env">
+  <thead>
+    <Tr>
+      <Th>Environment</Th>
+      <Th>Best For</Th>
+    </Tr>
+  </thead>
+  <tbody>
+    <Tr>
+      <Td>Browser-Side</Td>
+      <Td>Client-side rendering, or dynamic data-driven sites.</Td>
+    </Tr>
+    <Tr>
+      <Td>Node.js</Td>
+      <Td>Generating structured data for static pages or pre-rendered HTML.</Td>
+    </Tr>
+  </tbody>
+</Table>
+
+For detailed setup instructions tailored to each environment, explore the following guides:
+
+<Cards>
+  <Cards.Card
+    icon={<BsBrowserChrome />}
+    title="Browser-Side Setup"
+    href="/docs/getting-started-with-richie-js/browser-side"
+  />
+  <Cards.Card
+    icon={<FaNodeJs />}
+    title="Node.js Setup"
+    href="/docs/getting-started-with-richie-js/node-js"
+  />
+</Cards>
+
+---
+
+<b>Next Steps:</b> Choose the environment that fits your needs and get started with
+Richie.js today!
+
+---
+
+### Keywords
+
 <ul className={style.keywords}>
-  <li>Richie JS</li>
-  <li>Getting Started</li>
-  <li>SEO Tool</li>
-  <li>Search Engine Visibility</li>
-  <li>User Experience</li>
-  <li>Online Presence</li>
-  <li>Node.js</li>
-  <li>NPM</li>
-  <li>Yarn</li>
-  <li>Installation</li>
+  <li>Richie.js</li>
+  <li>SEO tool</li>
+  <li>Getting started with Richie.js</li>
+  <li>Rich results generator</li>
+  <li>Node.js SEO</li>
+  <li>Browser-side SEO integration</li>
+  <li>Structured data automation</li>
+  <li>JSON-LD generator</li>
+  <li>Search engine visibility</li>
+  <li>User experience optimization</li>
 </ul>

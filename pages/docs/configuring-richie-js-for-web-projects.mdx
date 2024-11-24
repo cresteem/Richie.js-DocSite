@@ -1,139 +1,256 @@
 ---
-title: "Intuitive Configuration: Enhancing Web Projects with Richie JS"
-description: Learn how to configure Richie JS for your web project with ease. Discover the power of customizing input parsing and results with our intuitive configuration file structure. Get started with configuring rich results for your website today!
-thumbnailUrl: https://www.cresteem.com/opensource/boost-seo-with-richie-js/thumbnail.webp
+title: "Richie.js Configuration Guide: Node.js and Browser-Side"
+description: Learn how to configure Richie.js for both Node.js and browser-side environments. Follow the same configuration schema with different implementation methods. Customize reserved names for specific rich result types.
+thumbnailUrl: https://www.cresteem.com/opensource/boost-seo-with-richie-js/configuration-guide-thumbnail.webp
 ---
-
-import { Tabs } from "nextra/components";
-
-# Configurations
-
-Richie JS is pre-configured for user convenience, allowing developers to start using it immediately. For more granular control over input parsing and results, you can create an `rjs.config.json` file in your project's root directory.
-
-This configuration file allows you to specify class names to look up for information in HTML, Which Richie JS will use them to generate rich results for your web pages. Additionally, it lets you customize certain behaviors and preferences of Richie JS to better suit your project's needs. By [Intellisense Support](/unlocking-intellisense-for-richie-js) we can customize configuration simpler and faster without issues.
-
-## Configuration File Structure
-
-```json
-{
-  "domainAddress": "cresteem.com",
-  "timeFormat": "yyyy-MM-dd hh:mm a",
-  "siteSearchBoxFieldName": "searchTerm",
-  "reservedNames": {
-    "aggregateRating": { ... },
-    "reviews": { ... },
-    "common": { ... },
-    "article": { ... },
-    "movie": { ... },
-    "recipe": { ... },
-    "course": { ... },
-    "restaurant": { ... },
-    "events": { ... },
-    "faqPage": { ... },
-    "video": { ... },
-    "localBusiness": { ... },
-    "organisation": { ... },
-    "product": { ... },
-    "profilePage": { ... },
-    "softwareApp": { ... },
-    "businessEntity": { ... }
-  },
-  "preference": { ... }
-}
-```
-
-## Configurations Description
-
-Configurations can be divided into three parts:
-
-<Tabs items={['1.Reserved Names','2.Preferences','3.Other Configuration']}>
-   <Tabs.Tab>
-      **Type:** `object`<br/>
-      **Description:** Specifies where to look for information required to create rich result snippets.
-
-      Configurations available inside it are:
-      1. **common**
-      2. **aggregateRating**
-      3. **reviews**
-      4. **article**
-      5. **movie**
-      6. **recipe**
-      7. **course**
-      8. **restaurant**
-      9. **events**
-      10. **faqPage**
-      11. **video**
-      12. **localBusiness**
-      13. **organisation**
-      14. **product**
-      15. **profilePage**
-      16. **softwareApp**
-      17. **businessEntity**
-
-      We will see each of them in dedicated page for more details about it. You can start it from [Article](/configuring-richie-js-for-web-projects/article)
-
-   </Tabs.Tab>
-   
-   <Tabs.Tab>
-      **Type:** `object`<br/>
-      **Description:** Defines which type of rich results to generate, particularly for categories such as movies, recipes, courses, restaurants and product.
-
-      1. **isCarousals**
-
-            **Type:** `object`<br/>
-            **Description:** Control to generate carousels of below richies.<br/>
-            `true` for carousels and `false` for standard rich result.
-
-         - **movie:** `boolean`
-         - **course:** `boolean`
-         - **restaurant:** `boolean`
-         - **recipe:** `boolean`
-
-      <br/>
-      2. **isProductVar**
-         - **Type:** `boolean`
-         - **Description:** Specifies whether product has varients `true` or it is a single product `false`.
-
-   </Tabs.Tab>
-
-   <Tabs.Tab>
-      - **Description:** Sets basic information such as domainAddress, timeFormat, and siteSearchBoxFieldName for [Sitelink Search Box](https://developers.google.com/search/docs/appearance/structured-data/sitelinks-searchbox).
-
-      1. **domainAddress**
-      - **Type:** `string`
-      - **Description:** The domain address of your website.
-      - **Example:** `"cresteem.com"`
-      <br/>
-
-      2. **timeFormat**
-      - **Type:** `string`
-      - **Description:** The format used for mentioning time in web page. Follow [these tokens.](https://moment.github.io/luxon/#/parsing?id=table-of-tokens)
-      - **Example:** `"yyyy-MM-dd hh:mm a"`
-      <br/>
-
-      3. **siteSearchBoxFieldName**
-      - **Type:** `string`
-      - **Description:** The name attribute of the site search box field.
-      - **Example:** `"searchTerm"`
-
-   </Tabs.Tab>
-
-</Tabs>
-
-<br />
-<br />
-**Let's see how to configure for each rich result in detail.**
 
 import style from "../../stylesheets/utils.module.scss";
 
-<br />
-<br />
-<br />
-<strong>Keywords:</strong>
+# Configuration Guide: Node.js and Browser-Side
+
+Richie.js provides a flexible configuration schema that can be used in both **Node.js** and **browser-side** environments. The schema supports customization for preferences, reserved names, and rich result types.
+
+---
+
+## Configuration Schema Overview
+
+Richie.js uses a unified configuration schema with the following key options:
+
+### **1. Domain Address**
+
+- **Key**: `domainAddress`
+- **Description**: Specifies the base domain for generating structured data.
+- **Example**: `"example.com"`
+
+### **2. Preferences**
+
+The `preference` object allows customization of key features for generating structured data.
+
+#### **Properties**
+
+import { Table, Td, Th, Tr } from "nextra/components";
+
+<Table id="env">
+  <thead>
+    <Tr>
+      <Th>Preference</Th>
+      <Th>Type</Th>
+      <Th>Description</Th>
+      <Th>Default</Th>
+    </Tr>
+  </thead>
+  <tbody>
+    <Tr>
+      <Td>isCarousals.movie</Td>
+      <Td>boolean</Td>
+      <Td>Enable or disable carousel support for movies.</Td>
+      <Td>false</Td>
+    </Tr>
+    <Tr>
+      <Td>isCarousals.course</Td>
+      <Td>boolean</Td>
+      <Td>Enable or disable carousel support for courses.</Td>
+      <Td>false</Td>
+    </Tr>
+    <Tr>
+      <Td>isCarousals.restaurant</Td>
+      <Td>boolean</Td>
+      <Td>Enable or disable carousel support for restaurants.</Td>
+      <Td>false</Td>
+    </Tr>
+    <Tr>
+      <Td>isCarousals.recipe</Td>
+      <Td>boolean</Td>
+      <Td>Enable or disable carousel support for recipes.</Td>
+      <Td>false</Td>
+    </Tr>
+    <Tr>
+      <Td>isProductVar</Td>
+      <Td>boolean</Td>
+      <Td>Enable product group for rich results.</Td>
+      <Td>false</Td>
+    </Tr>
+    <Tr>
+      <Td>breadcrumb</Td>
+      <Td>boolean</Td>
+      <Td>Enable or disable breadcrumb structured data.</Td>
+      <Td>false</Td>
+    </Tr>
+    <Tr>
+      <Td>siteSearchBoxFieldName</Td>
+      <Td>string</Td>
+      <Td>
+        Specifies the name of the search input field for the site search box.
+      </Td>
+      <Td>"query"</Td>
+    </Tr>
+  </tbody>
+</Table>
+
+#### **Example Configuration**
+
+```javascript
+preference: {
+  isCarousals: {
+    movie: true,
+    course: false,
+    restaurant: true,
+    recipe: false,
+  },
+  isProductVar: true,
+  breadcrumb: true,
+  siteSearchBoxFieldName: "searchTerm",
+}
+```
+
+### **3. Reserved Names**
+
+Reserved names are identifiers used for specific fields when generating rich result structured data. This allows you to align Richie.js with your website’s naming conventions.
+
+#### Example Reserved Names Configuration:
+
+```javascript
+reservedNames: {
+  siteSearchBox: {
+    baseID: "search-field",
+  },
+  aggregateRating: {
+    wrapper: "rating-container",
+    aggregatedRatingValue: "rating-value",
+    maxRangeOfRating: "max-rating",
+    numberOfRatings: "review-count",
+  },
+  article: {
+    baseID: "article-base",
+    articleType: "article-category",
+    authorNameStartwith: "author-",
+  },
+}
+```
+
+To see the complete list of reserved names for supported rich result types, visit the [Supported Rich Results](/docs/exploring-rich-results-with-richie-js).
+
+---
+
+## Node.js Configuration
+
+For **Node.js environments**, Richie.js simplifies configuration management. You don’t need to manually load or apply the configuration.
+
+#### Initialize Configuration
+
+Run the following command to generate a default configuration file in your project root:
+
+```bash
+rjs init
+```
+
+This will create a `richiejs.config.js` file with default settings. For example:
+
+```javascript
+/** @type {import("@cresteem/richie-js").rjsOptions} */
+const config = {
+  domainAddress: "cresteem.com",
+  preference: {
+    isCarousals: {
+      movie: false,
+      course: false,
+      recipe: true,
+      restaurant: true,
+    },
+    isProductVar: false,
+    breadcrumb: false,
+    siteSearchBoxFieldName: "query",
+  },
+};
+
+exports.default = config;
+```
+
+Richie.js will automatically detect and load the `richiejs.config.js` file from your project root during execution. No need to manually import or reference it in your code.
+
+By default, Richie.js uses the auto-loaded configuration file. If the file is missing, it will fall back to its **default configuration schema**.
+
+- To modify the configuration, edit the `richiejs.config.js` file directly in your project root.
+- For advanced configurations, refer to the [Supported Rich Results](/docs/exploring-rich-results-with-richie-js).
+
+---
+
+## Browser-Side Configuration
+
+For **browser-side setups**, the configuration object is passed as a parameter when calling the Richie.js API.
+
+### Example Initialization:
+
+```html
+<script src="https://cdn.jsdelivr.net/npm/@cresteem/richie-js@2.0.1/dist/browser/bundle.min.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    RichieJS.default({
+      richieNames: ["article", "faq"],
+      configuration: {
+        domainAddress: "example.com",
+        preference: {
+          breadcrumb: true,
+          siteSearchBoxFieldName: "searchTerm",
+        },
+        reservedNames: {
+          article: {
+            baseID: "article-container",
+            articleType: "category",
+          },
+        },
+      },
+    });
+  });
+</script>
+```
+
+---
+
+## Summary of Configuration Methods
+
+<Table id="env">
+  <thead>
+    <Tr>
+      <Th>Feature</Th>
+      <Th>Node.js Setup</Th>
+      <Th>Browser-Side Setup</Th>
+    </Tr>
+  </thead>
+  <tbody>
+    <Tr>
+      <Td>Configuration Location</Td>
+      <Td>`richiejs.config.js` file</Td>
+      <Td>Passed as a parameter in `RichieJS` API</Td>
+    </Tr>
+    <Tr>
+      <Td>Reserved Names</Td>
+      <Td>Define in `richiejs.config.js`</Td>
+      <Td>Pass in API configuration object</Td>
+    </Tr>
+    <Tr>
+      <Td>Customization Scope</Td>
+      <Td>Global (entire server instance)</Td>
+      <Td>Page-level (per API call)</Td>
+    </Tr>
+  </tbody>
+</Table>
+
+---
+
+## Reserved Names Reference
+
+For a detailed list of reserved names and how they map to specific fields in structured data, visit the [Supported Rich Results](/docs/exploring-rich-results-with-richie-js).
+
+---
+
+## Keywords
+
 <ul className={style.keywords}>
-  <li>Customizing Richie JS</li>
-  <li>Intuitive Configuration</li>
-  <li>Developer Tools</li>
-  <li>Site Search Enhancement</li>
-  <li>Structured Data</li>
+  <li>Richie.js Configuration</li>
+  <li>Dynamic Structured Data</li>
+  <li>Node.js Setup</li>
+  <li>Browser-Side Configuration</li>
+  <li>SEO Optimization</li>
+  <li>Rich Result Reserved Names</li>
 </ul>

@@ -24,11 +24,12 @@ td:nth-child(1) {
     @apply font-bold text-primary;
 }
 
-td:nth-child(3):before {
+td:nth-child(3):not(#env td):before {
     content: "✅";
     @apply pr-2;
 }
-td:nth-child(2):before {
+
+td:nth-child(2):not(#env td):before {
     content: "❌";
     @apply pr-2;
 }

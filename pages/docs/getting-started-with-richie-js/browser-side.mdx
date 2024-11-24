@@ -1,0 +1,130 @@
+---
+title: "Richie.js Browser-Side Setup: Dynamic SEO Made Simple"
+description: Learn how to set up Richie.js for dynamic SEO in browser-based environments. Enhance your site's search visibility with easy-to-implement steps.
+thumbnailUrl: https://www.cresteem.com/opensource/boost-seo-with-richie-js/browser-setup-thumbnail.webp
+---
+
+import style from "../../../stylesheets/utils.module.scss";
+
+# Browser-Side Setup
+
+Richie.js makes it simple to dynamically generate structured data for rich results directly in the browser. This setup is ideal for **client-side rendering** and dynamic, data-driven sites.
+
+## When to Use Browser-Side Setup
+
+Opt for the browser-side setup if:
+
+- Your application heavily relies on **dynamic content** generated on the client side.
+- You want rich results generated on the fly as users interact with your site.
+- You’re working on a **Single Page Application (SPA)** or a similar environment where rendering happens in the browser.
+
+## Step-by-Step Setup
+
+### Step 1: Add Richie.js Script to Your HTML
+
+Include the Richie.js script in the `<head>` tag of your HTML file. Use the following CDN link:
+
+```html
+<script src="https://cdn.jsdelivr.net/npm/@cresteem/richie-js@2.0.1/dist/browser/bundle.min.js"></script>
+```
+
+### Step 2: Initialize Richie.js for Initial Page Load
+
+Once the page loads, initialize Richie.js using the `DOMContentLoaded` event. You can specify the type of rich results you want to generate using the `richieNames` array. Here's an example:
+
+```html
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    RichieJS.default({
+      richieNames: ["article", "faq"],
+    });
+  });
+</script>
+```
+
+This will generate rich results based on the **initial HTML content** present when the page is loaded.
+
+### Optional: Handle Dynamic Content Updates with MutationObserver
+
+If your site dynamically updates content (e.g., adding new elements to the DOM after the page loads), use a **MutationObserver** to detect changes and regenerate structured data as needed. This is optional and can be skipped if dynamic updates aren't required.
+
+Here's how you can set up a MutationObserver:
+
+```html
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    // Initialize Richie.js for the initial load
+    RichieJS.default({
+      richieNames: ["article", "faq"],
+    });
+
+    // Optional: Observe DOM changes for dynamic content
+    const observer = new MutationObserver(() => {
+      // Remove previously generated JSON-LD scripts
+      document
+        .querySelectorAll('script[type="application/ld+json"]')
+        .forEach((script) => {
+          script.remove();
+        });
+
+      RichieJS.default({
+        richieNames: ["article", "faq"], // Add your desired types
+      });
+    });
+
+    observer.observe(document.body, {
+      childList: true, // Monitor addition/removal of child nodes
+      subtree: true, // Monitor all levels of the DOM
+    });
+  });
+</script>
+```
+
+Use this if you want to ensure rich results are continuously updated as new content is dynamically added to your page.
+
+### Step 3: Use Reserved Class Names
+
+To generate structured data, **Richie.js** requires specific **reserved class names** in your HTML. These class names allow Richie.js to identify and extract key content for JSON-LD. For example:
+
+```html
+<body data-articletype="NewsArticle">
+  <p class="rjs-article-pdt">2024-02-06 08:37 PM</p>
+  <!-- Published Date -->
+  <p class="rjs-article-mdt">2024-06-26 05:23 PM</p>
+  <!-- Modified Date -->
+
+  <img class="rjs-article-img" src="image.jpg" alt="Article Image" />
+  <!-- Thumbnail -->
+
+  <p class="rjs-article-anameP-1">Dr. Phil</p>
+  <!-- Author -->
+  <a class="rjs-article-aurl-1" href="profile-url">Profile Link</a>
+</body>
+```
+
+Ensure that your HTML elements are annotated with these class names for Richie.js to scan and generate the correct structured data.
+
+For detailed class names and usage for specific rich result types, please refer to their respective pages, refer [Supported Rich Results](/docs/exploring-rich-results-with-richie-js).
+
+### Step 4: Verify Your Structured Data
+
+Use the [Google Rich Results Test](https://search.google.com/test/rich-results) to validate your structured data and ensure everything is set up correctly.
+
+---
+
+## Next Steps
+
+You're all set! For **pre-generated structured data**, check out the [Node.js Setup Guide](./node-js). If you're unsure which environment suits your project best, revisit the [Getting Started Guide](/docs/getting-started-with-richie-js) for an overview.
+
+### Keywords
+
+<ul className={style.keywords}>
+  <li>Richie.js Browser Setup</li>
+  <li>Dynamic SEO</li>
+  <li>Rich Results</li>
+  <li>Structured Data</li>
+  <li>Single Page Application</li>
+  <li>Client-Side Rendering</li>
+  <li>MutationObserver</li>
+  <li>Dynamic Content</li>
+</ul>

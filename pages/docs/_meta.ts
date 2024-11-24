@@ -9,6 +9,12 @@ export default {
   },
   "getting-started-with-richie-js": {
     title: "Getting Started",
+    theme: {
+      breadcrumb: true,
+    },
+  },
+  "configuring-richie-js-for-web-projects": {
+    title: "Configurations",
   },
   "exploring-rich-results-with-richie-js": {
     title: "Supported Rich Results",
@@ -16,17 +22,12 @@ export default {
       breadcrumb: true,
     },
   },
-  "configuring-richie-js-for-web-projects": {
-    title: "Configurations",
+
+  "working-with-richie-js-api-and-cli": {
+    title: "Working with API & CLI",
     theme: {
       breadcrumb: true,
     },
-  },
-  "unlocking-intellisense-for-richie-js": {
-    title: "Intellisense Support",
-  },
-  "working-with-richie-js-api-and-cli": {
-    title: "Working with API & CLI",
   },
   "exploring-richie-js-repository": {
     title: "Demonstrations",
