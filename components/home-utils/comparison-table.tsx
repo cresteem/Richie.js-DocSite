@@ -15,7 +15,10 @@ export default function ComparisonTable() {
         </div>
 
         <div className="border w-[70%] my-10 rounded-xl overflow-hidden mx-auto border-gray-300">
-          <table className="table-auto text-left text-sm tracking-wider leading-loose">
+          <table
+            id="compare"
+            className="table-auto text-left text-sm tracking-wider leading-loose"
+          >
             <thead>
               <tr className="bg-gradient-to-r from-[#51c1b5] to-[#2d6a8a] text-white">
                 <th className="border border-gray-300 px-4 py-2">Feature</th>
