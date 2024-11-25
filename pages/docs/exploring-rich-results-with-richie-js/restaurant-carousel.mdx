@@ -16,7 +16,7 @@ Kindly Refer [Google Doc](https://developers.google.com/search/docs/appearance/s
 
 ## What are necessary data for restaurant rich result?
 
-### 1. Name
+### 1. **Name** (`rjs-restaurant-[number]-name`)
 
 ```html copy filename="restaurant.html" {2} /name/
 <div id="rjs-restaurant-1">
@@ -24,7 +24,7 @@ Kindly Refer [Google Doc](https://developers.google.com/search/docs/appearance/s
 </div>
 ```
 
-### 2. Thumbnail images
+### 2. **Thumbnail Images** (`rjs-restaurant-[number]-img`)
 
 ```html copy filename="restaurant.html" /1-img/
 <img
@@ -40,7 +40,7 @@ Kindly Refer [Google Doc](https://developers.google.com/search/docs/appearance/s
 />
 ```
 
-### 3. Location
+### 3. **Location** (`rjs-restaurant-[number]-loc`)
 
 ```html copy filename="restaurant.html" /-loc/ /class="stl"/ /class="ct"/ /class="st"/ /class="pc"/ /class="ctry"/ /div/
 <div class="rjs-restaurant-1-loc">
@@ -63,7 +63,7 @@ Kindly Refer [Google Doc](https://developers.google.com/search/docs/appearance/s
 </div>
 ```
 
-### 4. Reviews
+### 4. **Reviews** (`rjs-restaurant-[number]-reviews`)
 
 ```html copy filename="restaurant.html" /-reviews/ /class="urate"/ /class="rv"/ /class="mr"/ /class="raterP"/ /class="raterO"/  /class="rpOn"/ /div/
 <section class="rjs-restaurant-1-reviews">
@@ -99,28 +99,28 @@ Kindly Refer [Google Doc](https://developers.google.com/search/docs/appearance/s
 </section>
 ```
 
-### 5. Telephone & Reservation availability
+### 5. **Telephone & Reservation Availability** (`rjs-restaurant-[number]-tel`)
 
 ```html copy filename="restaurant.html" /data-reserve/ /-tel/
 <!-- data-reserve="true" for reservation accepted -->
 <p class="rjs-restaurant-1-tel" data-reserve="true">+91-84259372x3</p>
 ```
 
-### 6. Cuisine
+### 6. **Cuisine** (`rjs-restaurant-[number]-csnt`)
 
 ```html copy filename="restaurant.html" /-csnt/
-<!-- It can be more than 1-->
+<!-- It can be more than 1 -->
 <p class="rjs-restaurant-1-csnt">Asian</p>
 <p class="rjs-restaurant-1-csnt">Mexican</p>
 ```
 
-### 7. Price range
+### 7. **Price Range** (`rjs-restaurant-[number]-cost`)
 
 ```html copy filename="restaurant.html" /-cost/
 <p class="rjs-restaurant-1-cost">INR 200 - INR 500</p>
 ```
 
-### 8. Work Hours
+### 8. **Work Hours** (`rjs-restaurant-[number]-workhours`)
 
 ```html copy showLineNumbers filename="restaurant.html" /-workhours/ /class="wdr"/ /class="wd"/ /class="wdr"/ /class="HR"/ /class="hr"/ {3,13,15,16,5,6}
 <!-- opening hour specification -->
@@ -130,11 +130,12 @@ Kindly Refer [Google Doc](https://developers.google.com/search/docs/appearance/s
   <!-- wdr-HR HR means 24 hour format spec -->
   <!-- wdr-hr hr means 12 hour format spec -->
 
-  <!-- sepeartor should be (-) hyphen in range -->
+  <!-- separator should be (-) hyphen in range -->
   <p class="wdr">Sunday - Thursday <span class="HR">(10:00 - 21:00)</span></p>
   <!-- OR -->
   <p class="wdr">
-    Sunday - Thursday <span class="hr">(10:00AM - 09:00PM)</span>
+    Sunday - Thursday
+    <span class="hr">(10:00AM - 09:00PM)</span>
   </p>
 
   <!-- wd for single working day-->
@@ -148,13 +149,13 @@ Kindly Refer [Google Doc](https://developers.google.com/search/docs/appearance/s
 </section>
 ```
 
-### 9. Menu Link
+### 9. **Menu Link** (`rjs-restaurant-[number]-menu`)
 
 ```html copy filename="restaurant.html" /-menu/ /href="/
 <a class="rjs-restaurant-1-menu" href="https://www.restaurant.com/menu">Menu</a>
 ```
 
-### 10. Aggregated rating
+### 10. **Aggregated Rating** (`rjs-restaurant-[number]-aggrate`)
 
 ```html copy filename="restaurant.html" /1-aggrate/ /class="arv"/ /class="mr"/ /class="rc"/
 <div class="rjs-restaurant-1-aggrate">
@@ -169,7 +170,7 @@ Kindly Refer [Google Doc](https://developers.google.com/search/docs/appearance/s
 </div>
 ```
 
-### 11. URL
+### 11. **URL** (`rjs-restaurant-[number]`)
 
 <Callout type="warning">
   `id` is mandatory to make deeplink. Even though it is meant for Carousel.
