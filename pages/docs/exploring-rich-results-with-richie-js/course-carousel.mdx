@@ -16,57 +16,57 @@ Kindly Refer [Google Doc](https://developers.google.com/search/docs/appearance/s
 
 ## What are necessary data for course rich result?
 
-### 1. Course name
+### 1. **Course Name** (`rjs-course-[number]-name`)
 
 ```html copy filename="course.html" {3} /name/
 <div id="rjs-course-1">
-  <!-- name of course-->
+  <!-- name of course -->
   <p class="rjs-course-1-name">Python Crash Course</p>
 </div>
 ```
 
-### 2. Language
+### 2. **Language** (`rjs-course-[number]-lang`)
 
 ```html copy filename="course.html" /data-lang="Tamil"/ /lang/ {4}
-<!-- name of course with language as data attribute-->
+<!-- name of course with language as data attribute -->
 <p class="rjs-course-1-name" data-lang="Tamil">Java Intermediate to Advanced</p>
 <!-- OR -->
 <p class="rjs-course-1-lang">English</p>
 ```
 
-### 3. Mode of Course
+### 3. **Mode of Course** (`rjs-course-[number]-mode`)
 
 ```html copy filename="course.html" /mode/ {2}
 <p class="rjs-course-1-name">Java Intermediate to Advanced</p>
 <p class="rjs-course-1-mode">Blended</p>
 ```
 
-### 4. Instructor
+### 4. **Instructor** (`rjs-course-[number]-ins`)
 
 ```html copy filename="course.html" /ins/ {2}
 <p class="rjs-course-1-name">Java Intermediate to Advanced</p>
 <p class="rjs-course-1-ins">Peter</p>
 ```
 
-### 5. Description
+### 5. **Description** (`rjs-course-[number]-desc`)
 
 ```html copy filename="course.html" /desc/ {1}
-<p class="rjs-course-3-desc">This is scratch Course of java</p>
+<p class="rjs-course-1-desc">This is a scratch course of Java</p>
 ```
 
-### 6. Duration with repeatFrequency and repeatCount
+### 6. **Duration with repeatFrequency and repeatCount** (`rjs-course-[number]-period`)
 
-```html copy filename="course.html" /data-freq="daily"/ /data-rep="7"/ /"rjs-course-1-period"/ /1 Months/
-<p class="rjs-course-1-period" data-freq="daily" data-rep="7">1 Months</p>
+```html copy filename="course.html" /data-freq="daily"/ /data-rep="7"/ /rjs-course-1-period/
+<p class="rjs-course-1-period" data-freq="daily" data-rep="7">1 Month</p>
 ```
 
-### 7. Fees with Currency
+### 7. **Fees with Currency** (`rjs-course-[number]-cost`)
 
 ```html copy filename="course.html" /data-currency="inr"/ /cost/ /data-currency="inr"/
-<p class="rjs-course-1-cost" data-currency="inr">2000 RS</p>
+<p class="rjs-course-1-cost" data-currency="inr">2000 INR</p>
 ```
 
-### 8. Publisher name and URL
+### 8. **Publisher Name and URL** (`rjs-course-[number]-purl`)
 
 ```html copy filename="course.html" /purl/ /pname/
 <a class="rjs-course-1-purl" href="https://notoracle.com/">
@@ -74,15 +74,13 @@ Kindly Refer [Google Doc](https://developers.google.com/search/docs/appearance/s
 </a>
 ```
 
-### 9. Course URL
+### 9. **Course URL** (`rjs-course-[number]`)
 
-Richie.js's reserved value on `id` attribute is mandatory for deeplink or course URL
+Richie.js's reserved value on `id` attribute is mandatory for deeplink or course URL.
 
-{" "}
+<Callout type="info">ID value template is `rjs-course-[number]`</Callout>
 
-<Callout type="info">ID value template is rjs-course-[number]</Callout>
-
-```html copy filename="course.html" /id="rjs-course-/
+```html copy filename="course.html" /id="rjs-course-1"/
 <div id="rjs-course-1">......</div>
 
 <div id="rjs-course-2">......</div>
