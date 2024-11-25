@@ -16,7 +16,7 @@ Kindly Refer [Google Doc](https://developers.google.com/search/docs/appearance/s
 
 ## What are necessary data for software app rich result?
 
-### 1. Software / Game name
+### 1. Software / Game Name (`rjs-sapp-[number]-name`)
 
 ```html copy filename="software-app.html" /1-name/ {3}
 <div>
@@ -26,9 +26,9 @@ Kindly Refer [Google Doc](https://developers.google.com/search/docs/appearance/s
 </div>
 ```
 
-### 2. Operating system
+### 2. Operating System (`rjs-sapp-[number]-os`)
 
-<Callout>If you have list of OS, separator should be comma (,)</Callout>
+<Callout>If you have a list of OS, separators should be a comma (,)</Callout>
 
 ```html copy filename="software-app.html" /1-os/ {3-6}
 <div>
@@ -41,7 +41,7 @@ Kindly Refer [Google Doc](https://developers.google.com/search/docs/appearance/s
 </div>
 ```
 
-### 3. Category
+### 3. Category (`rjs-sapp-[number]-cat`)
 
 ```html copy filename="software-app.html" /1-cat/ {3-6}
 <div>
@@ -54,9 +54,9 @@ Kindly Refer [Google Doc](https://developers.google.com/search/docs/appearance/s
 </div>
 ```
 
-### 4. Aggregated Rating
+### 4. Aggregated Rating (`rjs-sapp-[number]-aggrate`)
 
-```html showLineNumbers copy filename="software-app.html" /1-aggrate/ /div/ /"arv"/ /"mr"/ /"rc"/ {3-16}
+```html showLineNumbers copy filename="software-app.html" /1-aggrate/ /"arv"/ /"mr"/ /"rc"/ {3-16}
 <div>
   <div class="rjs-sapp-1-aggrate">
     <!-- rating value -->
@@ -73,9 +73,9 @@ Kindly Refer [Google Doc](https://developers.google.com/search/docs/appearance/s
 </div>
 ```
 
-### 5. Price & Currency
+### 5. Price & Currency (`rjs-sapp-[number]-cost`)
 
-<Callout>Currency should be `alpha-3` code.</Callout>
+<Callout>Currency should be the `alpha-3` code.</Callout>
 
 ```html copy filename="software-app.html" {3} /1-cost/ /data-currency="inr"/
 <div>
