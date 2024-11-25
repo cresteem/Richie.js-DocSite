@@ -16,7 +16,7 @@ Kindly Refer [Google Doc](https://developers.google.com/search/docs/appearance/s
 
 ## What are necessary data for local business rich result?
 
-### 1. Business name
+### 1. Business Name (`rjs-lb-[number]-name`)
 
 ```html copy filename="local-business.html" /1-name/ /div/ {2}
 <div id="rjs-lb-1">
@@ -24,7 +24,7 @@ Kindly Refer [Google Doc](https://developers.google.com/search/docs/appearance/s
 </div>
 ```
 
-### 2. Image (Thumbnails)
+### 2. Image (Thumbnails) (`rjs-lb-[number]-img`)
 
 <Callout>Any number of images can be added</Callout>
 
@@ -44,7 +44,7 @@ Kindly Refer [Google Doc](https://developers.google.com/search/docs/appearance/s
 </div>
 ```
 
-### 3. Location
+### 3. Location (`rjs-lb-[number]-loc`)
 
 ```html showLineNumbers copy filename="local-business.html" {4,23} /1-loc/ /div/ /"stl"/ /"ct"/ /"st"/ /"pc"/ /"ctry"/
 <div id="rjs-lb-1">
@@ -70,7 +70,7 @@ Kindly Refer [Google Doc](https://developers.google.com/search/docs/appearance/s
 </div>
 ```
 
-### 4. Reviews
+### 4. Reviews (`rjs-lb-[number]-reviews`)
 
 Author type classes,
 
@@ -103,7 +103,7 @@ Author type classes,
 </div>
 ```
 
-### 5. Telephone & Reservation
+### 5. Telephone & Reservation (`rjs-lb-[number]-tel`)
 
 ```html copy filename="local-business.html" {2} /1-tel/ /data-reserve="true"/
 <div id="rjs-lb-1">
@@ -111,7 +111,7 @@ Author type classes,
 </div>
 ```
 
-### 6. Price Range & Currency
+### 6. Price Range & Currency (`rjs-lb-[number]-cost`)
 
 <Callout>Alpha-3 code standard for Currency</Callout>
 
@@ -121,23 +121,20 @@ Author type classes,
 </div>
 ```
 
-### 7. Work hours
-
-Format Specification classes are,
+### 7. Work Hours (`rjs-lb-[number]-workhours`)
 
 #### Day(s) Wrapper
 
-- `wdr` - Range of Working days.
-- `wd` - Single Working day
+- `wdr` - Range of Working Days
+- `wd` - Single Working Day
 
-#### Hour Specification classes
+#### Hour Specification Classes
 
-- `HR` - 24 Hours format
-- `hr` - 12 Hour format
+- `HR` - 24-hour format
+- `hr` - 12-hour format
 
 <Callout>
-  {" "}
-  Range seperator should be Hyphen(-) in between days and times
+  Range separator should be a hyphen (-) between days and times.
 </Callout>
 
 ```html copy filename="local-business.html" /div/ /section/ /1-workhours/ /"wdr"/ /"wd"/ /"HR"/ /"hr"/ /-/
@@ -147,12 +144,10 @@ Format Specification classes are,
       Sunday - Thursday
       <span class="HR">(10:00 - 21:00)</span>
     </p>
-
     <p class="wd">
       Saturday
       <span class="HR">(13:00 - 18:00)</span>
     </p>
-
     <p class="wd">
       Friday
       <span class="hr">(10:00AM - 06:00PM)</span>
@@ -161,7 +156,7 @@ Format Specification classes are,
 </div>
 ```
 
-### 8. Menu link
+### 8. Menu Link (`rjs-lb-[number]-menu`)
 
 ```html copy filename="local-business.html" /1-menu/ {3-5}
 <div id="rjs-lb-1">
@@ -171,7 +166,7 @@ Format Specification classes are,
 </div>
 ```
 
-### 9. Aggregated rating
+### 9. Aggregated Rating (`rjs-lb-[number]-aggrate`)
 
 ```html showLineNumbers copy filename="local-business.html" /1-aggrate/ /"arv"/ /"mr"/ /"rc"/ /div/ {5-12}
 <div id="rjs-lb-1">
@@ -188,7 +183,7 @@ Format Specification classes are,
 </div>
 ```
 
-### 10. Keywords
+### 10. Keywords (`rjs-lb-[number]-kw`)
 
 ```html showLineNumbers copy filename="local-business.html" /1-kw/ /div/ {5-8}
 <div id="rjs-lb-1">
@@ -201,7 +196,7 @@ Format Specification classes are,
 </div>
 ```
 
-### 11. Area served
+### 11. Area Served (`rjs-lb-[number]-areaserves`)
 
 ```html showLineNumbers copy filename="local-business.html" /1-areaserves/ /div/ {3-9,13}
 <div id="rjs-lb-1">
@@ -217,19 +212,17 @@ Format Specification classes are,
 </div>
 ```
 
-### 12. URL (Website)
+### 12. URL (Website) (`id="rjs-lb-[number]"`)
 
-<Callout>
-  URL would be deeplink of entity so ID is mandatory in parent wrapper.
-</Callout>
+<Callout>ID is mandatory in the parent wrapper.</Callout>
 
 ```html copy filename="local-business.html" /id="rjs-lb-1"/ /div/
 <div id="rjs-lb-1">....</div>
 ```
 
-### 13. Map iframe
+### 13. Map Iframe (`rjs-lb-[number]-map`)
 
-<Callout>Use Google Map embed</Callout>
+<Callout>Use Google Map embed.</Callout>
 
 ```html copy filename="local-business.html" /div/ /1-map/ {3-5}
 <div id="rjs-lb-1">
