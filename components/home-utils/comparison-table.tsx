@@ -1,6 +1,6 @@
 export default function ComparisonTable() {
   return (
-    <section className="py-10">
+    <section className="py-5">
       <div className="max-w-screen-xl mx-auto px-4 text-gray-600 md:px-8">
         <div className="relative z-10 max-w-2xl mx-auto sm:text-center">
           <h3 className="text-gray-800 text-3xl font-semibold sm:text-4xl">
@@ -14,10 +14,10 @@ export default function ComparisonTable() {
           </p>
         </div>
 
-        <div className="border w-[70%] my-10 rounded-xl overflow-hidden mx-auto border-gray-300">
+        <div className="border xl:w-[70%] my-10 rounded-xl overflow-scroll md:overflow-hidden mx-auto border-gray-300">
           <table
             id="compare"
-            className="table-auto text-left text-sm tracking-wider leading-loose"
+            className="table-auto text-left text-[12.5px] md:text-md tracking-wider leading-loose"
           >
             <thead>
               <tr className="bg-gradient-to-r from-[#51c1b5] to-[#2d6a8a] text-white">

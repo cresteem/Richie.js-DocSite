@@ -18,7 +18,7 @@ export default function HowItWorks() {
             results and save hours of effort.
           </p>
         </div>
-        <div className="relative mt-12 w-[50%] mx-auto">
+        <div className="relative mt-12 px-3 lg:w-[50%] mx-auto">
           <Stepper
             active={4}
             orientation="vertical"

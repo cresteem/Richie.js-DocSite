@@ -25,14 +25,14 @@ export default function Footer() {
 
   return (
     <footer
-      className="text-gray-500 px-4 pb-5 pt-[3%] w-full md:px-8 border-t"
+      className="text-gray-500 px-4 pb-5 pt-[10%] md:pt-[3%] w-full md:px-8 border-t"
       style={{ margin: 0 }}
     >
       <div className="max-w-screen-xl mx-auto">
-        <div className="max-w-lg sm:mx-auto sm:text-center">
-          <div>
-            <Logo className="w-20 sm:mx-auto" />
-            <p className="font-bold ml-2 text-xl text-primary tracking-widest">
+        <div className="max-w-lg mx-auto text-center">
+          <div className="">
+            <Logo className="w-20 mx-auto" />
+            <p className="font-bold ml-2 text-xl text-primary tracking-widest text-center">
               RICHIE.js
             </p>
           </div>
@@ -46,15 +46,15 @@ export default function Footer() {
             minimal effort.
           </p>
         </div>
-        <ul className="items-center justify-center mt-8 space-y-5 sm:flex sm:space-x-4 sm:space-y-0">
+        <ul className="text-center items-center justify-center mt-8 space-y-5 sm:flex sm:space-x-4 sm:space-y-0">
           {footerNavs.map((item, idx) => (
             <li className=" hover:text-gray-800" key={idx}>
               <Link href={item.href}>{item.name}</Link>
             </li>
           ))}
         </ul>
-        <div className="mt-8 items-center justify-between sm:flex">
-          <div className="mt-4 sm:mt-0">
+        <div className="mt-8 items-center justify-between flex flex-col lg:flex-row gap-y-5">
+          <div className="mt-4 sm:mt-0 text-center">
             <Link
               href="https://github.com/cresteem/Richie.js/blob/main/LICENSE"
               target="_blank"
@@ -68,14 +68,26 @@ export default function Footer() {
             about="blank"
             aria-label="This website is built by cresteem.com"
             style={{ zIndex: 200 }}
-            className="-ml-[9%] flex justify-center items-center gap-x-2 relative text-gray-600"
+            className="flex justify-center items-center gap-x-2 relative text-gray-600"
           >
             {" "}
             Powered By
             <CresteemBrandMark classNames="h-4" />
           </Link>
+          <Link
+            href="https://darsan.in/"
+            target="_blank"
+            about="blank"
+            aria-label="This website is designed & built by darsan.in"
+            className="flex justify-center items-center gap-x-2 relative text-gray-600"
+          >
+            Built By{" "}
+            <span className="font-semibold text-green-500 underline">
+              DARSAN✅
+            </span>
+          </Link>
           <div className="mt-6 sm:mt-0">
-            <ul className="flex items-center space-x-4">
+            <ul className="flex items-center space-x-4 justify-center">
               <li className="w-10 h-10 border rounded-full flex items-center justify-center">
                 <Link
                   href="https://github.com/cresteem/Richie.js"

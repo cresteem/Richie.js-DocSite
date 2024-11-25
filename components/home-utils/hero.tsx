@@ -19,11 +19,11 @@ export default function Hero() {
             Automate schema creation to boost rankings, enhance visibility, and
             drive effortless engagement. It's all start with this command.
           </p>
-          <div className="items-center justify-center gap-x-3 space-y-3 sm:flex sm:space-y-0">
-            <NPMInstall className="relative w-[25%] min-w-[250px]" />
+          <div className="items-center justify-center gap-x-3 space-y-3 sm:flex sm:space-y-0  w-[60%] min-w-[250px] mx-auto">
+            <NPMInstall className="relative w-full" />
             <Link
               href="/docs/getting-started-with-richie-js"
-              className="block py-2 px-4 text-white font-medium bg-primary duration-150 hover:bg-primary/[70%] active:bg-primary/[70%] rounded-lg shadow-lg hover:shadow-none"
+              className="block py-2 px-4 text-white font-medium bg-primary duration-150 hover:bg-primary/[70%] active:bg-primary/[70%] rounded-lg shadow-lg hover:shadow-none w-full"
             >
               Get started
             </Link>
