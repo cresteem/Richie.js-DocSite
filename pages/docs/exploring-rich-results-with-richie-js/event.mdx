@@ -19,7 +19,7 @@ Kindly Refer [Google Doc](https://developers.google.com/search/docs/appearance/s
 
 ## What are necessary data for event rich result?
 
-### 1. Event name
+### 1. Event name (`rjs-event-[number]-name`)
 
 ```html copy filename="event.html" /1-name/ {2}
 <div>
@@ -27,15 +27,15 @@ Kindly Refer [Google Doc](https://developers.google.com/search/docs/appearance/s
 </div>
 ```
 
-### 2. Mode
+### 2. Mode (`rjs-event-[number]-mode`)
 
 <Callout>Data attribute item</Callout>
 
-Three Modes are,
+Three Modes are:
 
 - `online` - Online Only Event
 - `offline` - Offline Only Event
-- `mixed` - Hybrid or Online & Offline - Mixed Event.
+- `mixed` - Hybrid or Online & Offline Mixed Event
 
 ```html copy filename="event.html" {3,5,7} /1-mode/
 <div>
@@ -43,12 +43,10 @@ Three Modes are,
     Attendance Mode:
     <span class="rjs-event-1-mode" data-mode="online">Online</span>
   </p>
-
   <p>
     Attendance Mode:
     <span class="rjs-event-1-mode" data-mode="offline">Offline</span>
   </p>
-
   <p>
     Attendance Mode:
     <span class="rjs-event-1-mode" data-mode="mixed">Mixed</span>
@@ -56,7 +54,7 @@ Three Modes are,
 </div>
 ```
 
-### 3. Start date
+### 3. Start Date (`rjs-event-[number]-from`)
 
 ```html copy filename="event.html" {2} /1-from/
 <div>
@@ -66,7 +64,7 @@ Three Modes are,
 </div>
 ```
 
-### 4. End Date
+### 4. End Date (`rjs-event-[number]-end`)
 
 ```html copy filename="event.html" {2} /1-end/
 <div>
@@ -74,15 +72,15 @@ Three Modes are,
 </div>
 ```
 
-### 5. Status
+### 5. Status (`rjs-event-[number]-sts`)
 
-Status data values are:
+Status values are:
 
 - `postponed` - Event Postponed
-- `toonline` - Event Moved to Online from Offline
+- `toonline` - Event Moved to Online
 - `cancelled` - Event Cancelled
-- `rescheduled` - Event Re-Scheduled
-- `scheduled` - Event as per Scheduled
+- `rescheduled` - Event Rescheduled
+- `scheduled` - Event Scheduled
 
 ```html copy filename="event.html" /1-sts/ {2} /data-sts="scheduled"/
 <div>
@@ -93,13 +91,12 @@ Status data values are:
 </div>
 ```
 
-### 6. Images - Thumbnails
+### 6. Images - Thumbnails (`rjs-event-[number]-img`)
 
 ```html copy filename="event.html" /1-img/ {3,5}
 <div>
-  <!-- any number of img possible-->
+  <!-- any number of img possible -->
   <img class="rjs-event-1-img" src="https://jdi.group/a.jpg" alt="" />
-
   <img
     class="rjs-event-1-img"
     src="https://neurosciexcenews.com/sd.webp"
@@ -108,27 +105,26 @@ Status data values are:
 </div>
 ```
 
-### 7. Description
+### 7. Description (`rjs-event-[number]-desc`)
 
 ```html copy filename="event.html" {3-6} /1-desc/
 <div>
   <p class="rjs-event-1-desc">
     <b>Explore the cutting-edge world of Deep Learning</b> at our AI event! Dive
     into the latest advancements, breakthroughs, and applications of neural
-    networks and deep learning algorithms.<!-- reduce for brevity -->
+    networks and deep learning algorithms.
   </p>
 </div>
 ```
 
-### 8. Location
+### 8. Location (`rjs-event-[number]-loc`)
 
-Two type of location are,
+Two types:
 
-- `venue` - Physical Location (Offline Event)
-- `vlurl` - Virtual Location (Online Event)
+- **Venue (Physical Location)**
+- **Virtual Location (Online Event)**
 
-<Tabs items={['Physical Location',"Virtual Location","Combined"]}>
-{/* physical location */}
+<Tabs items={["Physical Location", "Virtual Location", "Combined"]}>
   <Tabs.Tab>
   ```html copy filename="event.html" /1-loc/ {3} /venue/ /"stl"/ /"ct"/ /"st"/ /"pc"/ /"ctry"/
   <div>
@@ -158,9 +154,6 @@ Two type of location are,
   </div>
   ```
   </Tabs.Tab>
-
-{/* virtual location */}
-
   <Tabs.Tab>
   ```html copy filename="event.html" /1-loc/ {3} /"vlurl"/
   <div>
@@ -175,9 +168,6 @@ Two type of location are,
   </div>
   ```
   </Tabs.Tab>
-
-{/* combined */}
-
   <Tabs.Tab>
     ```html copy filename="event.html" /1-loc/ {3} /venue/ /"stl"/ /"ct"/ /"st"/ /"pc"/ /"ctry"/ /"vlurl"/
   <div>
@@ -212,11 +202,11 @@ Two type of location are,
   </Tabs.Tab>
 </Tabs>
 
-### 9. Performer(s)
+### 9. Performers (`rjs-event-[number]-aname`)
 
 ```html copy filename="event.html" /1-aname/
 <div>
-  <!--any number of performer possible-->
+  <!-- any number of performers possible -->
   <p>
     Actor/Performer: <span class="rjs-event-1-aname">DEAN</span>,
     <span class="rjs-event-1-aname">SAM</span>
@@ -224,7 +214,7 @@ Two type of location are,
 </div>
 ```
 
-### 10. Organiser(s)
+### 10. Organisers (`rjs-event-[number]-pname`)
 
 - `pnameP` - Person type Organiser
 - `pnameO` - Organisation type Organiser
@@ -244,11 +234,11 @@ Two type of location are,
 </div>
 ```
 
-### 11. Price & Currency
+### 11. Price & Currency (`rjs-event-[number]-cost`)
 
 <Callout>
-  Pass data as free only if event entry is free otherwise pass currency alpha-3
-  code
+  Use `data-currency="free"` for free events, otherwise use a currency alpha-3
+  code.
 </Callout>
 
 ```html copy filename="event.html" /1-cost/ /data-currency="free"/ /data-currency="inr"/ {4}
@@ -267,7 +257,7 @@ Two type of location are,
 </div>
 ```
 
-### 12. Booking (Reservation) link
+### 12. Booking Link (`rjs-event-[number]-rlink`)
 
 ```html copy filename="event.html" /1-rlink/ {3}
 <div>
