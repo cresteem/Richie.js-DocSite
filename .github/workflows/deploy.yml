@@ -69,7 +69,7 @@ jobs:
           npm i @cresteem/hawk-js -g
           cp hawk.config.json ./out/hawk.config.json
           cd out
-          hawk genmap
+          hawk genmap || true
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
