@@ -199,9 +199,9 @@ Offer is a object that consists of shipping details, return policy, price, purch
 
 #### Validity
 
-This is defined as `reservedNames.product.productPriceValidUntilNext` in `rjs.config.json`
+This is defined as `reservedNames.product.productPriceValidUntilNext` in `richiejs.config.js`
 
-```json copy filename="rjs.config.json" {4}
+```json copy filename="richiejs.config.js" {4}
 {
   "reservedNames": {
     "product": {
@@ -215,9 +215,9 @@ This is defined as `reservedNames.product.productPriceValidUntilNext` in `rjs.co
 
 The purchase link is automatically generated based on the hierarchical structure of the input file. For files containing multiple variants on a single page, the link includes specific variant parameters in the URL, such as `https://www.ashop.com/productPage?var=black_20_male.`
 
-Parameter name is defined as `reservedNames.product.varientParameterName` in `rjs.config.json`. Configure this according to your web server's logic of parameters handling.
+Parameter name is defined as `reservedNames.product.varientParameterName` in `richiejs.config.js`. Configure this according to your web server's logic of parameters handling.
 
-```json copy filename="rjs.config.json" {4} /"var"/
+```json copy filename="richiejs.config.js" {4} /"var"/
 {
   "reservedNames": {
     "product": {

@@ -22,22 +22,30 @@ Kindly Refer [Google Doc](https://developers.google.com/search/docs/appearance/s
 
 ### 1.siteSearchBoxFieldName
 
-This is configured inside `rjs.config.json` file.
+This is configured inside `richiejs.config.js` file.
 
-```json copy filename="rjs.config.json"
-{
-  "siteSearchBoxFieldName": "searchTerm"
-}
+```js copy filename="richiejs.config.js"
+/** @type {import("@cresteem/richie-js").rjsOptions} */
+const config = {
+  preference: {
+    siteSearchBoxFieldName: "searchTerm",
+  },
+};
+
+exports.default = config;
 ```
 
 ### 2. domainAddress
 
-This also configured inside `rjs.config.json` file.
+This also configured inside `richiejs.config.js` file.
 
-```json copy filename="rjs.config.json"
-{
-  "domainAddress": "cresteem.com"
-}
+```js copy filename="richiejs.config.js"
+/** @type {import("@cresteem/richie-js").rjsOptions} */
+const config = {
+  domainAddress: "cresteem.com",
+};
+
+exports.default = config;
 ```
 
 ## Function and parameters
