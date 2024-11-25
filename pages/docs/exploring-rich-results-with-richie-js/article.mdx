@@ -16,95 +16,110 @@ Kindly Refer [Google Doc](https://developers.google.com/search/docs/appearance/s
 
 ## What are necessary data for article rich result?
 
-### 1. Article type
+### 1. Article Type (`rjs-article-type`)
 
-    ```html copy filename="article.html" /data-articletype="NewsArticle"/
-    <!-- article type - Article, NewsArticle, BlogPosting-->
-    <body data-articletype="NewsArticle">
-    ```
+```html copy filename="article.html" /data-articletype="NewsArticle"/
+<!-- Article type - Article, NewsArticle, BlogPosting -->
+<body class="rjs-article-type" data-articletype="NewsArticle"></body>
+```
 
-### 2. Published date
+### 2. Published Date (`rjs-article-pdt`)
 
-    ```html copy filename="article.html" /pdt/
-    <p class="rjs-article-pdt">2024-02-06 08:37 PM</p>
-    ```
+```html copy filename="article.html" /pdt/
+<p class="rjs-article-pdt">2024-02-06 08:37 PM</p>
+```
 
-### 3. Modified date
+### 3. Modified Date (`rjs-article-mdt`)
 
-    ```html copy filename="article.html"  /mdt/
-    <p class="rjs-article-mdt">2024-06-26 05:23 PM</p>
-    ```
+```html copy filename="article.html" /mdt/
+<p class="rjs-article-mdt">2024-06-26 05:23 PM</p>
+```
 
-### 4. Images
+### 4. Images (`rjs-article-img`)
 
-    ```html copy filename="article.html" /img/
-    <!--any number of images can be added -->
-    <img class="rjs-article-img" src="https://i.imsur.com/image-1.jpeg" alt="" />
-    <img class="rjs-article-img" src="https://i.imsur.com/image-2.jpeg" alt="" />
-    ```
+```html copy filename="article.html" /img/
+<!-- Any number of images can be added -->
+<img
+  class="rjs-article-img"
+  src="https://i.imsur.com/image-1.jpeg"
+  alt="Example image 1"
+/>
+<img
+  class="rjs-article-img"
+  src="https://i.imsur.com/image-2.jpeg"
+  alt="Example image 2"
+/>
+```
 
-### 5. Author name
+### 5. Author Name (`rjs-article-anameP-*`, `rjs-article-anameO-*`)
 
-    ```html copy filename="article.html" /anameP/ /anameO/
-    <!-- number suffix helps to associate informations to a entity-->
+```html copy filename="article.html" /anameP/ /anameO/
+<!-- Number suffix helps associate information to an entity -->
 
-    <p class="rjs-article-anameP-1">Dr.Phil</p> <!-- Type:Person -->
+<p class="rjs-article-anameP-1">Dr. Phil</p>
+<!-- Type: Person -->
 
-    <p class="rjs-article-anameO-2">Cresteem</p> <!-- Type:Organisation-->
+<p class="rjs-article-anameO-2">Cresteem</p>
+<!-- Type: Organisation -->
 
-    <p class="rjs-article-anameP-3">Dr.Bruce</p> <!-- Type:Person -->
+<p class="rjs-article-anameP-3">Dr. Bruce</p>
+<!-- Type: Person -->
 
-    <p class="rjs-article-anameO-4">Stark Industry</p> <!-- Type:Organisation-->
-    ```
+<p class="rjs-article-anameO-4">Stark Industry</p>
+<!-- Type: Organisation -->
+```
 
-### 6. Author URL
+### 6. Author URL (`rjs-article-aurl-*`)
 
-    ```html copy filename="article.html" /aurl-1/ /aurl-2/ /href/
-    <!-- number suffix helps to associate informations to a entity-->
-    <p class="rjs-article-anameP-1">Dr.Phil</p>
+```html copy filename="article.html" /aurl-1/ /aurl-2/ /href/
+<!-- Number suffix helps associate information to an entity -->
+<p class="rjs-article-anameP-1">Dr. Phil</p>
+<a class="rjs-article-aurl-1" href="https://www.instagram.com/drphil/"
+  >User Profile</a
+>
 
-    <!-- author profile url -->
-    <a class="rjs-article-aurl-1" href="https://www.instagram.com/drphil/">User Profile</a>
+<p class="rjs-article-anameP-2">Dr. Bruce</p>
+<a class="rjs-article-aurl-2" href="https://www.linkedin.com/in/bruce/"
+  >User Profile</a
+>
+```
 
-    <p class="rjs-article-anameP-2">Dr.Bruce</p>
+### 7. Job Title (`rjs-article-ajob-*`)
 
-    <a class="rjs-article-aurl-2" href="https://www.linkedin.com/in/bruce/">User Profile</a>
-    ```
+<Callout type="info">Optional</Callout>
 
-### 7. Job title
+```html copy filename="article.html" /ajob-1/ /ajob-2/
+<!-- Number suffix helps associate information to an entity -->
+<p class="rjs-article-anameP-1">Dr. Phil</p>
+<p class="rjs-article-ajob-1">Dermatologists</p>
 
-    <Callout type='info'>Optional</Callout>
+<p class="rjs-article-anameP-2">Dr. Bruce</p>
+<p class="rjs-article-ajob-2">Anesthesiologists</p>
+```
 
-    ```html copy filename="article.html" /ajob-1/ /ajob-2/
-    <!-- number suffix helps to associate informations to a entity-->
-    <p class="rjs-article-anameP-1">Dr.Phil</p>
-    <p class="rjs-article-ajob-1">Dermatologists</p>
+### 8. Headline (`rjs-article-headline`)
 
-    <p class="rjs-article-anameP-2">Dr.Bruce</p>
-    <p class="rjs-article-ajob-2">Anesthesiologists</p>
-    ```
+<Callout type='info'>The `<title>` tag is considered as the headline.</Callout>
 
-### 8. Headline
+```html copy filename="article.html"
+<title class="rjs-article-headline">Article Example Page</title>
+```
 
-    <Callout type='info'>Title is considered as headline.</Callout>
+### 9. Publisher Name (`rjs-article-pname-*`)
 
-    ```html copy filename="article.html"
-    <title>Article Example Page</title>
-    ```
+```html copy filename="article.html" /pname-1/
+<p class="rjs-article-pname-1">Cresteem</p>
+```
 
-### 9. Publisher name
+### 10. Publisher URL (`rjs-article-purl-*`)
 
-    ```html copy filename="article.html" /pname-1/
-    <p class="rjs-article-pname-1">Cresteem</p>
-    ```
-
-### 10. Publisher URL
-
-    ```html copy filename="article.html" /purl-1/
-    <!-- number suffix helps to associate informations to a entity-->
-    <p class="rjs-article-pname-1">Cresteem</p>
-    <a class="rjs-article-purl-1" href="https://cresteem.com/blogs/"></a>
-    ```
+```html copy filename="article.html" /purl-1/
+<!-- Number suffix helps associate information to an entity -->
+<p class="rjs-article-pname-1">Cresteem</p>
+<a class="rjs-article-purl-1" href="https://cresteem.com/blogs/"
+  >Publisher Website</a
+>
+```
 
 ## Function and parameters
 
