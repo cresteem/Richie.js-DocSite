@@ -22,7 +22,7 @@
 
 .keywords {
     display: flex;
-    width: 50vw;
+    @apply px-2;
     flex-wrap: wrap;
 
     li {
