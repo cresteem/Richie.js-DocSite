@@ -22,19 +22,18 @@ Kindly Refer [Google Doc](https://developers.google.com/search/docs/appearance/s
 
 ## What are necessary data for product rich result?
 
-### 1. Product name
+### 1. Product name (`rjs-prod-[number]-name`)
 
-```html copy filename="product.html" {3} /class="rjs-prod-1-name"/
+```html copy filename="product.html" /class="rjs-prod-1-name"/
 <div class="product">
   <h1 class="rjs-prod-1-name">Denim Jacket</h1>
-
   <div></div>
 </div>
 ```
 
-### 2. Images
+### 2. Images (`rjs-prod-[number]-img`)
 
-```html copy filename="product.html" /class="rjs-prod-1-img"/ /<img/ {3-4}
+```html copy filename="product.html" /class="rjs-prod-1-img"/ /<img/
 <div class="product">
   <img
     class="rjs-prod-1-img"
@@ -51,21 +50,19 @@ Kindly Refer [Google Doc](https://developers.google.com/search/docs/appearance/s
 </div>
 ```
 
-### 3. Description
+### 3. Description (`rjs-prod-[number]-desc`)
 
-```html copy filename="product.html" /class="rjs-prod-1-desc"/ {3-5}
+```html copy filename="product.html" /class="rjs-prod-1-desc"/
 <div class="product">
   <p class="rjs-prod-1-desc">
     Product Description Lorem ipsum dolor sit amet, consectetur adipiscing elit.
   </p>
-
-  <div></div>
 </div>
 ```
 
-### 4. SKU ID / MPN Code
+### 4. SKU ID / MPN Code (`rjs-prod-[number]-sku` / `rjs-prod-[number]-mpn`)
 
-```html showLineNumbers copy filename="product.html" /class="rjs-prod-1-sku"/ /class="rjs-prod-1-mpn"/ {3-6,8-11}
+```html showLineNumbers copy filename="product.html" /class="rjs-prod-1-sku"/ /class="rjs-prod-1-mpn"/ {2-5,7-10}
 <div class="product">
   <p>
     SKU ID:
@@ -81,9 +78,9 @@ Kindly Refer [Google Doc](https://developers.google.com/search/docs/appearance/s
 </div>
 ```
 
-### 5. Brand name
+### 5. Brand name (`rjs-prod-[number]-brand`)
 
-```html showLineNumbers copy filename="product.html" /class="rjs-prod-1-brand"/ {3-6}
+```html showLineNumbers copy filename="product.html" /class="rjs-prod-1-brand"/ {2-5}
 <div class="product">
   <p>
     Brand:
@@ -94,9 +91,9 @@ Kindly Refer [Google Doc](https://developers.google.com/search/docs/appearance/s
 </div>
 ```
 
-### 6. Reviews
+### 6. Reviews (`rjs-prod-[number]-reviews`)
 
-```html showLineNumbers copy filename="product.html" /class="rjs-prod-1-reviews"/ /"urate"/ /"rv"/ /"mr/ /"raterP"/ /"raterO"/ /section/ /div/ {5-11,13-19}
+```html showLineNumbers copy filename="product.html" /class="rjs-prod-1-reviews"/ /"urate"/ /"rv"/ /"mr/ /"raterP"/ /"raterO"/ /section/ /div/ {3-9,11-17}
 <div class="product">
   <section class="rjs-prod-1-reviews">
     <div class="urate">
@@ -120,9 +117,9 @@ Kindly Refer [Google Doc](https://developers.google.com/search/docs/appearance/s
 </div>
 ```
 
-### 7. Aggregated rating
+### 7. Aggregated rating (`rjs-prod-[number]-aggrate`)
 
-```html showLineNumbers copy filename="product.html" /class="rjs-prod-1-aggrate"/ /"arv"/ /"mr"/ /"rc"/ {3-10}
+```html showLineNumbers copy filename="product.html" /class="rjs-prod-1-aggrate"/ /"arv"/ /"mr"/ /"rc"/ {2-9}
 <div class="product">
   <div class="rjs-prod-1-aggrate">
     <!-- aggregated rate-->
@@ -137,144 +134,141 @@ Kindly Refer [Google Doc](https://developers.google.com/search/docs/appearance/s
 </div>
 ```
 
-### 8. Offer
+### 8. Offer (rjs-prod-[number]-offer)
 
-Offer is a object that consists of shipping details, return policy, price, purchase link, availability and condition.
+Offer includes several key components such as shipping details, return policy, price, purchase link, availability, and item condition.
 
-#### Shipping details
+#### Shipping Details
 
-- Shipping cost - `rjs-prod-*(uid)-delcost`
+- Shipping cost - `rjs-prod-[number]-delcost`
 - Shipping destination - `data-delover` (data attribute)
-- Processing time - `rjs-prod-*(uid)-ptime`
-- Delivery time - `rjs-prod-*(uid)-ttime`
+- Processing time - `rjs-prod-[number]-ptime`
+- Delivery time - `rjs-prod-[number]-ttime`
 
-<Callout>`data-range` is mandatory for processing & delivery time (**see line no 8 & 12**)</Callout>
-```html showLineNumbers copy filename="product.html" /class="rjs-prod-1-delcost"/ /data-delover/ /"rjs-prod-1-ptime"/ /"rjs-prod-1-ttime"/ /data-range/ {5,8,12}
+<Callout>
+  `data-range` is mandatory for processing & delivery time (**see line no 8 &
+  12**)
+</Callout>
+
+```html showLineNumbers copy filename="product.html" /class="rjs-prod-1-delcost"/ /data-delover/ /"rjs-prod-1-ptime"/ /"rjs-prod-1-ttime"/ /data-range/
 <div class="product">
-
-{" "}
-
-<p>
-  Shipping Cost:
-  <span class="rjs-prod-1-delcost" data-delover="india">
-    80
-  </span>
-</p>
-
-{" "}
-
-<p class="rjs-prod-1-ptime" data-range="1-3">
-  Processing Time: 1-3 business days
-</p>
-
-{" "}
-
-<p class="rjs-prod-1-ttime" data-range="3-5">
-  Estimated Delivery Time: 3-5 business days
-</p>
-
-<div>
+  <p>
+    Shipping Cost:
+    <span class="rjs-prod-1-delcost" data-delover="india"> 80 </span>
+  </p>
+  <p class="rjs-prod-1-ptime" data-range="1-3">
+    Processing Time: 1-3 business days
+  </p>
+  <p class="rjs-prod-1-ttime" data-range="3-5">
+    Estimated Delivery Time: 3-5 business days
+  </p>
+</div>
 ```
 
-#### Merchant return details
+#### Merchant Return Details
 
-- Return within
-- Return fee
+- **Return Within**: `rjs-prod-[number]-returnin`.
+- **Return Fee**: `rjs-prod-[number]-returnfee`.
 
-```html showLineNumbers copy filename="product.html" /"rjs-prod-1-returnin"/ /"rjs-prod-1-returnfee"/ {5,10}
+```html showLineNumbers copy filename="product.html" /"rjs-prod-1-returnin"/ /"rjs-prod-1-returnfee"/ {4,8}
 <div class="product">
   <p>
     Return Policy:
     <span class="rjs-prod-1-returnin">30 days</span>
   </p>
-
   <p>
     Return Fees:
     <span class="rjs-prod-1-returnfee">Free</span>
   </p>
-
-  <div></div>
 </div>
 ```
 
-#### Validity
+#### Validity (Reserved Names: productPriceValidUntilNext)
 
-This is defined as `reservedNames.product.productPriceValidUntilNext` in `richiejs.config.js`
+This is configured in `richiejs.config.js`:
 
-```json copy filename="richiejs.config.js" {4}
-{
-  "reservedNames": {
-    "product": {
-      "productPriceValidUntilNext": 30 //30days from generation date.
+```js copy filename="richiejs.config.js" {4}
+const config = {
+  reservedNames: {
+    product: {
+      productPriceValidUntilNext: 30; // Valid for 30 days from generation date
     }
   }
 }
+
+exports.default = config;
 ```
 
-#### Purchase link
+#### Purchase Link (Reserved Names: varientParameterName)
 
 The purchase link is automatically generated based on the hierarchical structure of the input file. For files containing multiple variants on a single page, the link includes specific variant parameters in the URL, such as `https://www.ashop.com/productPage?var=black_20_male.`
 
 Parameter name is defined as `reservedNames.product.varientParameterName` in `richiejs.config.js`. Configure this according to your web server's logic of parameters handling.
 
-```json copy filename="richiejs.config.js" {4} /"var"/
-{
-  "reservedNames": {
-    "product": {
-      "varientParameterName": "var"
-    }
-  }
-}
+```js copy filename="richiejs.config.js" {4} /"var"/
+const config = {
+  reservedNames: {
+    product: {
+      varientParameterName: "var",
+    },
+  },
+};
+
+exports.default = config;
 ```
 
 #### Price & Currency
 
+- **Price**: Marked with `rjs-prod-[number]-cost`.
+- **Currency**: Specified using `data-currency` (Alpha-3 code).
+
 <Callout>Alpha-3 code is for currency</Callout>
-```html copy filename="product.html" /"rjs-prod-1-cost"/ /data-currency/ {5}
+```html copy filename="product.html" /"rjs-prod-1-cost"/ /data-currency/ {4}
 <div class="product">
-  
   <p>
     Price:
-    <span class="rjs-prod-1-cost" data-currency="inr">990</span>
+    <span class="rjs-prod-1-cost" data-currency="inr">
+      990
+    </span>
   </p>
-
-<div>
+</div>
 ```
 
-#### Availability
+#### Availability (rjs-prod-[number]-avail)
 
-Availability is boolean (true or false)
+Availability is boolean (`true` or `false`):
 
-```html copy filename="product.html" /rjs-prod-1-avail/ /data-avail/ {5}
+```html copy filename="product.html" /rjs-prod-1-avail/ /data-avail/ {4}
 <div class="product">
   <p>
     Availability:
     <span class="rjs-prod-1-avail" data-avail="true">In Stock</span>
   </p>
-
-  <div></div>
 </div>
 ```
 
-#### Condition
+#### Condition (rjs-prod-[number]-cond)
 
-Two possible values are,
+Possible values:
 
 - `new`
 - `used`
 
-```html copy filename="product.html" /"rjs-prod-1-cond"/ /data-cond/ {5}
+```html copy filename="product.html" /"rjs-prod-1-cond"/ /data-cond/ {4}
 <div class="product">
   <p>
     Item Condition:
     <span class="rjs-prod-1-cond" data-cond="new">New</span>
   </p>
-
-  <div></div>
 </div>
 ```
 
-### 9. Varies By classes
+### 9. Varies By classes (`data-var="color-audage-gender"`)
+
+<Callout>
+  `data-var` should be added in **[product name](#1-product-name) element**
+  (`rjs-prod-[number]-name`) element.
+</Callout>
 
 There are six type of variant class,
 
@@ -286,26 +280,24 @@ There are six type of variant class,
 - `Size` - size
 
 <Callout type="info">
-  Two or more classes can be added by using separator between them.
-  <br />
-  Example: `color-audage-gender`- Element's innerText value order should match
-  them and follow after name of the product. (**see line number 4**)
+  Two or more classes can be added by using hyphen between them. Example:
+  `color-audage-gender`- Element's innerText value order should match them and
+  follow after name of the product. (**see line number 4**)
 </Callout>
 
-<Callout>`data-var` should be added in **[product name](#1-product-name) element** (`rjs-prod-*-name`) element.</Callout>
-```html showLineNumbers copy filename="product.html" /data-var="color-audage-gender"/ /class="rjs-prod-1-name"/ {3-5}
+```html showLineNumbers copy filename="product.html" /data-var="color-audage-gender"/ /class="rjs-prod-1-name"/ / Black | Age 20 | Male/
 <div class="product">
-
   <h1 class="rjs-prod-1-name" data-var="color-audage-gender">
     Denim Jacket(Product Name) | Black | Age 20 | Male
   </h1>
-  
-<div>
+</div>
 ```
-    
+
 ## Function and parameters
-    
-<Callout type='default'>By default input file is overwriiten with result so `destination` is optional</Callout>
+
+<Callout type="default">
+  By default input file is overwriiten with result so `destination` is optional
+</Callout>
 
 <Callout type="info">
   This is only for API method. We prefer CLI method for keeping it simpler
