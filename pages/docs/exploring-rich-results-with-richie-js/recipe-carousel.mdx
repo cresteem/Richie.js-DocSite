@@ -16,7 +16,7 @@ Kindly Refer [Google Doc](https://developers.google.com/search/docs/appearance/s
 
 ## What are necessary data for recipe rich result?
 
-### 1. Name
+### 1. **Name** (`rjs-recipe-[number]-name`)
 
 ```html copy filename="recipe.html" /1-name/ {3}
 <div id="rjs-recipe-1">
@@ -25,33 +25,33 @@ Kindly Refer [Google Doc](https://developers.google.com/search/docs/appearance/s
 </div>
 ```
 
-### 2. URL
+### 2. **URL** (`rjs-recipe-[number]`)
 
 ```html copy filename="recipe.html" /id="rjs-recipe-1">/
 <div id="rjs-recipe-1">....</div>
 ```
 
-### 3. Thumbnail
+### 3. **Thumbnail** (`rjs-recipe-[number]-img`)
 
 ```html copy filename="recipe.html" /1-img/
-<!-- image thumbanails -->
+<!-- image thumbnails -->
 <img class="rjs-recipe-1-img" src="https://i.imsur.com/ULHbPTa.jpeg" />
 <img class="rjs-recipe-1-img" src="https://i.imsur.com/RstsU7N.jpeg" />
 ```
 
-### 4. Author
+### 4. **Author** (`rjs-recipe-[number]-aname`)
 
 ```html copy filename="recipe.html" /1-aname/
 <p class="rjs-recipe-1-aname">Darsan</p>
 ```
 
-### 5. Date published
+### 5. **Date published** (`rjs-recipe-[number]-pdt`)
 
 ```html copy filename="recipe.html" /pdt/
 <p class="rjs-recipe-1-pdt">2023-01-12</p>
 ```
 
-### 6. Description
+### 6. **Description** (`rjs-recipe-[number]-desc`)
 
 ```html copy filename="recipe.html" /1-desc/
 <p class="rjs-recipe-1-desc">
@@ -60,13 +60,13 @@ Kindly Refer [Google Doc](https://developers.google.com/search/docs/appearance/s
 </p>
 ```
 
-### 7. Recipe cuisine
+### 7. **Recipe cuisine** (`rjs-recipe-[number]-csnt`)
 
 ```html copy filename="recipe.html" /1-csnt/
 <p class="rjs-recipe-1-csnt">Indian</p>
 ```
 
-### 8. Preparation time
+### 8. **Preparation time** (`rjs-recipe-[number]-ptm`, `rjs-recipe-[number]-pth`, `rjs-recipe-[number]-pthm`)
 
 ```html copy filename="recipe.html" /ptm/ /pth/ /pthm/
 <!-- ptm - means minutes-->
@@ -74,14 +74,14 @@ Kindly Refer [Google Doc](https://developers.google.com/search/docs/appearance/s
 <!-- OR -->
 
 <!-- pth - means hours-->
-<p class="rjs-recipe-1-pth">1 hours</p>
+<p class="rjs-recipe-1-pth">1 hour</p>
 <!-- OR -->
 
 <!-- pthm - hours and minutes -->
 <p class="rjs-recipe-1-pthm">2 hours 15 minutes</p>
 ```
 
-### 9. Cooking time
+### 9. **Cooking time** (`rjs-recipe-[number]-ctm`, `rjs-recipe-[number]-cth`, `rjs-recipe-[number]-cthm`)
 
 ```html copy filename="recipe.html" /cth/ /ctm/ /cthm/
 <!-- ctm - means minutes-->
@@ -89,14 +89,14 @@ Kindly Refer [Google Doc](https://developers.google.com/search/docs/appearance/s
 <!-- OR -->
 
 <!-- cth - means hours-->
-<p class="rjs-recipe-1-cth">1 hours</p>
+<p class="rjs-recipe-1-cth">1 hour</p>
 <!-- OR -->
 
 <!-- cthm - hours and minutes -->
 <p class="rjs-recipe-1-cthm">2 hours 15 minutes</p>
 ```
 
-### 10. Keywords
+### 10. **Keywords** (`rjs-recipe-[number]-kw`)
 
 ```html copy filename="recipe.html" /1-kw/ {1,10}
 <ul class="rjs-recipe-1-kw">
@@ -111,19 +111,19 @@ Kindly Refer [Google Doc](https://developers.google.com/search/docs/appearance/s
 </ul>
 ```
 
-### 11. Number of Servings
+### 11. **Number of Servings** (`rjs-recipe-[number]-serves`)
 
 ```html copy filename="recipe.html" /serves/
 <p class="rjs-recipe-1-serves">2</p>
 ```
 
-### 12. Recipe category
+### 12. **Recipe category** (`rjs-recipe-[number]-cat`)
 
 ```html copy filename="recipe.html" /cat/
 <p class="rjs-recipe-1-cat">Breakfast</p>
 ```
 
-### 13. Calories
+### 13. **Calories** (`rjs-recipe-[number]-nutrition`, `cal`)
 
 ```html copy filename="recipe.html" /nutrition/ /cal/ {2}
 <div class="rjs-recipe-1-nutrition">
@@ -131,7 +131,7 @@ Kindly Refer [Google Doc](https://developers.google.com/search/docs/appearance/s
 </div>
 ```
 
-### 14. Aggregated rating
+### 14. **Aggregated rating** (`rjs-recipe-[number]-aggrate`)
 
 ```html copy filename="recipe.html" /aggrate/ {1,8} /mr/ /arv/ /rc/
 <div class="rjs-recipe-1-aggrate">
@@ -144,7 +144,7 @@ Kindly Refer [Google Doc](https://developers.google.com/search/docs/appearance/s
 </div>
 ```
 
-### 15 Ingredients
+### 15. **Ingredients** (`rjs-recipe-[number]-ingredient`)
 
 ```html copy filename="recipe.html" /ingredient/ /ul/ /li/
 <ul class="rjs-recipe-1-ingredient">
@@ -157,9 +157,9 @@ Kindly Refer [Google Doc](https://developers.google.com/search/docs/appearance/s
 </ul>
 ```
 
-### 16. Instructions
+### 16. **Instructions** (`rjs-recipe-[number]-instructions`)
 
-<Callout type='warning'>Each step instance `<div>` mush have `id` for making deeplink / internal link. like line 4 and 18 in below.</Callout>
+<Callout type='warning'>Each step instance `<div>` must have `id` for making deep-link / internal link. like line 4 and 18 in below.</Callout>
 
 ```html showLineNumbers copy filename="recipe.html" /instructions/ {1,34,3} /id="step1"/ /id="step2"/ /div/ /class="short"/ /class="simg"/ /class="long"/ /class="step"/
 <div class="rjs-recipe-1-instructions">
@@ -187,14 +187,14 @@ Kindly Refer [Google Doc](https://developers.google.com/search/docs/appearance/s
     </p>
   </div>
 
-  <!-- add number of step instance as you need -->
+  <!-- add number of step instances as you need -->
 </div>
 <!-- INSTRUCTIONS OVER -->
 ```
 
-### 17. Video
+### 17. **Video** (`rjs-recipe-[number]-vframe`)
 
-<Callout type="info">Use Youtube Embed Video</Callout>
+<Callout type="info">Use YouTube Embed Video</Callout>
 
 ```html copy filename="recipe.html" /vframe/
 <iframe
