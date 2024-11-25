@@ -16,7 +16,7 @@ Kindly Refer [Google Doc](https://developers.google.com/search/docs/appearance/s
 
 ## What are necessary data for learning video rich result?
 
-### 1. Embed video
+### 1. Embed Video (`rjs-video-[number]-vframe`)
 
 ```html copy filename="learning-video.html" /class="rjs-video-1-vframe"/ /div/ /iframe/
 <div id="video-1">
@@ -35,11 +35,11 @@ Kindly Refer [Google Doc](https://developers.google.com/search/docs/appearance/s
 </div>
 ```
 
-### 2. Segment index
+### 2. Segment Index (`rjs-video-[number]-index`)
 
 <Callout>
-  Time stamp of beginning of each segment should be set using `data-offset`
-  attribute. Where value is number of seconds.
+  Time stamp of the beginning of each segment should be set using the
+  `data-offset` attribute, where the value is the number of seconds.
 </Callout>
 
 ```html copy filename="learning-video.html" /class="rjs-video-1-index"/ /ul/ /div/ /data-offset=/ {4-6}
