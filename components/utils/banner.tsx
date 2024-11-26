@@ -5,7 +5,7 @@ export default () => {
       target="_blank"
       className="tracking-widest font-normal"
     >
-      Richie.js 2.0.1 released 🚀{" "}
+      Richie.js 2.0.2 released 🚀{" "}
       <span className="underline text-deep">Explore</span>
     </a>
   );

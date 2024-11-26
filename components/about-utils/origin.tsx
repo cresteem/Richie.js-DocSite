@@ -34,7 +34,7 @@ export default () => {
             </li>
 
             <li className="list-disc">
-              <span className="font-medium">Version 2.0.1:</span> Richie.js
+              <span className="font-medium">Version 2.0.2:</span> Richie.js
               evolved to allow for client-side implementation, making it
               compatible with newer frameworks such as Next.js, AngularJS,
               Vue.js, and React.js. This enables users to easily automate the
