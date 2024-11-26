@@ -11,6 +11,7 @@ const config = {
   footer: {
     component: <Footer />,
   },
+  themeSwitch: { component: false },
   backgroundColor: { dark: "#000", light: "#fff" },
   color: { hue: 162, saturation: 60, lightness: 50 },
   banner: {
