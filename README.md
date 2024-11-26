@@ -1,6 +1,6 @@
 <div align="center">
 
-# Richie JS API References - Website
+# Richie.js Documentation - Website
 
 ---
 

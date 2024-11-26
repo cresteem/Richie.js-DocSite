@@ -9,7 +9,7 @@ export function Video(): ReactElement {
       <div>
         <ul className={style.ol}>
           <li>
-            What is Richie JS?
+            What is Richie.js?
             <button
               onClick={() => {
                 updateState(10);
@@ -53,7 +53,7 @@ export function Video(): ReactElement {
           </li>
 
           <li>
-            Richie JS in Action
+            Richie.js in Action
             <button
               onClick={() => {
                 updateState(100);

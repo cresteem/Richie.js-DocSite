@@ -74,6 +74,6 @@ export async function generateFavicons(
 }
 
 generateFavicons(
-  "Meet Richie JS, a Rich Results Generator, Boost your website's visibility with Richie JS, a powerful SEO tool that generates rich results for enhanced search engine rankings and improved user experience. Learn how to simplify your SEO process and increase your online presence with our innovative solution.",
+  "Meet Richie.js, a Rich Results Generator, Boost your website's visibility with Richie.js, a powerful SEO tool that generates rich results for enhanced search engine rankings and improved user experience. Learn how to simplify your SEO process and increase your online presence with our innovative solution.",
   "2.0.1"
 );

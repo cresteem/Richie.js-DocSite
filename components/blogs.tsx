@@ -2,7 +2,7 @@ export default () => {
   /*  const posts: { title: string; desc: string; date: string; href: string }[] = [
     {
       title: "What Makes Richie.js Unique?",
-      desc: "This section is a placeholder for detailed information about the unique features and benefits of Richie JS. Here, you could describe how Richie JS simplifies the process of generating structured data, enhances SEO performance, and integrates seamlessly with modern frameworks like Next.js, Vue.js, and React.js. Add compelling insights or stats to engage readers and highlight the tool's value.",
+      desc: "This section is a placeholder for detailed information about the unique features and benefits of Richie.js. Here, you could describe how Richie.js simplifies the process of generating structured data, enhances SEO performance, and integrates seamlessly with modern frameworks like Next.js, Vue.js, and React.js. Add compelling insights or stats to engage readers and highlight the tool's value.",
       date: "Thursday, November 9th 2024",
       href: "/",
     },

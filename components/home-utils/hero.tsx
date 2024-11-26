@@ -7,7 +7,7 @@ export default function Hero() {
       <div className="max-w-screen-xl mx-auto px-4 py-[6%] gap-12 text-gray-600 md:px-8">
         <div className="space-y-5 max-w-4xl mx-auto text-center">
           <h1 className="text-sm text-primary font-medium">
-            Richie JS: Simplify SEO, Maximize Impact
+            Richie.js: Simplify SEO, Maximize Impact
           </h1>
           <h2 className="text-4xl text-gray-800 font-extrabold mx-auto md:text-5xl">
             There’s no shortcut to SEO,{" "}

@@ -38,7 +38,7 @@ export default function Footer() {
           </div>
 
           <p className="leading-relaxed mt-2 text-[15px] text-justify">
-            Richie JS is an advanced SEO toolkit that simplifies the creation of
+            Richie.js is an advanced SEO toolkit that simplifies the creation of
             structured data for rich results, enhancing your website's
             visibility and performance on search engines. By automating the
             generation of JSON-LD schema, it accelerates SEO optimization,
