@@ -45,9 +45,9 @@ const config = {
     const { pathname, basePath } = useRouter();
     const url = `https://cresteem.com${basePath}${pathname}`;
     const title =
-      frontMatter.title +
-      " | Richie JS API References | OpenSource of Cresteem";
+      frontMatter.title + " | Richie.js Documentation | OpenSource of Cresteem";
     const desc = frontMatter.description;
+    const thumbnailUrl = "/thumbnail.webp";
     return (
       <>
         <title>{title}</title>
@@ -143,19 +143,19 @@ const config = {
           href="/favicons/yandex-browser-manifest.json"
         ></link>
         {/*  */}
-        <meta name="twitter:card" content={frontMatter.description} />
+        <meta name="twitter:card" content={thumbnailUrl} />
         <meta name="twitter:title" content={title} />
-        <meta name="twitter:description" content={frontMatter.description} />
-        <meta name="twitter:image" content={frontMatter.thumbnailUrl} />
+        <meta name="twitter:description" content={desc} />
+        <meta name="twitter:image" content={thumbnailUrl} />
         <meta name="twitter:creator" content="@cresteem" />
         <meta name="twitter:site" content={url} />
-        <meta property="og:image" content={frontMatter.thumbnailUrl} />
+        <meta property="og:image" content={thumbnailUrl} />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content={url} />
         <meta property="og:site_name" content="CRESTEEM" />
-        <meta property="og:description" content={frontMatter.description} />
+        <meta property="og:description" content={desc} />
         <meta property="og:title" content={title} />
         <meta property="og:locale" content="en_US" />
       </>
