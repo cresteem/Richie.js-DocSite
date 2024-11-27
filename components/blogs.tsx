@@ -1,12 +1,12 @@
 export default () => {
-  /*  const posts: { title: string; desc: string; date: string; href: string }[] = [
+  const posts: { title: string; desc: string; date: string; href: string }[] = [
     {
-      title: "What Makes Richie.js Unique?",
-      desc: "This section is a placeholder for detailed information about the unique features and benefits of Richie.js. Here, you could describe how Richie.js simplifies the process of generating structured data, enhances SEO performance, and integrates seamlessly with modern frameworks like Next.js, Vue.js, and React.js. Add compelling insights or stats to engage readers and highlight the tool's value.",
-      date: "Thursday, November 9th 2024",
-      href: "/",
+      title: "🎉 1,100 Downloads on NPM! Celebrate with Richie.js",
+      desc: "Thanks to 1,100+ developers for supporting Richie.js! Join the growing community and automate rich snippets to boost your SEO with ease. Install Richie.js today, no expertise required!",
+      date: "Wednesday, November 27th 2024",
+      href: "/blogs/richie-js-1100-downloads-celebration",
     },
-  ]; */
+  ];
 
   return (
     <section className="mt-12 mb-[9%] mx-auto px-4 max-w-screen-lg md:px-8 leading-loose">
@@ -22,8 +22,8 @@ export default () => {
           Richie.js is transforming web development and SEO strategies.
         </p>
       </div>
-      <div className="mt-12 grid gap-8 divide-y md:grid-cols-2 md:divide-y-0">
-        {/* {posts.map((item, idx) => (
+      <div className="mt-5 grid gap-8 divide-y md:grid-cols-2 md:divide-y-0">
+        {posts.map((item, idx) => (
           <article className="mt-5 pt-8 md:pt-0" key={idx}>
             <a href={item.href}>
               <span className="block text-gray-400 text-sm">{item.date}</span>
@@ -55,10 +55,6 @@ export default () => {
             </a>
           </article>
         ))}
- */}{" "}
-        <article>
-          <p className="text-xl">No Blogs Added</p>
-        </article>
       </div>
     </section>
   );
