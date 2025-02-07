@@ -1,4 +1,4 @@
-import { MantineProvider } from "@mantine/core";
+import { ColorSchemeScript, MantineProvider } from "@mantine/core";
 import "@mantine/core/styles.css";
 import ComparisonTable from "./home-utils/comparison-table";
 import Features from "./home-utils/features";
@@ -9,7 +9,8 @@ import SupportHome from "./home-utils/support-home";
 export default function Home() {
   return (
     <main>
-      <MantineProvider>
+      <MantineProvider defaultColorScheme="light" forceColorScheme="light">
+        <ColorSchemeScript />
         <Hero />
         <Features />
         <HowItWorks />
